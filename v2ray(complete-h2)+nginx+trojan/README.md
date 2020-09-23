@@ -1,4 +1,4 @@
-此集成配置中nginx同时为v2ray与trojan提供web回落服务,因trojan不支持PROXY protocol，故nginx也无必要开启PROXY protocol接受v2ray传递请求的真实来源 IP 和端口。
+此集成配置中nginx同时为v2ray与trojan提供web回落服务,因trojan不支持PROXY protocol，故关闭此项服务。
 
 此配置实现 vless tcp 以http/1.1或http/2自适应代理科学上网，分流出ws，非v2ray的web回落给nginx。
 
