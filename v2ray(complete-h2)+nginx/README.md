@@ -4,6 +4,4 @@
 
 1、nginx 支持 h2c server，但不支持http/1.1 server与h2c server共用一个端口或一个进程。
 
-2、vless tcp 以http/1.1或http/2自适应代理科学上网。
-
-3、v2ray tcp类应用直连。v2ray ws类应用分流一次。
+2、v2ray tcp类应用直连，且以http/1.1或http/2自适应代理科学上网；v2ray ws类应用分流一次。
