@@ -1,6 +1,6 @@
 注：
 
-1、nginx为v2ray、trojan(trojan-go)、naiveproxy(caddy2)进行sni分流（四层转发），实现共用443端口。同时兼顾为v2ray、trojan(trojan-go)提供回落web服务应用。
+1、nginx为v2ray、trojan(trojan-go)、naiveproxy(caddy2)进行sni分流（四层转发），实现共用443端口。同时兼顾为v2ray与trojan(trojan-go)提供回落web服务应用。
 
 2、v2ray tcp类应用直连，v2ray ws类应用分流一次。
 
