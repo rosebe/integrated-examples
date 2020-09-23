@@ -2,7 +2,7 @@
 
 1、naiveproxy(caddy2)兼顾为v2ray与trojan(trojan-go)提供回落web服务应用。
 
-2、nginx为v2ray、naiveproxy(caddy2)、trojan(trojan-go)进行sni分流（四层转发），实现共用443端口。
+2、haproxy或nginx为v2ray、naiveproxy(caddy2)、trojan(trojan-go)进行sni分流（四层转发），实现共用443端口。
 
 3、v2ray tcp类应用直连，v2ray ws类应用分流一次。
 
