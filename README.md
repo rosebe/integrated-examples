@@ -17,7 +17,7 @@
 4）、v2ray(complete)+naiveproxy+trojan（上一项应用+trojan。各程序监听端口对外公开，同级对等。）  
 5）、v2ray(complete)+naiveproxy+trojan+nginx （用nginx对上一项应用进行SNI分流，共用443端口。）  
 2、v2ray为主，nginx为辅。  
-1）、v2ray(complete-h2)+nginx （不含vless\vmess+h2的综合应用）  
+1）、v2ray(complete-h2)+nginx （v2ray不含vless\vmess+h2的综合应用）  
 2）、v2ray(complete-h2)+nginx+trojan（上一项应用+trojan）  
 3）、v2ray(complete-h2)+nginx+trojan+naiveproxy （上一项应用+naiveproxy）  
 注：  
