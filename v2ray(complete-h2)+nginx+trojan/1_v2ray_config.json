@@ -19,12 +19,12 @@
         "fallbacks": [
           {
             "dest": 80,
-            "xver": 1
+            "xver": 0
           },
           {
             "alpn": "h2",
             "dest": 88,
-            "xver": 1
+            "xver": 0
           },
           {
             "path": "/HALdGZ9k",
