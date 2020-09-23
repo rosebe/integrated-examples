@@ -1,4 +1,4 @@
-除v2ray kcp外,所用应用共用443端口。此端口由v2ray监听（即v2ray前置），利用vless tcp回落/分流特性实现，分流出ws，非v2ray的web回落给nginx，无vless h2应用。
+除v2ray kcp外,所用应用共用443端口。此端口由v2ray监听（即v2ray前置），利用vless tcp回落/分流特性实现，分流出ws，非v2ray的web回落给nginx，无vless\vmess h2应用。
 
 注意：
 
