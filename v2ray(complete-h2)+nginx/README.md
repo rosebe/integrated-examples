@@ -2,7 +2,7 @@
 
 注意：
 
-1、nginx 支持 h2c server，但不支持http/1.1 server与h2c server共用一个端口或一个进程。
+1、nginx 支持 h2c server，但不支持http/1.1 server与h2c server共用一个端口或一个进程，故回落端口或进程必须分开。
 
 2、nginx 不支持 h2c proxy，故无vless\vmess+h2应用。
 
