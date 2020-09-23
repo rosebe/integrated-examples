@@ -14,7 +14,7 @@
 
 7、naiveproxy(caddy2) 使用本github文件，才可以同时支持naiveproxy及v2ray h2反向代理。
 
-8、配置1：v2ray、naiveproxy(caddy2)、trojan(trojan-go)各自公开一个监听端口，各自分别或配合提供服务。
+8、配置1：v2ray、trojan(trojan-go、naiveproxy(caddy2))各自公开一个监听端口，各自分别或配合提供服务。
 
 9、配置2：nginx为v2ray、trojan(trojan-go)、naiveproxy(caddy2)进行sni分流（四层转发），实现共用443端口。
 
