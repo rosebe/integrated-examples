@@ -17,5 +17,11 @@
 5、v2ray(complete)+naiveproxy+trojan+nginx （用nginx对上一项应用进行SNI分流，共用443端口。）  
 注：naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。
 
+service  
+各程序service文件目录
+
+client  
+各客户端配置示例目录
+
 贡献指南  
 欢迎你将自己使用的配置制作模板，提交 PR。
