@@ -19,7 +19,7 @@
 1）、v2ray(vless+tcp+tls+ws)+nginx （目前推荐部署，同时支持tcp与ws，回落给nginx。）  
 2）、v2ray(complete-h2)+nginx （不含vless\vmess+h2的v2ray综合应用。）  
 3）、v2ray(complete-h2)+nginx+trojan（上一项应用+trojan。）  
-4）、v2ray(complete-h2)+nginx+trojan+naiveproxy （上一项应用+naiveproxy。）  
+4）、v2ray(complete)+nginx+trojan+naiveproxy （上一项应用+naiveproxy。）  
 注：  
 1、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。  
 2、complete表示包含v2ray的vless+tcp、vless\vmess+ws、vless\vmess+h2、SS+v2ray-plugin、vmess+kcp+seed的综合应用。  
