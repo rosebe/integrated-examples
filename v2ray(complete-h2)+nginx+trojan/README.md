@@ -8,9 +8,11 @@
 
 5、因trojan不支持PROXY protocol，故统一不启用此项应用。
 
-6、实现 vless tcp 以http/1.1或http/2自适应代理科学上网，分流出ws，非v2ray的web回落给nginx。
+6、vless tcp 以http/1.1或http/2自适应代理科学上网。
 
-7、配置1：v2ray与trojan各自公开一个监听端口，各自分别提供科学上网服务。
+7、利用 vless tcp 强大的回落/分流特性，实现了vless tcp与任意 ws 类应用完美共存。
 
-8、配置2：nginx为v2ray、trojan(trojan-go)进行sni分流（四层转发），除v2ray kcp外,实现共用443端口。
+8、配置1：v2ray与trojan各自公开一个监听端口，各自分别提供科学上网服务。
+
+9、配置2：nginx为v2ray、trojan(trojan-go)进行sni分流（四层转发），除v2ray kcp外,实现共用443端口。
 
