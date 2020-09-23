@@ -41,8 +41,8 @@
         }
       },
       "mux": {
-        "enabled": true,
-        "concurrency": 4
+        "enabled": true, //ws类传输方式，强烈建议开启。
+        "concurrency": 4 //此数据根据网络情况调整。表示4条传输进程复合一个链路发出。
       }
     },
     {
