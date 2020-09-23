@@ -3,7 +3,7 @@
     "local_addr": "0.0.0.0",
     "local_port": 2083,
     "remote_addr": "127.0.0.1",
-    "remote_port": 88,
+    "remote_port": 80,
     "password": [
         "diy1155",
         "diy9125"
