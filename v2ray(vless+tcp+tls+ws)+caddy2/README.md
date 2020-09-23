@@ -2,4 +2,4 @@
 
 利用 vless tcp 强大的回落/分流特性，实现了共用 443 端口，同时支持vless tcp与任意 ws 类应用完美共存。
 
-1_v2ray_config.json为VLESS TCP分流VLESS WS 配置，2_v2ray_config.json为VLESS TCP分流VMess WS 配置，3_v2ray_config.json为VLESS TCP分流shadowsocks WS 配置。
+1_v2ray_config.json为vless tcp分流vless ws 配置，2_v2ray_config.json为vless tcp分流vmess ws 配置，3_v2ray_config.json为vless tcp分流shadowsocks ws 配置。
