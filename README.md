@@ -11,13 +11,13 @@
 
 综合应用集成服务器端配置示例  
 1、v2ray为主，caddy2为辅。  
-1）、v2ray(complete-tcp)+caddy2 （v2ray不含vless+tcp的综合应用）  
+1）、v2ray(complete-tcp)+caddy2 （不含vless+tcp的v2ray综合应用）  
 2）、v2ray(complete)+caddy2 （v2ray综合应用）  
 3）、v2ray(complete)+naiveproxy （上一项应用+naiveproxy）  
 4）、v2ray(complete)+naiveproxy+trojan（上一项应用+trojan。各程序监听端口对外公开，同级对等。）  
 5）、v2ray(complete)+naiveproxy+trojan+nginx （用nginx对上一项应用进行SNI分流，共用443端口。）  
 2、v2ray为主，nginx为辅。  
-1）、v2ray(complete-h2)+nginx （v2ray不含vless\vmess+h2的综合应用）  
+1）、v2ray(complete-h2)+nginx （不含vless\vmess+h2的v2ray综合应用）  
 2）、v2ray(complete-h2)+nginx+trojan（上一项应用+trojan）  
 3）、v2ray(complete-h2)+nginx+trojan+naiveproxy （上一项应用+naiveproxy）  
 注：  
