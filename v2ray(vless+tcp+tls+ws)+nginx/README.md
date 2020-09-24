@@ -6,6 +6,5 @@
 
 1、nginx 支持 h2c server，但不支持http/1.1 server与h2c server共用一个端口或一个进程，故回落端口或进程必须分开。
 
-2、nginx 预编译程序包不带支持 PROXY protocol 协议的模块。如要使用此项协议，需加http_realip_module与stream_realip_module两模块构建自定义模板进行源代码编译和安装。
-
+2、nginx 预编译程序包不带支持 PROXY protocol 协议的模块。如要使用此项协议应用，需加http_realip_module与stream_realip_module两模块构建自定义模板进行源代码编译和安装。
 
