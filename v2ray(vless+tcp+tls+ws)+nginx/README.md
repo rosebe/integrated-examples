@@ -3,4 +3,9 @@
 利用 vless tcp 强大的回落/分流特性，实现了共用 443 端口，同时支持vless tcp与任意 ws 类应用完美共存。
 
 注意：
-nginx 支持 h2c server，但不支持http/1.1 server与h2c server共用一个端口或一个进程，故回落端口或进程必须分开。
+
+1、nginx 支持 h2c server，但不支持http/1.1 server与h2c server共用一个端口或一个进程，故回落端口或进程必须分开。
+
+2、nginx 预编译程序包不带支持 PROXY protocol 协议的模块。如要使用此项协议，需加http_realip_module与stream_realip_module两模块构建自定义模板进行源代码编译和安装。
+
+
