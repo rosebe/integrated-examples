@@ -8,4 +8,4 @@ v2ray tcp类应用直连，且以http/1.1或http/2自适应代理科学上网；
 
 2、nginx 不支持 h2c proxy，故无法搭建vless\vmess+h2反代应用。
 
-3、nginx 预编译程序包不带支持 PROXY protocol 协议的模块。如要使用此项协议应用，需加http_realip_module与stream_realip_module两模块构建自定义模板进行源代码编译和安装。
+3、nginx 预编译程序包不带支持 PROXY protocol 协议的模块。如要使用此项协议应用，需加http_realip_module与stream_realip_module两模块构建自定义模板进行源代码编译和安装。另编译时选取源代码版本建议不要低于1.13.11。
