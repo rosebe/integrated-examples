@@ -8,4 +8,4 @@
 
 3、trojan(trojan-go)直连。
 
-4、caddy2 使用本人github文件，才可以同时支持naiveproxy、回落 h2 及v2ray h2反向代理。
+4、naiveproxy（caddy2）使用本人github文件，才可以同时支持naiveproxy、回落 h2 及v2ray h2反向代理。
