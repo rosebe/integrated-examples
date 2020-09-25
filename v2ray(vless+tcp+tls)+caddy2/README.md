@@ -5,6 +5,6 @@ v2ray client <--- tcp+tls ---> v2ray server <--- web回落 ---> caddy2
 
 注意：
 
-1、caddy2 目前只能json配置才支持 h2c server，故要实现回落h2就不能采用Caddyfile配置。
+1、caddy2 目前只能 json 配置才支持 h2c server，故要实现回落 h2 就不能采用 Caddyfile 配置；另外caddy2 版本不能低于 v2.1.0 ，否则不支持。
 
-2、caddy2 支持http/1.1 server与h2c server共用一个端口。
+2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
