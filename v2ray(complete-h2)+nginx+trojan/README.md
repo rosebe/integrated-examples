@@ -12,7 +12,7 @@
 
 6、nginx 不支持 h2c proxy，故无法搭建vless\vmess+h2反代应用。
 
-7、nginx 预编译程序包不带支持SNI分流协议的模块。如要使用此项协议应用，需加stream_ssl_preread_module模块构建自定义模板进行源代码编译和安装。
+7、nginx 预编译程序包不带支持SNI分流协议的模块。如要使用此项协议应用，需加stream_ssl_preread_module模块构建自定义模板，后进行源代码编译和安装。
 
 8、配置1：v2ray与trojan各自公开一个监听端口，各自分别提供科学上网服务。
 
