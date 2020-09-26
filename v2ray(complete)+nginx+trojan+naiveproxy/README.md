@@ -18,5 +18,5 @@
 
 9、配置1：v2ray、trojan(trojan-go、naiveproxy(caddy2))各自公开一个监听端口，各自分别或配合提供服务。
 
-10、配置2：nginx为v2ray、trojan(trojan-go)、naiveproxy(caddy2)进行sni分流（四层转发），实现共用443端口。
+10、配置2：nginx为v2ray、trojan(trojan-go)、naiveproxy(caddy2)进行SNI分流（四层转发），实现共用443端口。
 
