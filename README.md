@@ -4,8 +4,8 @@
 1、v2ray(vless\vmess+ws+tls)+caddy2\nginx （之前vmess协议时代，推荐部署。）  
 2、v2ray(vless\vmess+h2)+caddy2 （h2优势：链路复用。）  
 3、v2ray(SS+v2ray-plugin+tls)+caddy2\nginx（不常用，如需直接使用shadowsocks客户端可部署。）  
-4、v2ray(vless+tcp+tls)+caddy2 （vless tcp应用下回落给caddy2。）  
-5、v2ray(vless+tcp+tls)+nginx （vless tcp应用下回落给nginx。）  
+4、v2ray(vless+tcp+tls)+caddy2 （vless tcp应用下回落给caddy2，配置同时支持http/1.1与h2回落。）  
+5、v2ray(vless+tcp+tls)+nginx （vless tcp应用下回落给nginx，配置同时支持http/1.1与h2回落。）  
 
 综合应用集成服务器端配置示例  
 1、v2ray为主，caddy2为辅。  
