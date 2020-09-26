@@ -20,7 +20,7 @@
 2）、v2ray(complete-h2)+nginx （不含vless\vmess+h2的v2ray综合应用。）  
 3）、v2ray(complete-h2)+nginx+trojan（上一项应用+trojan。可用nginx进行SNI分流，共用443端口。）  
 4）、v2ray(complete)+nginx+trojan+naiveproxy （上一项应用+naiveproxy。可用nginx进行SNI分流，共用443端口。）  
-注：  
+注意：  
 1、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。  
 2、complete表示包含v2ray的vless+tcp+tls、vless\vmess+ws+tls、vless\vmess+h2、SS+v2ray-plugin+tls、vmess+kcp+seed的综合应用。  
 
@@ -31,4 +31,5 @@ client
 各客户端配置示例目录
 
 贡献指南  
-欢迎你将自己使用的配置制作模板，提交 PR。
+1、若 v2ray 程序增加新功能，开始仅单一应用集成服务器端配置示例增加，一段时间后才会在综合应用集成服务器端配置示例添加。 
+2、欢迎你提交 PR ,如对现行配置示例优化修订，或将自己使用的配置制作模板提交等。
