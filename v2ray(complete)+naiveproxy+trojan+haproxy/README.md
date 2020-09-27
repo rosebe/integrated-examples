@@ -6,7 +6,7 @@
 
 3、naiveproxy(caddy2)兼顾为v2ray与trojan(trojan-go)提供回落web服务应用。
 
-4、naiveproxy（caddy2）使用本人github文件，才可以同时支持naiveproxy、回落 h2 及v2ray h2反向代理。
+4、naiveproxy（caddy2）使用本人github文件，可同时支持naiveproxy、回落 h2 及v2ray h2反向代理。
 
 5、用haproxy或nginx为v2ray、naiveproxy(caddy2)、trojan(trojan-go)进行SNI分流（四层转发），实现共用443端口。
 
