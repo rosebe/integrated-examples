@@ -4,7 +4,7 @@
 
 2、利用 vless tcp 强大的回落/分流特性，实现了vless tcp与任意 ws 类应用完美共存。
 
-3、naiveproxy(caddy2) 使用本github文件，才可以同时支持naiveproxy及v2ray h2反向代理。
+3、naiveproxy(caddy2) 使用本github文件，可同时支持naiveproxy及v2ray h2反向代理。
 
 4、nginx同时为v2ray与trojan提供web回落服务。
 
