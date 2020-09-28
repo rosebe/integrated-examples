@@ -29,7 +29,7 @@
               "auth_user": "user", //naiveproxy账号，修改为自己的。
               "auth_pass": "pass", //naiveproxy密码，修改为自己的。
               "probe_resistance": {
-              	"domain": "unsplash.com:8443"
+              	"domain": "unsplash.com:443"
               }
             }]
           },
