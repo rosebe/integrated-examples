@@ -9,4 +9,4 @@
 
 2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
 
-3、1_v2ray_config.json为vless tcp分流vless ws 配置，2_v2ray_config.json为vless tcp分流vmess ws 配置，3_v2ray_config.json为vless tcp分流shadowsocks ws 配置。
+3、caddy2 发行版不支持 PROXY protocol，如要支持 PROXY protocol 选 caddy2-proxyprotocol 插件定制即可。
