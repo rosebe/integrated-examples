@@ -9,4 +9,4 @@ v2ray client <--- tcp+tls ---> v2ray server <--- web回落 ---> caddy2
 
 2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
 
-3、caddy2 发行版不支持 PROXY protocol，如要支持 PROXY protocol 需加caddy2-proxyprotocol插件定制。
+3、caddy2 发行版不支持 PROXY protocol，如要支持 PROXY protocol 选 caddy2-proxyprotocol 插件定制即可。
