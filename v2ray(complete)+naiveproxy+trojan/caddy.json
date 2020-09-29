@@ -69,13 +69,16 @@
                 }],
                 "handle": [{
                   "handler": "reverse_proxy",
-                  "upstreams": [{
-                    "dial": "127.0.0.1:2002" //与v2ray h2 端口对应
-                  }],
                   "transport": {
                     "protocol": "http",
+                    "keep_alive": {
+                      "enabled": false
+                    },
                     "versions": ["h2c"]
-                  }
+                  },
+                  "upstreams": [{
+                    "dial": "127.0.0.1:2002" //与v2ray h2 端口对应
+                  }]
                 }],
                 "terminal": true
               },
