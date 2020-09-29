@@ -13,9 +13,6 @@
             }],
             "handle": [{
               "handler": "reverse_proxy",
-              "upstreams": [{
-                "dial": "127.0.0.1:2002" //转发给本机v2ray对应端口
-              }],
               "transport": {
                 "protocol": "http",
                 "keep_alive": {
