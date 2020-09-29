@@ -18,8 +18,14 @@
               }],
               "transport": {
                 "protocol": "http",
+                "keep_alive": {
+                  "enabled": false
+	              },
                 "versions": ["h2c"]
-              }
+              },
+              "upstreams": [{
+                "dial": "127.0.0.1:2002" //转发给本机v2ray对应端口
+              }]
             }],
             "terminal": true
           },
