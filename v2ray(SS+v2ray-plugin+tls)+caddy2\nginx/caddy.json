@@ -9,7 +9,11 @@
           "listen": [":443"],
           "routes": [{
             "match": [{
-            	"path": ["/ss1v2ray"] //分流出ws,与本机ws path对应。
+              "path": ["/ss1v2ray"], //分流出ws,与本机ws path对应。
+              "header": {
+                "Connection": ["*Upgrade*"],
+                "Upgrade": ["websocket"]
+              }
             }],
             "handle": [{
               "handler": "reverse_proxy",
