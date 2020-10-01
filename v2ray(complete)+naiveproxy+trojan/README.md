@@ -1,4 +1,4 @@
-注：
+注意：
 
 1、v2ray、caddy2(naiveproxy)、trojan(trojan-go)各自公开一个监听端口，各自分别或配合提供服务。如caddy2为v2ray与trojan(trojan-go)提供回落服务。
 
@@ -8,4 +8,4 @@
 
 3、trojan(trojan-go)直连。
 
-4、caddy2 使用本github文件，才可以同时支持naiveproxy及v2ray h2反向代理。
+4、naiveproxy（caddy2）使用本人github文件，可同时支持naiveproxy、回落 h2 及v2ray h2反向代理。
