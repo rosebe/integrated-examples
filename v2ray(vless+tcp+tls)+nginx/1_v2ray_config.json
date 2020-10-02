@@ -33,8 +33,8 @@
         "security": "xtls", //如启用xtls，tls必须改成xtls。
         "xtlsSettings": { //如启用xtls，tlsSettings必须改成xtlsSettings。
           "alpn":[
-            "h2", //启用h2连接，web回落也需配置支持h2回落；否则不一致（裸奔），被墙探测出，从而被封。
-            "http/1.1" //启用http/1.1连接，web回落也需配置支持http/1.1回落；否则不一致（裸奔），被墙探测出，从而被封。
+            "h2", //启用h2连接，web回落也需配置支持h2回落；否则不一致（裸奔），容易被墙探测出，从而被封。
+            "http/1.1" //启用http/1.1连接，web回落也需配置支持http/1.1回落；否则不一致（裸奔），容易被墙探测出，从而被封。
           ],
           "certificates": [
             {
