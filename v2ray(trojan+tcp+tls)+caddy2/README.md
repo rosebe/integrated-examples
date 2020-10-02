@@ -2,8 +2,8 @@
 
 注意：
 
-1、caddy2 目前只能 json 配置才能开启 h2c server，故要实现回落 h2 就不能采用 Caddyfile 配置；另外caddy2 版本不能低于 v2.1.0 ，否则不支持h2c server。
+1、v2ray v4.30版本及以后才支持trojan。
 
-2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
+2、caddy2 目前只能 json 配置才能开启 h2c server，故要实现回落 h2 就不能采用 Caddyfile 配置；另外caddy2 版本不能低于 v2.1.0 ，否则不支持h2c server。
 
-3、v2ray v4.30版本及以后才支持trojan。
+3、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
