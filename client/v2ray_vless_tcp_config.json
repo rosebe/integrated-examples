@@ -26,7 +26,7 @@
             "users": [
               {
                 "id": "7326a426-d601-11ea-b574-560002e9f264", //改成服务端配置的对应UUID
-                "flow": "xtls-rprx-origin", //启用xtls，必须增加此条参数；否则删除。另支持xtls必须v2ray版本不小于v4.29.0，且服务端已配置支持。
+                "flow": "xtls-rprx-origin", //启用xtls必须增加此条参数，参数值也可以为xtls-rprx-origin-udp443；否则删除此条参数。另支持xtls必须v2ray版本不小于v4.29.0，且服务端已配置支持。
                 "encryption": "none"
               }
             ]
