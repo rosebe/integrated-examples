@@ -7,13 +7,6 @@
       "settings": {
         "auth": "noauth",
         "udp": true
-      },
-      "sniffing": {
-        "enabled": true,
-        "destOverride": [
-          "http",
-          "tls"
-        ]
       }
     },
     {
