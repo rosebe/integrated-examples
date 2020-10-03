@@ -19,14 +19,7 @@
     {
       "port": "1081",
       "protocol": "http",
-      "settings": {},
-      "sniffing": {
-        "enabled": true,
-        "destOverride": [
-          "http",
-          "tls"
-        ]
-      }
+      "settings": {}
     }
   ],
   "outbounds": [
