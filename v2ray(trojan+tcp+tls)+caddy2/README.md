@@ -5,7 +5,7 @@ v2ray\trojan client <--- tcp+tls ---> v2ray server <--- web回落 ---> caddy2
 
 注意：
 
-1、v2ray v4.30版本及以后才支持trojan。
+1、v2ray v4.30 版本及以后才支持 trojan 。另外 trojan 回落还很简易（以后版本可能改进成vless+tcp回落。），如设置连接配置h2、http/1.1同时支持，回落流也是h2、http/1.1复合的，暂不支持分开回落，故目前只有 caddy2 支持。
 
 2、caddy2 目前只能 json 配置才能开启 h2c server，故要实现回落 h2 就不能采用 Caddyfile 配置；另外caddy2 版本不能低于 v2.1.0 ，否则不支持h2c server。
 
