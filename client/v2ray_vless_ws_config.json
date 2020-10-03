@@ -1,42 +1,42 @@
 {
-  "log":{},
-  "inbounds":[
+  "log": {},
+  "inbounds": [
     {
-      "port":"1080",
-      "protocol":"socks",
-      "settings":{
-        "auth":"noauth",
-        "udp":true
+      "port": "1080",
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true
       }
     },
     {
-      "port":"1081",
-      "protocol":"http",
-      "settings":{}
+      "port": "1081",
+      "protocol": "http",
+      "settings": {}
     }
   ],
-  "outbounds":[
+  "outbounds": [
     {
-      "protocol":"vless",
-      "settings":{
-        "vnext":[
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
           {
-            "address":"xx.yy", //改成服务端配置的对应域名
-            "port":443, //改成服务端配置的对应端口（如没有SNI分流共用端口；回落就是vless+tcp监听端口，反代就是caddy2或nginx等https监听端口。）
-            "users":[
+            "address": "xx.yy", //改成服务端配置的对应域名
+            "port": 443, //改成服务端配置的对应端口（如没有SNI分流共用端口；回落就是vless+tcp监听端口，反代就是caddy2或nginx等https监听端口。）
+            "users": [
               {
-                "id":"a3d238a4-b777-11ea-90d6-42010a8c000a", //改成服务端配置的对应UUID
-                "encryption":"none"
+                "id": "a3d238a4-b777-11ea-90d6-42010a8c000a", //改成服务端配置的对应UUID
+                "encryption": "none"
               }
             ]
           }
         ]
       },
-      "streamSettings":{
-        "security":"tls",
-        "network":"ws",
-        "wsSettings":{
-          "path":"/5hBv56Es" //改成服务端设置的对应path
+      "streamSettings": {
+        "security": "tls",
+        "network": "ws",
+        "wsSettings": {
+          "path": "/5hBv56Es" //改成服务端设置的对应path
         }
       },
       "mux": {
@@ -45,14 +45,14 @@
       }
     },
     {
-      "tag":"direct", //如果要使用路由，这个 tag 是一定要有的，在这里 direct 就是 freedom 的一个标号，在路由中说 direct V2Ray 就知道是这里的 freedom 了。
-      "protocol":"freedom",
-      "settings":{}
+      "tag": "direct", //如果要使用路由，这个 tag 是一定要有的，在这里 direct 就是 freedom 的一个标号，在路由中说 direct V2Ray 就知道是这里的 freedom 了。
+      "protocol": "freedom",
+      "settings": {}
     }
   ],
-  "routing":{
-    "domainStrategy":"IPOnDemand",
-    "rules":[
+  "routing": {
+    "domainStrategy": "IPOnDemand",
+    "rules": [
       {
         "type": "field",
         "outboundTag": "direct",
