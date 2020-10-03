@@ -7,12 +7,26 @@
       "settings": {
         "auth": "noauth",
         "udp": true
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
       }
     },
     {
       "port": "1081",
       "protocol": "http",
-      "settings": {}
+      "settings": {},
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      }
     }
   ],
   "outbounds": [
