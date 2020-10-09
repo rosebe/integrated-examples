@@ -25,7 +25,7 @@
           {
             "alpn": "h2", //h2回落匹配 
             "dest": 88, //h2回落端口
-            "xver": 1 //nginx 支持 PROXY protocol，开启传递请求的真实来源 IP 和端口给 nginx。
+            "xver": 1 //可设置1或2,开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。
           },
           {
             "path": "/HALdGZ9k", //通过路径分流出ws
