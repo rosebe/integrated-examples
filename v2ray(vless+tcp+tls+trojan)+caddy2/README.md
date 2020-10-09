@@ -1,8 +1,8 @@
-此配置实现 vless tcp 以http/1.1或http/2自适应代理科学上网，回落给trojan，由trojan处理后再回落给caddy2。（套娃方式）
+此配置实现 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，回落给 trojan，由 trojan 处理后再回落给 caddy2。（套娃方式）
 
-利用 vless tcp 强大的回落/分流特性，实现了共用 443 端口，同时支持vless tcp与trojan 类应用完美共存。
+利用 vless tcp 强大的回落/分流特性，实现了共用 443 端口，同时支持 vless tcp 与trojan 应用完美共存。
 
-原理图： v2ray\trojan client <--- tcp+tls ---> v2ray server( vless+tcp+tls <-- 回落 ---> trojan ) <-- 回落 ---> caddy2
+原理图： v2ray\trojan client <--- tcp+tls ---> v2ray server( vless+tcp+tls <- 回落 -> trojan ) <-- 回落 ---> caddy2
 
 注意：
 
