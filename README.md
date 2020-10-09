@@ -13,10 +13,11 @@
 1、v2ray为主，caddy2为辅。  
 1）、v2ray(complete-tcp)+caddy2 （不含vless+tcp的v2ray综合应用。）  
 2）、v2ray(vless+tcp+tls+ws)+caddy2 （目前推荐部署，同时支持tcp与ws，回落给caddy2。）  
-3）、v2ray(complete)+caddy2 （v2ray综合应用。）  
-4）、v2ray(complete)+naiveproxy （上一项应用+naiveproxy。）  
-5）、v2ray(complete)+naiveproxy+trojan（上一项应用+trojan。各程序监听端口对外公开，同级对等。）  
-6）、v2ray(complete)+naiveproxy+trojan+haproxy （用haproxy对上一项应用进行SNI分流，共用443端口。）  
+3）、v2ray(vless+tcp+tls+trojan)+caddy2 （新增trojan协议应用，同时支持tcp与trojan，回落给caddy2。）  
+4）、v2ray(complete)+caddy2 （v2ray综合应用。）  
+5）、v2ray(complete)+naiveproxy （上一项应用+naiveproxy。）  
+6）、v2ray(complete)+naiveproxy+trojan（上一项应用+trojan。各程序监听端口对外公开，同级对等。）  
+7）、v2ray(complete)+naiveproxy+trojan+haproxy （用haproxy对上一项应用进行SNI分流，共用443端口。）  
 2、v2ray为主，nginx为辅。  
 1）、v2ray(vless+tcp+tls+ws)+nginx （目前推荐部署，同时支持tcp与ws，回落给nginx。）  
 2）、v2ray(complete-h2)+nginx （不含vless\vmess+h2的v2ray综合应用。）  
