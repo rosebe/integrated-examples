@@ -20,7 +20,7 @@
 7）、v2ray(complete)+naiveproxy+trojan+haproxy （用haproxy对上一项应用进行SNI分流，共用443端口。）  
 2、v2ray为主，nginx为辅。  
 1）、v2ray(vless+tcp+tls+ws)+nginx （目前推荐部署，同时支持tcp与ws，回落给nginx。）  
-2）、v2ray(vless+tcp+tls+ws+trojan)+nginx （回落终极部署，同时支持tcp与ws及trojan，回落给nginx。）
+2）、v2ray(vless+tcp+tls+ws+trojan)+nginx （回落终极部署，同时支持tcp与ws及trojan，回落给nginx。）  
 3）、v2ray(complete-h2)+nginx （不含vless\vmess+h2的v2ray综合应用。）  
 4）、v2ray(complete-h2)+nginx+trojan（上一项应用+trojan。可用nginx进行SNI分流，共用443端口。）  
 5）、v2ray(complete)+nginx+trojan+naiveproxy （上一项应用+naiveproxy。可用nginx进行SNI分流，共用443端口。）  
