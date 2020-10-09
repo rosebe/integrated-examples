@@ -7,6 +7,7 @@
 4、v2ray(vless+tcp+tls)+caddy2 （回落给caddy2，支持http/1.1与h2回落。）  
 5、v2ray(trojan+tcp+tls)+caddy2 （新增trojan协议应用，http/1.1与h2回落给caddy2。）  
 6、v2ray(vless+tcp+tls)+nginx （回落给nginx，支持http/1.1与h2回落。）  
+7、v2ray(trojan+tcp+tls)+nginx （新增trojan协议应用，http/1.1与h2回落给nginx。）  
 
 综合应用集成服务器端配置示例  
 1、v2ray为主，caddy2为辅。  
