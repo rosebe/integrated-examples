@@ -1,0 +1,79 @@
+{
+  "log": {
+    "error": "/var/log/v2ray/error.log",
+    "access": "/var/log/v2ray/access.log",
+    "loglevel": "info"
+  },
+  "inbounds": [
+    {
+      "port": 443, //监听端口
+      "protocol": "trojan",
+      "settings": {
+        "clients": [
+          {
+            "password":"diy443", //修改成自己密码
+            "email": "443@gmail.com"
+          }
+        ],
+        "fallbacks": [
+          {
+            "dest": 80, //http/1.1回落端口
+            "xver": 1 //nginx 支持 PROXY protocol，开启传递请求的真实来源 IP 和端口给 nginx。
+          },
+          {
+            "alpn": "h2", //h2回落匹配 
+            "dest": 88, //h2回落端口
+            "xver": 1 //可设置1或2,开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。
+          }
+        ]
+      },
+      "streamSettings": {
+        "security": "tls",
+        "tlsSettings": {
+          "alpn":[
+            "h2", //启用h2连接，web回落也需配置支持h2回落；否则不一致（裸奔），容易被墙探测出，从而被封。
+            "http/1.1" //启用http/1.1连接，web回落也需配置支持http/1.1回落；否则不一致（裸奔），容易被墙探测出，从而被封。
+          ],
+          "certificates": [
+            {
+              "certificateFile": "/etc/ssl/tls/xx.yy.crt", //换成你的证书，绝对路径。
+              "keyFile": "/etc/ssl/tls/xx.yy.key" //换成你的私钥，绝对路径。
+            }
+          ]
+        },
+        "network": "tcp"
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "tag": "blocked",
+      "protocol": "blackhole",
+      "settings": {}
+    }
+  ],
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "blocked"
+      }
+    ]
+  }
+}
