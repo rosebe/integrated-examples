@@ -13,7 +13,7 @@
 1、v2ray为主，caddy2为辅。  
 1）、v2ray(complete-tcp)+caddy2 （不含vless+tcp的v2ray综合应用。）  
 2）、v2ray(vless+tcp+tls+ws)+caddy2 （目前推荐部署，同时支持tcp与ws，回落给caddy2。）  
-3）、v2ray(vless+tcp+tls+ws+trojan)+caddy2 （新增trojan协议应用。尝鲜推荐部署，同时支持tcp与ws及trojan，回落给caddy2。）  
+3）、v2ray(vless+tcp+tls+ws+trojan)+caddy2 （尝鲜推荐部署，同时支持tcp与ws及trojan，回落给caddy2。）  
 4）、v2ray(complete)+caddy2 （v2ray综合应用。）  
 5）、v2ray(complete)+naiveproxy （上一项应用+naiveproxy。）  
 6）、v2ray(complete)+naiveproxy+trojan（上一项应用+trojan。各程序监听端口对外公开，同级对等。）  
