@@ -19,13 +19,8 @@
         "decryption": "none",
         "fallbacks": [
           {
-            "dest": "/dev/shm/h1.web", //http/1.1回落进程
-            "xver": 1 //开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。
-          },
-          {
-            "alpn": "h2", //h2回落匹配 
-            "dest": "/dev/shm/h2.web", //h2回落进程
-            "xver": 1 //开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。
+            "dest": 2006, //回落给trojan处理。
+            "xver": 2 //caddy2用支持PROXY protocol插件的定制版，可设置1或2。1或2表示PROXY protocol插件版本。多级传递，建议配置2。
           },
           {
             "path": "/HALdGZ9k", //通过路径分流出ws
@@ -43,8 +38,8 @@
           ],
           "certificates": [
             {
-              "certificateFile": "/etc/ssl/tls/xx.yy.crt", // 换成你的证书，绝对路径。
-              "keyFile": "/etc/ssl/tls/xx.yy.key" // 换成你的私钥，绝对路径。
+              "certificateFile": "/etc/ssl/tls/xx.yy.crt", //换成你的证书，绝对路径。
+              "keyFile": "/etc/ssl/tls/xx.yy.key" //换成你的私钥，绝对路径。
             }
           ]
         },
@@ -76,6 +71,39 @@
         "network": "ws",
         "wsSettings": {
           "path": "/HALdGZ9k" //修改成自己的path
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      }
+    },
+    {
+      "port": 2006, //监听端口，对应上回落端口。
+      "listen": "127.0.0.1", //只监听本机，避免除本机外的机器探测到上面监听端口。
+      "protocol": "trojan",
+      "settings": {
+        "clients": [
+          {
+            "password":"diy2006", //修改成自己密码
+            "email": "2006@gmail.com"
+          }
+        ],
+        "fallbacks": [
+          {
+            "dest": 80, //h2与http/1.1共用此端口回落到web服务器,即web服务器同时支持h2c server与http/1.1 server应用。
+            "xver": 2 //caddy2用支持PROXY protocol插件的定制版，可设置1或2。1或2表示PROXY protocol插件版本。多级传递，建议配置2。
+          }
+        ]
+      },
+      "streamSettings": {
+        "security": "none",
+        "network": "tcp",
+        "tcpSettings": {
+          "acceptProxyProtocol": true //开启 PROXY protocol 接收，接收vless+tcp 回落的传递请求的真实来源 IP 和端口。
         }
       },
       "sniffing": {

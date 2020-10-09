@@ -1,6 +1,6 @@
 此配置实现 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，非 v2ray 的 web 回落给 nginx。
 
-原理图： v2ray client <--- tcp+tls ---> v2ray server <--- web回落 ---> nginx
+原理图： v2ray client <--- tcp+tls ---> v2ray server <- web回落 -> nginx
 
 注意：
 
