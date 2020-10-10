@@ -11,16 +11,17 @@
 
 综合应用集成服务器端配置示例  
 1、v2ray为主，caddy2为辅。  
+以前组合
 1）、v2ray(complete+h2-tcp)+caddy2 （caddy2前置，反代ws与h2的综合应用。）  
 2）、v2ray(vless+tcp+tls+ws)+caddy2 （目前推荐部署，同时支持tcp与ws，回落给caddy2。）  
 3）、v2ray(complete+h2)+caddy2 （v2ray综合应用+反代h2应用。）  
 4）、v2ray(complete+h2)+naiveproxy （上一项应用+naiveproxy应用。）  
 5）、v2ray(complete+h2)+naiveproxy+trojan（上一项应用+trojan应用。各程序监听端口对外公开，同级对等。）  
 6）、v2ray(complete+h2)+naiveproxy+trojan+haproxy （用haproxy对上一项应用进行SNI分流，共用443端口。）  
-
+现在新组合
 7）、v2ray(vless+tcp+tls+ws+trojan)+caddy2 （回落终极部署，同时支持tcp与ws及trojan，回落给caddy2。）  
-8）、v2ray(vless+tcp+tls+ws+trojan)+caddy2 （回落终极部署，同时支持tcp与ws及trojan，回落给caddy2。）  
-9）、v2ray(vless+tcp+tls+ws+trojan)+caddy2 （回落终极部署，同时支持tcp与ws及trojan，回落给caddy2。）  
+8）、v2ray(complete+ws+h2+trojan)+naiveproxy （综合应用，同时支持tcp与ws及trojan，回落给caddy2。）  
+9）、v2ray(complete+ws+h2+trojan)+naiveproxy+haproxy （回落终极部署，同时支持tcp与ws及trojan，回落给caddy2。）  
 2、v2ray为主，nginx为辅。  
 1）、v2ray(vless+tcp+tls+ws)+nginx （目前推荐部署，同时支持tcp与ws，回落给nginx。）  
 2）、v2ray(vless+tcp+tls+ws+trojan)+nginx （回落终极部署，同时支持tcp与ws及trojan，回落给nginx。）  
