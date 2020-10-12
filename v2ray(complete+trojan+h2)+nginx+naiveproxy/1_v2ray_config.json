@@ -37,7 +37,6 @@
         "security": "tls",
         "tlsSettings": {
           "alpn":[
-            "h2",
             "http/1.1"
           ],
           "certificates": [
@@ -173,11 +172,6 @@
         "fallbacks": [
           {
             "dest": 80,
-            "xver": 0
-          },
-          {
-            "alpn": "h2",
-            "dest": 88,
             "xver": 0
           }
         ]
