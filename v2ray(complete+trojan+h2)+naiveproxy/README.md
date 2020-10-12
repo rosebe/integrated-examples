@@ -1,8 +1,12 @@
+v2ray、caddy2(naiveproxy)各自公开一个监听端口，各自分别或配合提供服务。如caddy2还同时为v2ray与trojan(trojan-go)提供回落服务。
+
 此配置实现 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出ws，回落给 trojan，由 trojan 处理后再回落给 caddy2。（套娃方式）
 
 利用 vless 强大的回落/分流特性，实现了共用 443 端口，同时支持 vless tcp 与任意 ws 类及trojan 应用完美共存。
 
-原理图： v2ray\trojan client <--- tcp+tls ---> v2ray server (vless+tcp+tls <- 回落 -> trojan) <-- 回落 ---> caddy2
+v2ray tcp类应用直连，v2ray ws类应用分流一次。
+
+naiveproxy直连。v2ray h2类应用分流（反代）一次。
 
 注意：
 
@@ -14,4 +18,4 @@
 
 4、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
 
-5、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
+5、全部配置没有启用 PROXY protocol，仅端口回落。因觉得caddy2已单独公开一个监听端口，对web服务来说已经足够。
