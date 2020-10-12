@@ -1,4 +1,4 @@
-此配置实现 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出ws，回落给 trojan，由 trojan 处理后再回落给 nginx。（套娃方式）
+此配置实现 vless tcp 以 http/1.1 代理科学上网，分流出ws，回落给 trojan，由 trojan 处理后再回落给 nginx。（套娃方式）
 
 利用 vless 强大的回落/分流特性，实现了共用 443 端口，同时支持 vless tcp 与任意 ws 类及trojan 应用完美共存。
 
