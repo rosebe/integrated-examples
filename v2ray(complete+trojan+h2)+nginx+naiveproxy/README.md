@@ -8,7 +8,7 @@ v2ray tcp类应用直连，v2ray ws类应用分流一次；naiveproxy直连，v2
 
 2、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
 
-3、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程，故回落端口或进程必须分开。
+3、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程；而v2ray的trojan不支持端口或进程分离h2回落，故套娃回落nginx只能全部采用h1回落。
 
 4、全部配置没有启用 PROXY protocol，仅端口回落。
 
