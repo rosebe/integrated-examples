@@ -93,7 +93,7 @@
         ],
         "fallbacks": [
           {
-            "dest": "/dev/shm/h1.web", //http/1.1回落端口
+            "dest": "/dev/shm/h1.sock", //http/1.1回落端口
             "xver": 2 //开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。多级传递，建议配置2。
           }
         ]
