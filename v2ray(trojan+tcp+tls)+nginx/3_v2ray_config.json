@@ -19,11 +19,6 @@
           {
             "dest": "/dev/shm/h1.web", //http/1.1回落进程
             "xver": 1 //nginx 支持 PROXY protocol，开启传递请求的真实来源 IP 和端口给nginx。
-          },
-          {
-            "alpn": "h2", //h2回落匹配 
-            "dest": "/dev/shm/h2.web", //h2回落进程
-            "xver": 1 //可设置1或2,开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。
           }
         ]
       },
@@ -31,7 +26,6 @@
         "security": "tls",
         "tlsSettings": {
           "alpn":[
-            "h2", //启用h2连接，web回落也需配置支持h2回落；否则不一致（裸奔），容易被墙探测出，从而被封。
             "http/1.1" //启用http/1.1连接，web回落也需配置支持http/1.1回落；否则不一致（裸奔），容易被墙探测出，从而被封。
           ],
           "certificates": [
