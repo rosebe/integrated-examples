@@ -12,4 +12,4 @@
 
 3、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
 
-4、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
+4、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。配置3：启用了 PROXY protocol，且进程回落。
