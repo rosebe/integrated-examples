@@ -21,12 +21,12 @@
         "fallbacks": [
           {
             "dest": "/dev/shm/h1.sock", //http/1.1回落进程
-            "xver": 1 //开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。
+            "xver": 2 //开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。多级传递，建议配置2。
           },
           {
             "alpn": "h2", //h2回落匹配 
             "dest": "/dev/shm/h2c.sock", //h2回落进程
-            "xver": 1 //开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。
+            "xver": 2 //开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。多级传递，建议配置2。
           },
           {
             "path": "/HALdGZ9k", //通过路径分流出ws
@@ -48,7 +48,10 @@
             }
           ]
         },
-        "network": "tcp"
+        "network": "tcp",
+        "tcpSettings": {
+          "acceptProxyProtocol": true //开启 PROXY protocol 接收，接收nginx SNI分流前传递请求的真实来源 IP 和端口。
+        }
       },
       "sniffing": {
         "enabled": true,
@@ -100,7 +103,7 @@
         "fallbacks": [
           {
             "dest": "/dev/shm/h1.sock", //http/1.1回落进程
-            "xver": 1 //开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。
+            "xver": 2 //开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。多级传递，建议配置2。
           }
         ]
       },
@@ -117,7 +120,10 @@
             }
           ]
         },
-        "network": "tcp"
+        "network": "tcp",
+        "tcpSettings": {
+          "acceptProxyProtocol": true //开启 PROXY protocol 接收，接收nginx SNI分流前传递请求的真实来源 IP 和端口。
+        }
       },
       "sniffing": {
         "enabled": true,
