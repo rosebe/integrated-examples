@@ -1,5 +1,3 @@
-此配置实现 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出ws，回落给 trojan，由 trojan 处理后再回落给 caddy2。（套娃方式）
-
 v2ray tcp类应用直连，v2ray ws类应用分流一次；naiveproxy直连，v2ray h2类应用分流（反代）一次。
 
 注意：
@@ -14,6 +12,6 @@ v2ray tcp类应用直连，v2ray ws类应用分流一次；naiveproxy直连，v2
 
 5、全部配置没有启用 PROXY protocol，仅端口回落。因觉得caddy2已单独公开一个监听端口，对web服务来说已经足够。
 
-6、用haproxy或nginx为v2ray、naiveproxy(caddy2)进行SNI分流（四层转发），实现共用443端口。
+6、用haproxy或nginx为v2ray vless+tcp、v2ray trojan、naiveproxy(caddy2)进行SNI分流（四层转发），实现共用443端口。
 
 7、nginx 预编译程序包不带支持SNI分流协议的模块。如要使用此项协议应用，需加stream_ssl_preread_module模块构建自定义模板，再进行源代码编译和安装。
