@@ -1,4 +1,4 @@
-v2ray tcp类应用直连，v2ray ws类应用分流一次；naiveproxy直连，v2ray h2类应用分流（反代）一次。
+v2ray tcp类应用直连，v2ray ws类应用分流一次；v2ray trojan直连；naiveproxy直连，v2ray h2类应用分流（反代）一次。
 
 注意：
 
