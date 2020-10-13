@@ -19,7 +19,7 @@
         "decryption": "none",
         "fallbacks": [
           {
-            "dest": 2006,
+            "dest": 88,
             "xver": 0
           },
           {
@@ -173,13 +173,25 @@
         ],
         "fallbacks": [
           {
-            "dest": 80,
+            "dest": 88,
             "xver": 0
           }
         ]
       },
       "streamSettings": {
-        "security": "none",
+        "security": "tls",
+        "tlsSettings": {
+          "alpn":[
+            "h2",
+            "http/1.1"
+          ],
+          "certificates": [
+            {
+              "certificateFile": "/etc/ssl/tls/xx.yy.crt",
+              "keyFile": "/etc/ssl/tls/xx.yy.key"
+            }
+          ]
+        },
         "network": "tcp"
       },
       "sniffing": {
