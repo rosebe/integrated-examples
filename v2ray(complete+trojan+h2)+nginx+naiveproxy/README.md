@@ -1,5 +1,3 @@
-此配置实现 vless tcp 以 http/1.1 代理科学上网，分流出ws，回落给 trojan，由 trojan 处理后再回落给 nginx。（套娃方式）
-
 v2ray tcp类应用直连，v2ray ws类应用分流一次；naiveproxy直连，v2ray h2类应用分流（反代）一次。
 
 注意：
