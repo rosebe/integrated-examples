@@ -21,12 +21,12 @@
         "fallbacks": [
           {
             "dest": 80, //http/1.1回落端口
-            "xver": 2 //开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。
+            "xver": 2 //开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。多级传递，建议配置2。
           },
           {
             "alpn": "h2", //h2回落匹配 
             "dest": 88, //h2回落端口
-            "xver": 2 //开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。
+            "xver": 2 //开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。多级传递，建议配置2。
           },
           {
             "path": "/HALdGZ9k", //通过路径分流出ws
@@ -103,7 +103,7 @@
         "fallbacks": [
           {
             "dest": 80, //http/1.1回落端口
-            "xver": 2 //开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。
+            "xver": 2 //开启PROXY protocol支持，传递请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。多级传递，建议配置2。
           }
         ]
       },
