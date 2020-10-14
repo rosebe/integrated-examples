@@ -148,7 +148,8 @@
         "security": "none",
         "network": "domainsocket",
         "dsSettings": {
-          "path": "/var/run/ss1-loop.sock"
+          "path": "ss1",
+          "abstract": true
         }
       },
       "sniffing": {
@@ -201,7 +202,8 @@
       "streamSettings": {
         "network": "domainsocket",
         "dsSettings": {
-          "path": "/var/run/ss1-loop.sock"
+          "path": "ss1",
+          "abstract": true
         }
       }
     },
