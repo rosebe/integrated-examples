@@ -111,7 +111,7 @@
               "terminal": true
             }]
           },
-          "experimental_http3": true //开启http3 server支持。如采用haproxy分流，haproxy不支持UDP，此项可以关闭。
+          "experimental_http3": true //开启http3 server支持。如采用haproxy分流，haproxy不支持UDP，此项可以关闭（false）。
         }
       }
     },
