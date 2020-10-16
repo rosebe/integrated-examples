@@ -6,13 +6,13 @@
   },
   "inbounds": [
     {
-      "port": 2053,
+      "port": 2053, //监听端口
       "protocol": "vless",
       "settings": {
         "clients": [
           {
             "email": "2053@gmail.com",
-            "id": "0a652466-dd56-11e9-aa37-5600024c1d6a"
+            "id": "0a652466-dd56-11e9-aa37-5600024c1d6a" //修改成自己的UUID
           }
         ],
         "decryption": "none"
@@ -22,7 +22,7 @@
         "network": "kcp",
         "kcpSettings": {
           "congestion": true,
-          "seed": "60VoqhfjP79nBQyU"
+          "seed": "60VoqhfjP79nBQyU" //seed密码，修改成自己的。
         }
       },
       "sniffing": {
