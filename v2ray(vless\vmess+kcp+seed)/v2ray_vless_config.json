@@ -7,16 +7,15 @@
   "inbounds": [
     {
       "port": 2053,
-      "protocol": "vmess",
+      "protocol": "vless",
       "settings": {
         "clients": [
           {
             "email": "2053@gmail.com",
-            "id": "0a652466-dd56-11e9-aa37-5600024c1d6a",
-            "alterId": 0 //为0启用VMessAEAD，大于0关闭VMessAEAD。
+            "id": "0a652466-dd56-11e9-aa37-5600024c1d6a"
           }
         ],
-        "disableInsecureEncryption": true
+        "decryption": "none"
       },
       "streamSettings": {
         "security": "none",
