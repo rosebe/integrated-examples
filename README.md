@@ -1,13 +1,14 @@
 这里是主流科学上网的优化集成配置示例。如是不太了解科学上网，建议先依次从简单到复杂参考及部署。
 
 单一应用集成服务器端配置示例  
-1、v2ray(vless\vmess+ws+tls)+caddy2\nginx （之前vmess协议时代，推荐部署。）  
-2、v2ray(vless\vmess+h2)+caddy2 （h2优势：链路复用。）  
-3、v2ray(SS+v2ray-plugin+tls)+caddy2\nginx（不常用，如需直接使用shadowsocks客户端可部署。）  
-4、v2ray(vless+tcp+tls)+caddy2 （回落给caddy2，支持http/1.1与h2回落。）  
-5、v2ray(trojan+tcp+tls)+caddy2 （新增trojan协议应用，http/1.1与h2回落给caddy2。）  
-6、v2ray(vless+tcp+tls)+nginx （回落给nginx，支持http/1.1与h2回落。）  
-7、v2ray(trojan+tcp+tls)+nginx （新增trojan协议应用，http/1.1与h2回落给nginx。）  
+1、v2ray(vless\vmess+kcp+seed) （若网络太差，推荐部署。）  
+2、v2ray(vless\vmess+ws+tls)+caddy2\nginx （之前vmess协议时代，推荐部署。）  
+3、v2ray(vless\vmess+h2)+caddy2 （h2优势：链路复用。）  
+4、v2ray(SS+v2ray-plugin+tls)+caddy2\nginx（不常用，如需直接使用shadowsocks客户端可部署。）  
+5、v2ray(vless+tcp+tls)+caddy2 （回落给caddy2，支持http/1.1与h2回落。）  
+6、v2ray(trojan+tcp+tls)+caddy2 （新增trojan协议应用，http/1.1与h2回落给caddy2。）  
+7、v2ray(vless+tcp+tls)+nginx （回落给nginx，支持http/1.1与h2回落。）  
+8、v2ray(trojan+tcp+tls)+nginx （新增trojan协议应用，http/1.1与h2回落给nginx。）  
 
 综合应用集成服务器端配置示例  
 1、v2ray为主，caddy2为辅。  
@@ -29,7 +30,7 @@
 6）、v2ray(complete+trojan+h2)+nginx+naiveproxy （v2ray全部应用+naiveproxy应用。可SNI分流共用443端口。）  
 注意：  
 1、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。  
-2、complete表示包含v2ray的vless+tcp+tls、vless\vmess+ws+tls、SS+v2ray-plugin+tls、vmess+kcp+seed的综合应用。  
+2、complete表示包含v2ray的vless+tcp+tls、vless\vmess+ws+tls、SS+v2ray-plugin+tls、vless\vmess+kcp+seed的综合应用。  
 
 service  
 各程序service文件目录
