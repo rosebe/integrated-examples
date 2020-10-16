@@ -1,0 +1,62 @@
+{
+  "log": {
+    "error": "/var/log/v2ray/error.log",
+    "access": "/var/log/v2ray/access.log",
+    "loglevel": "info"
+  },
+  "inbounds": [
+    {
+      "port": 2053,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "email": "2053@gmail.com",
+            "id": "0a652466-dd56-11e9-aa37-5600024c1d6a",
+            "alterId": 0 //为0启用VMessAEAD，大于0关闭VMessAEAD。
+          }
+        ],
+        "disableInsecureEncryption": true
+      },
+      "streamSettings": {
+        "security": "none",
+        "network": "kcp",
+        "kcpSettings": {
+          "congestion": true,
+          "seed": "60VoqhfjP79nBQyU"
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "tag": "blocked",
+      "protocol": "blackhole",
+      "settings": {}
+    }
+  ],
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "blocked"
+      }
+    ]
+  }
+}
