@@ -12,8 +12,8 @@
 
 综合应用集成服务器端配置示例  
 1、v2ray为主，caddy2为辅。  
-1）、v2ray(complete+h2-tcp)+caddy2 （caddy2前置，主要反代ws与h2的综合应用。）  
-2）、v2ray(vless+tcp+tls+ws)+caddy2 （目前推荐部署，同时支持tcp与ws，回落给caddy2。）  
+1）、v2ray(vless+tcp+tls+ws)+caddy2 （目前推荐部署，同时支持tcp与ws，回落给caddy2。）  
+2）、v2ray(complete+h2-tcp)+caddy2 （caddy2前置，主要反代ws与h2的综合应用。）  
 3）、v2ray(complete+h2)+caddy2 （v2ray综合应用+反代h2应用。）  
 4）、v2ray(complete+h2)+naiveproxy （上一项应用+naiveproxy应用。）  
 5）、v2ray(complete+h2)+naiveproxy+trojan（上一项应用+trojan应用。各程序监听端口对外公开，同级对等。）  
