@@ -21,7 +21,7 @@
 
 配置4/配置5/配置6实现 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出ws，回落给nginx。同时v2ray trojan也以 http/1.1 代理科学上网，回落给nginx。
 
-利用nginx支持SNI分流特性，对vless tcp与trojan进行端口分流（四层转发），除v2ray kcp外,实现共用443端口。
+利用nginx支持SNI分流特性，对vless tcp与trojan进行端口分流（四层转发），实现共用443端口。
 
 注意：
 
