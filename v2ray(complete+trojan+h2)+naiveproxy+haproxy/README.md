@@ -10,8 +10,6 @@ v2ray tcp类应用直连，v2ray ws类应用分流一次；v2ray trojan直连；
 
 4、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
 
-5、全部配置没有启用 PROXY protocol，仅端口回落。因觉得caddy2已单独公开一个监听端口，对web服务来说已经足够。
+5、用haproxy或nginx为v2ray vless+tcp、v2ray trojan、naiveproxy(caddy2)进行SNI分流（四层转发），实现共用443端口。
 
-6、用haproxy或nginx为v2ray vless+tcp、v2ray trojan、naiveproxy(caddy2)进行SNI分流（四层转发），实现共用443端口。
-
-7、nginx 预编译程序包不带支持SNI分流协议的模块。如要使用此项协议应用，需加stream_ssl_preread_module模块构建自定义模板，再进行源代码编译和安装。
+4、nginx 预编译程序包不带支持SNI分流协议的模块。如要使用此项协议应用，需加stream_ssl_preread_module模块构建自定义模板，再进行源代码编译和安装。
