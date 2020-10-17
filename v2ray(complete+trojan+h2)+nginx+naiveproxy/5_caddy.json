@@ -22,7 +22,7 @@
         "srv0": {
           "listen": ["127.0.0.1:8443"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。
           "listener_wrappers": [{
-            "wrapper": "proxy_protocol",
+            "wrapper": "proxy_protocol", //开启proxy_protocol支持
             "timeout": "5s",
             "allow": ["127.0.0.1/24"]
           }, 
