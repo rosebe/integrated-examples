@@ -18,4 +18,4 @@ naiveproxy直连。v2ray h2类应用分流（反代）一次。
 
 4、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
 
-5、全部配置没有启用 PROXY protocol，仅端口回落。因觉得caddy2已单独公开一个监听端口，对web服务来说已经足够。
+5、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
