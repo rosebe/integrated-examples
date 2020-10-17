@@ -10,4 +10,4 @@
 
 4、naiveproxy（caddy2）使用本人github文件，可同时支持naiveproxy、回落 h2 及v2ray h2反向代理。
 
-5、全部配置没有启用 PROXY protocol，仅端口回落。因觉得caddy2已单独公开一个监听端口，对web服务来说已经足够。
+5、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
