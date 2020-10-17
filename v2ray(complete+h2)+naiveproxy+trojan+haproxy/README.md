@@ -10,7 +10,7 @@
 
 5、用haproxy或nginx为v2ray、naiveproxy(caddy2)、trojan(trojan-go)进行SNI分流（四层转发），实现共用443端口。
 
-6、nginx 预编译程序包不带支持SNI分流协议的模块。如要使用此项协议应用，需加stream_ssl_preread_module模块构建自定义模板，再进行源代码编译和安装。
+6、nginx 预编译程序包不带支持SNI分流协议的模块。如要使用此项协议应用，需加stream_ssl_preread_module模块构建自定义模板，再进行源代码编译和安装。另nginx SNI分流是全局模式，不支持域名（内部端口）分流。
 
 7、caddy2 发行版不支持 PROXY protocol，如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译或选使用本人github文件即可。
 
