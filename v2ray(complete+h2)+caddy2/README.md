@@ -5,3 +5,5 @@
 2、v2ray tcp类应用直连。v2ray ws类应用分流（回落）一次。v2ray h2类应用回落一次，反代（分流）一次，共计两次。
 
 3、caddy2 等于或大于v2.2.0-rc.1版才支持反向代理v2ray h2(http/2) 应用。
+
+4、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
