@@ -12,7 +12,7 @@
 
 6、nginx 预编译程序包不带支持SNI分流协议的模块。如要使用此项协议应用，需加stream_ssl_preread_module模块构建自定义模板，再进行源代码编译和安装。
 
-7、nginx 支持 PROXY protocol 协议。但是针对共用端口是全局模式，不支持区分域名（或内部端口）发送。而trojan(trojan-go)不支持PROXY protocol，故不能用nginx SNI分流,且开启PROXY protocol发送。
+7、nginx 支持 PROXY protocol 协议。但是针对共用端口是全局模式，不支持区分域名（或内部端口）发送。而trojan(trojan-go)不支持PROXY protocol，故不能用nginx SNI分流，且开启PROXY protocol发送。
 
 8、caddy2 发行版不支持 PROXY protocol，如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译或选使用本人github文件即可。
 
