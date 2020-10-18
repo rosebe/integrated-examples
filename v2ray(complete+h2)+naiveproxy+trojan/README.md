@@ -1,6 +1,6 @@
 介绍：
 
-此配置包括v2ray、naiveproxy及trojan(trojan-go)集成。v2ray、naiveproxy(caddy2)、trojan(trojan-go)各自公开一个监听端口，各自分别或配合提供服务。如caddy2还同时为v2ray与trojan(trojan-go)提供回落服务。v2ray包括如下应用：
+此配置包括v2ray、naiveproxy(caddy2)及trojan(trojan-go)集成。v2ray、naiveproxy(caddy2)、trojan(trojan-go)各自公开一个监听端口，各自分别或配合提供服务。如caddy2还同时为v2ray与trojan(trojan-go)提供回落服务。v2ray包括如下应用：
 
 1、vless+tcp+tls
 
