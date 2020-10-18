@@ -4,7 +4,7 @@
 
 1、vless+tcp+tls（回落/分流配置。）
 
-2、vless+ws+tls（tls由vless+tcp+tls处理，不需要配置；另可改成vmess+ws+tls。）
+2、vless+ws+tls（tls由vless+tcp+tls处理，不需要另外配置；另可改成vmess+ws+tls。）
 
 3、SS+v2ray-plugin+tls（tls由vless+tcp+tls处理，不需要另外配置。）
 
