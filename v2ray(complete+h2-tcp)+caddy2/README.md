@@ -2,7 +2,7 @@
 
 除 v2ray kcp 外，所用应用共用443端口。此端口由 caddy2 监听（即caddy2前置），反向代理分流 ws 与 h2。无 vless tcp 应用。包括应用如下：
 
-1、vless+ws+tls（tls由caddy2处理，不需要配置；另可改成vmess+ws+tls。）
+1、vless+ws+tls（tls由caddy2处理，不需要另外配置；另可改成vmess+ws+tls。）
 
 2、SS+v2ray-plugin+tls（tls由caddy2处理，不需要另外配置。）
 
