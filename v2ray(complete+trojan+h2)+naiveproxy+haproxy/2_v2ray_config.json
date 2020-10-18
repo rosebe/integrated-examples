@@ -136,6 +136,13 @@
         "wsSettings": {
           "path": "/SS1v2ray"
         }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
       }
     },
     {
@@ -155,13 +162,6 @@
           "path": "ss1",
           "abstract": true
         }
-      },
-      "sniffing": {
-        "enabled": true,
-        "destOverride": [
-          "http",
-          "tls"
-        ]
       }
     },
     {
