@@ -1,6 +1,6 @@
 介绍：
 
-此配置包括v2ray与trojan（trojan-go）集成。另v2ray包括如下应用：
+此配置包括v2ray与trojan（trojan-go）集成。v2ray包括如下应用：
 
 1、vless+tcp+tls
 
