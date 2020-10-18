@@ -30,7 +30,7 @@
 6）、v2ray(complete+trojan+h2)+nginx+naiveproxy （v2ray全部应用+naiveproxy应用。可SNI分流共用443端口。）  
 注意：  
 1、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。  
-2、complete表示包含v2ray的vless+tcp+tls、vless\vmess+ws+tls、SS+v2ray-plugin+tls、vless\vmess+mkcp+seed的综合应用。  
+2、complete表示包含v2ray的vless+tcp+tls、vless\vmess+ws+tls、SS+v2ray-plugin+tls、vless\vmess+kcp+seed的综合应用。  
 
 service  
 各程序service文件目录
