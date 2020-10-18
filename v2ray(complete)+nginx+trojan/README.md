@@ -1,3 +1,15 @@
+介绍：
+
+此配置包括v2ray与trojan（trojan-go）集成。另v2ray包括如下应用：
+
+1、vless+tcp+tls
+
+2、vless+ws+tls（tls由vless+tcp+tls处理，不需要配置；另可改成vmess+ws+tls。）
+
+3、SS+v2ray-plugin+tls（tls由vless+tcp+tls处理，不需要另外配置。）
+
+4、vmess+kcp+seed（可改成vless+kcp+seed。）
+
 注意：
 
 1、vless tcp 以http/1.1或http/2自适应代理科学上网。
@@ -6,7 +18,7 @@
 
 3、nginx同时为v2ray与trojan提供web回落服务。
 
-4、因trojan不支持PROXY protocol，故统一不启用此项应用。
+4、因trojan（trojan-go）不支持PROXY protocol，故统一不启用此项应用。
 
 5、nginx 支持 h2c server，但不支持http/1.1 server与h2c server共用一个端口或一个进程，故回落端口或进程必须分开。
 
