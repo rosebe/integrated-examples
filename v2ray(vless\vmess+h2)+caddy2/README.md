@@ -1,3 +1,5 @@
+介绍：
+
 通过caddy2前置v2ray server实现 h2 反向代理。
 
 原理图： v2ray client <----- h2 ------> caddy2 <- h2c -> v2ray server
