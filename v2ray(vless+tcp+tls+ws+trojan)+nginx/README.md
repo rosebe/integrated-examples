@@ -2,9 +2,15 @@
 
 配置1/配置2/配置3实现 vless tcp 以 http/1.1 代理科学上网，分流出ws，回落给 trojan，由 trojan 处理后再回落给 nginx。（套娃方式）
 
-利用 vless 强大的回落/分流特性，实现了共用 443 端口，同时支持 vless tcp 与任意 ws 类及trojan 应用完美共存。
+其应用如下：
 
-原理图： v2ray\trojan client <--- tcp+tls ---> v2ray server (vless+tcp+tls <- 回落 -> trojan) <-- 回落 ---> caddy2
+1、vless+tcp+tls（回落/分流配置。）
+
+2、vless+ws+tls（tls由vless+tcp+tls处理，不需要另外配置；另可改成vmess+ws+tls。）
+
+3、trojan+tcp+tls（tls由vless+tcp+tls处理，不需要另外配置。）
+
+利用 vless 强大的回落/分流特性，实现了共用 443 端口，同时支持 vless tcp 与任意 ws 类及trojan 应用完美共存。
 
 注意：
 
@@ -20,6 +26,14 @@
 二、nginx SNI分流优化共用443端口
 
 配置4/配置5/配置6实现 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出ws，回落给nginx。同时v2ray trojan也以 http/1.1 代理科学上网，回落给nginx。
+
+其应用如下：
+
+1、vless+tcp+tls（回落/分流配置。）
+
+2、vless+ws+tls（tls由vless+tcp+tls处理，不需要另外配置；另可改成vmess+ws+tls。）
+
+3、trojan+tcp+tls（回落配置。）
 
 利用nginx支持SNI分流特性，对vless tcp与trojan进行端口分流（四层转发），实现共用443端口。
 
