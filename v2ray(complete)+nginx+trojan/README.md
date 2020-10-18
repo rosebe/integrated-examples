@@ -29,5 +29,5 @@
 
 8、配置1：v2ray与trojan各自公开一个监听端口，各自分别提供科学上网服务。
 
-9、配置2：nginx为v2ray、trojan(trojan-go)进行SNI分流（四层转发），除v2ray kcp外,实现共用443端口。
+9、配置2：nginx为v2ray、trojan(trojan-go)进行SNI分流（四层转发），除v2ray kcp外，实现共用443端口。
 
