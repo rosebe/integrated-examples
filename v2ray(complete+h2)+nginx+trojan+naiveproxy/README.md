@@ -1,3 +1,17 @@
+介绍：
+
+此配置包括v2ray、trojan(trojan-go)及naiveproxy(caddy2)应用。nginx同时为v2ray与trojan(trojan-go)提供回落服务。v2ray包括如下应用：
+
+1、vless+tcp+tls
+
+2、vless+ws+tls（tls由vless+tcp+tls处理，不需要配置；另可改成vmess+ws+tls。）
+
+3、SS+v2ray-plugin+tls（tls由vless+tcp+tls处理，不需要另外配置。）
+
+4、vless+h2 （tls由caddy2处理，不需要另外配置；另可改成vmess+h2。）
+
+5、vmess+kcp+seed（可改成vless+kcp+seed。）
+
 注意：
 
 1、vless tcp 以http/1.1或http/2自适应代理科学上网。
