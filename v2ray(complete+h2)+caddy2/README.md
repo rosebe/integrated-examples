@@ -1,6 +1,6 @@
 介绍：
 
-除 v2ray kcp 外,所用应用共用443端口。此端口由 v2ray 监听（即 v2ray 前置），利用 vless tcp 回落/分流特性实现，分流出 ws，其它回落给 caddy2。caddy2再处理，h2反代，web回落。包括应用如下：
+除 v2ray kcp 外，所用应用共用443端口。此端口由 v2ray 监听（即 v2ray 前置），利用 vless tcp 回落/分流特性实现，分流出 ws，其它回落给 caddy2。caddy2再处理，h2反代，web回落。包括应用如下：
 
 1、vless+tcp+tls
 
