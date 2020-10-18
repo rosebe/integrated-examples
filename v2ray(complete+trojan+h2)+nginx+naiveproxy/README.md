@@ -16,6 +16,7 @@ v2ray tcp类应用直连，v2ray ws类应用分流一次；naiveproxy直连，v2
 
 4、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。配置3：启用了 PROXY protocol，且进程回落。
 
+
 二、nginx SNI分流优化共用443端口
 
 利用nginx支持SNI分流特性，对v2ray vless+tcp、v2ray trojan、naiveproxy(caddy2)进行端口分流（四层转发），实现共用443端口。
