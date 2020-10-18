@@ -1,8 +1,6 @@
 介绍：
 
-此配置包括v2ray回落/分流应用及v2ray h2反代应用。另v2ray包括如下应用：
-
-包括如下应用：
+除 v2ray kcp 外,所用应用共用443端口。此端口由 v2ray 监听（即 v2ray 前置），利用 vless tcp 回落/分流特性实现，分流出 ws，其它回落给 caddy2。caddy2再处理，h2反代，web回落。包括应用如下：
 
 1、vless+tcp+tls
 
@@ -10,11 +8,9 @@
 
 3、SS+v2ray-plugin+tls（tls由vless+tcp+tls处理，不需要另外配置。）
 
-4、vless+h2 （tls由caddy2处理，不需要另外配置；另可改成vmess+h2。）
+4、vless+h2 （tls由vless+tcp+tls处理，不需要另外配置；另可改成vmess+h2。）
 
 5、vmess+kcp+seed（可改成vless+kcp+seed。）
-
-v2ray tcp 类应用直连，且以 http/1.1 或 http/2 自适应代理科学上网；v2ray ws 类应用分流；v2ray h2 应用反代。
 
 注意：
 
