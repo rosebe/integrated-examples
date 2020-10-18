@@ -1,6 +1,8 @@
 介绍：
 
-此配置实现 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出ws，回落给 trojan，由 trojan 处理后再回落给 caddy2。（套娃方式）其应用如下：
+此配置实现 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出ws，回落给 trojan，由 trojan 处理后再回落给 caddy2。（套娃方式）
+
+其应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
