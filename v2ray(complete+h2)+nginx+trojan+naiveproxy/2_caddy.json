@@ -21,6 +21,14 @@
       "servers": {
         "srv0": {
           "listen": [":8443"], //监听端口
+          "listener_wrappers": [{
+            "wrapper": "proxy_protocol", //开启proxy_protocol支持
+            "timeout": "5s",
+            "allow": ["127.0.0.1/24"]
+          }, 
+          {
+            "wrapper":"tls"
+          }],
           "routes": [{
             "handle": [{
               "handler": "forward_proxy",
