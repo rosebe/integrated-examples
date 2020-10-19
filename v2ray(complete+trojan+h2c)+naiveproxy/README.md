@@ -1,6 +1,6 @@
 介绍：
 
-此配置包括 v2ray、naiveproxy(caddy2) 应用。v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配合提供服务。另 caddy2 还同时为v2ray（vless+tcp+tls 与 trojan+tcp+tls）提供回落服务。v2ray 包括如下应用：
+此配置包括 v2ray、naiveproxy(caddy2) 应用。v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配合提供服务。另 caddy2 还同时为v2ray（vless+tcp+tls 与 trojan+tcp+tls）提供回落服务。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
