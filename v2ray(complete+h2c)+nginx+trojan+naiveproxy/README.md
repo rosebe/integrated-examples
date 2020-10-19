@@ -1,6 +1,6 @@
 介绍：
 
-此配置包括v2ray、trojan(trojan-go)及naiveproxy(caddy2)应用。nginx同时为v2ray与trojan(trojan-go)提供回落服务。v2ray包括如下应用：
+此配置包括 v2ray、trojan(trojan-go) 及 naiveproxy(caddy2) 应用。nginx 同时为 v2ray 与 trojan(trojan-go) 提供回落服务。v2ray 包括如下应用：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -14,17 +14,17 @@
 
 注意：
 
-1、利用 vless tcp 强大的回落/分流特性，实现了vless tcp与任意 ws 类应用完美共存；且vless tcp 以http/1.1或http/2自适应代理科学上网。
+1、利用 vless tcp 强大的回落/分流特性，实现了vless tcp 与任意 ws 类应用完美共存；且vless tcp 以 http/1.1 或 http/2 自适应代理科学上网。
 
-2、naiveproxy(caddy2) 使用本github文件，可同时支持naiveproxy及v2ray h2反向代理。
+2、naiveproxy(caddy2) 使用本 github 文件，可同时支持 naiveproxy 及 v2ray h2 反向代理。
 
-3、nginx同时为v2ray与trojan提供web回落服务。
+3、nginx同时为 v2ray 与 trojan 提供 web 回落服务。
 
-4、因trojan(trojan-go)不支持PROXY protocol，故统一不启用此项应用。
+4、因 trojan(trojan-go) 不支持 PROXY protocol，故统一不启用此项应用。
 
-5、nginx 支持 h2c server，但不支持http/1.1 server与h2c server共用一个端口或一个进程，故回落端口或进程必须分开。
+5、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程，故回落端口或进程必须分开。
 
-6、nginx 预编译程序包不带支持SNI分流协议的模块。如要使用此项协议应用，需加stream_ssl_preread_module模块构建自定义模板，再进行源代码编译和安装。
+6、nginx 预编译程序包不带支持 SNI 分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
 
-7、配置1：v2ray、trojan(trojan-go、naiveproxy(caddy2))各自公开一个监听端口，各自分别或配合提供服务。配置2：nginx为v2ray、trojan(trojan-go)、naiveproxy(caddy2)进行SNI分流（四层转发），实现共用443端口。
+7、配置1：v2ray、trojan(trojan-go)、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配合提供服务。配置2：nginx 为 v2ray、trojan(trojan-go)、naiveproxy(caddy2) 进行 SNI 分流（四层转发），实现共用443端口。
 
