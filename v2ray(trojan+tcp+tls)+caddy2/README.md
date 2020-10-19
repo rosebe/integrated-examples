@@ -3,7 +3,7 @@
 此配置为v2ray新增trojan协议。可以直接使用trojan客户端（完全兼容），以http/1.1或http/2自适应代理科学上网，非v2ray\trojan的web回落给caddy2。
 
 原理图：
-v2ray\trojan client <--- tcp+tls ---> v2ray server <- web回落 -> caddy2
+v2ray\trojan client <------ tcp+tls ------> v2ray server <- web回落 -> caddy2
 
 注意：
 
