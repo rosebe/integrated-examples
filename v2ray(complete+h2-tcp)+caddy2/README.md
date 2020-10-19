@@ -6,7 +6,7 @@
 
 2、SS+v2ray-plugin+tls（tls由caddy2处理，不需要另外配置。）
 
-3、vless+h2 （tls由caddy2处理，不需要另外配置；另可改成vmess+h2。）
+3、vless+h2/h2c+tls（tls由caddy2处理，不需要另外配置；另可改成vmess+h2。）
 
 4、vmess+kcp+seed（可改成vless+kcp+seed。）
 
