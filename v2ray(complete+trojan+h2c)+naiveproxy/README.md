@@ -4,15 +4,15 @@
 
 1、vless+tcp+tls（回落/分流配置。）
 
-2、vless+ws+tls（tls由vless+tcp+tls处理，不需要另外配置；另可改成vmess+ws+tls。）
+2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vmess+ws+tls。）
 
-3、SS+v2ray-plugin+tls（tls由vless+tcp+tls处理，不需要另外配置。）
+3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需要另外配置。）
 
-4、vless+h2c+tls（tls由caddy2处理，不需要另外配置；另可改成vmess+h2c。）
+4、vless+h2c+tls（tls由caddy2提供及处理，不需要另外配置；另可改成vmess+h2c。）
 
 5、vmess+kcp+seed（可改成vless+kcp+seed。）
 
-6、trojan+tcp+tls（tls由vless+tcp+tls处理，不需要另外配置。）
+6、trojan+tcp+tls（tls由vless+tcp+tls提供及处理，不需要另外配置。）
 
 此配置实现 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出ws，回落给 trojan，由 trojan 处理后再回落给 caddy2。（套娃方式）
 
