@@ -8,7 +8,7 @@ v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配�
 
 3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需要另外配置。）
 
-4、vless+h2c+tls（tls由caddy2提供及处理，不需要另外配置；另可改成vmess+h2c。）
+4、vless+h2c+tls（tls由caddy2提供及处理，不需要另外配置；另可改成vmess+h2c+tls。）
 
 5、vmess+kcp+seed（可改成vless+kcp+seed。）
 
@@ -35,7 +35,7 @@ v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配�
 
 3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需要另外配置。）
 
-4、vless+h2c+tls（tls由caddy2提供及处理，不需要另外配置；另可改成vmess+h2c。）
+4、vless+h2c+tls（tls由caddy2提供及处理，不需要另外配置；另可改成vmess+h2c+tls。）
 
 5、vmess+kcp+seed（可改成vless+kcp+seed。）
 
