@@ -6,7 +6,7 @@
 
 注意：
 
-1、trojan-go使用go实现的完整trojan代理，与trojan协议以及trojan版本的配置文件格式兼容（可以直接使用Trojan配置文件，但无自己特色功能了。）。
+1、trojan-go使用go实现的完整trojan代理，与trojan协议以及trojan版本的配置文件格式兼容（可以直接使用trojan配置文件，但无自己特色功能了。）。
 
 2、trojan-go支持使用多路复用提升并发性能，使用路由模块实现国内直连。
 
