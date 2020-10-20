@@ -43,7 +43,7 @@
   "websocket": {
     "enabled": false, //默认关闭websocket支持
     "path": "/TrojanGo", //修改成自己配置的路径
-    "host": "zz.xx.yy" //修改成自己域名
+    "host": "zt.xx.yy" //修改成自己域名
   },
   "shadowsocks": {
     "enabled": false,
