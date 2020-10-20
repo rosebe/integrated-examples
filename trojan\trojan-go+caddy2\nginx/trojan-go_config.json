@@ -1,0 +1,61 @@
+{
+  "run_type": "server",
+  "local_addr": "0.0.0.0",
+  "local_port": 443,
+  "remote_addr": "127.0.0.1",
+  "remote_port": 80,
+  "password": [
+    "diy443" //修改成自己密码
+  ],
+  "disable_http_check": false,
+  "udp_timeout": 60,
+  "ssl": {
+    "verify_hostname": true,
+    "cert": "/etc/ssl/tls/xx.yy.crt", //换成你的证书，绝对路径。
+    "key": "/etc/ssl/tls/xx.yy.key", //换成你的私钥，绝对路径。
+    "key_password": "",
+    "cipher": "",
+    "curves": "",
+    "prefer_server_cipher": true,
+    "sni": "*.xx.yy", //修改成自己域名（通配域名）
+    "alpn": [
+      "http/1.1"
+    ],
+    "session_ticket": true,
+    "reuse_session": true,
+    "plain_http_response": "",
+    "fallback_addr": "",
+    "fallback_port": 0
+  },
+  "tcp": {
+    "no_delay": true,
+    "keep_alive": true,
+    "prefer_ipv4": false
+  },
+  "router": {
+    "enabled": true, //可以关闭
+    "block": [
+      "geoip:private"
+    ],
+    "geoip": "/usr/local/bin/trojan-go/geoip.dat", //修改成geoip.dat路径
+    "geosite": "/usr/local/bin/trojan-go/geosite.dat" //修改成geosite.dat路径
+  },
+  "websocket": {
+    "enabled": false, //默认关闭websocket支持
+    "path": "/TrojanGo",
+    "host": "xx.yy"
+  },
+  "shadowsocks": {
+    "enabled": false,
+    "method": "AES-128-GCM",
+    "password": ""
+  },
+  "transport_plugin": {
+    "enabled": false,
+    "type": "plaintext",
+    "command": "",
+    "option": "",
+    "arg": [],
+    "env": []
+  }
+}
