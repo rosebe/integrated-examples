@@ -8,7 +8,7 @@
 
 3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需要另外配置。）
 
-4、vless+h2c+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vmess+h2c。）
+4、vless+h2c+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vmess+h2c+tls。）
 
 5、vmess+kcp+seed（可改成vless+kcp+seed。）
 
