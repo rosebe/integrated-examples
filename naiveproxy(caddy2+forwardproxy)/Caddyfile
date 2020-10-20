@@ -1,0 +1,17 @@
+xx.yy { //修改成自己的域名
+    tls {
+        ciphers TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
+        curves x25519
+        alpn h2 http/1.1
+    }
+
+    route {
+        forward_proxy {
+          basic_auth user pass  //naiveproxy账号及密码，修改为自己的。
+          hide_via
+          hide_ip
+          probe_resistance unsplash.com:443
+        }
+        file_server { root /var/www/html }
+    }
+}
