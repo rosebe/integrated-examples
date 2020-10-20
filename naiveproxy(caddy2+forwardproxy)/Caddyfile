@@ -12,6 +12,8 @@ xx.yy { //修改成自己的域名
           hide_ip
           probe_resistance unsplash.com:443
         }
-        file_server { root /var/www/html }
+        file_server { 
+          root /var/www/html
+        }
     }
 }
