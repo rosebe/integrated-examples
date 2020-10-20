@@ -8,7 +8,7 @@
   "log_file": "",
   "password": [
     "diy1155", //修改成自己配置的密码
-    "diy9125" //密码可以多个，用‘，’隔开即可。
+    "diy9125" //密码可以多个，用‘，’隔开。也可删除仅保留一个。
   ],
   "disable_http_check": false,
   "udp_timeout": 60,
