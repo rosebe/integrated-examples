@@ -16,7 +16,7 @@
 
 此配置实现 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出ws，回落给 trojan，由 trojan 处理后再回落给 caddy2。（套娃方式）
 
-v2ray tcp 类应用直连，v2ray ws 类应用分流一次；v2ray trojan 分流两次次；naiveproxy 直连，v2ray h2 类应用分流（反代）一次。
+v2ray tcp 类应用直连，v2ray ws 类应用分流一次；v2ray trojan 分流两次；naiveproxy 直连，v2ray h2 类应用分流（反代）一次。
 
 注意：
 
