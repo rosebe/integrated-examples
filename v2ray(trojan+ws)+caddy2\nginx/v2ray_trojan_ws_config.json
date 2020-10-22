@@ -6,23 +6,22 @@
   },
   "inbounds": [
     {
-      "port": 2001, // 监听端口，此端口收发web代理服务器(如caddy2、nginx等）转来的v2ray数据流。
       "listen": "127.0.0.1", //只监听本机，避免除本机外的机器探测到上面监听端口。
-      "protocol": "vless",
+      "port": 2007, // 监听端口，此端口收发web代理服务器(如caddy2、nginx等）转来的v2ray数据流。
+      "protocol": "trojan",
       "settings": {
         "clients": [
           {
-            "email": "2001@gmail.com",
-            "id": "21376258-dd56-11e9-aa37-5600024c1d6a" //修改成自己的UUID
+            "password":"diy2007", //修改成自己密码
+            "email": "2007@gmail.com"
           }
-        ],
-        "decryption": "none"
+        ]
       },
       "streamSettings": {
         "security": "none",
         "network": "ws",
         "wsSettings": {
-          "path": "/HALdGZ9k" //修改成自己的path
+          "path": "/9ALdGZ9k" //修改成自己的path
         }
       },
       "sniffing": {
