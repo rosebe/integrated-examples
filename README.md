@@ -2,14 +2,14 @@
 
 单一应用集成服务器端配置示例  
 1、v2ray(vless\vmess+kcp+seed) （若网络极度差，推荐部署。）  
-2、v2ray(vless\vmess+ws)+caddy2\nginx （之前vmess协议时代，推荐部署。）  
-3、v2ray(vless\vmess+h2c)+caddy2 （h2优势，自带链路复用。）  
-4、v2ray(SS+v2ray-plugin)+caddy2\nginx（不常用，如需使用shadowsocks客户端可部署。）  
+2、v2ray(vless\vmess+ws)+caddy2\nginx （之前vmess协议时代，推荐部署；caddy2或nginx反向代理。）  
+3、v2ray(vless\vmess+h2c)+caddy2 （h2应用，自带链路复用，caddy2反向代理。）  
+4、v2ray(SS+v2ray-plugin)+caddy2\nginx（不常用，如需使用shadowsocks客户端可部署；caddy2或nginx反向代理。）  
 5、v2ray(vless+tcp+tls)+caddy2 （回落给caddy2，支持http/1.1与h2回落。）  
 6、v2ray(vless+tcp+tls)+nginx （回落给nginx，支持http/1.1与h2回落。）  
 7、v2ray(trojan+tcp+tls)+caddy2 （兼容trojan应用，支持http/1.1与h2回落给caddy2。）  
 8、v2ray(trojan+tcp+tls)+nginx （兼容trojan应用，仅支持http/1.1回落给nginx。）  
-9、v2ray(trojan+ws)+caddy2\nginx （兼容trojan-go的ws应用。）  
+9、v2ray(trojan+ws)+caddy2\nginx （兼容trojan-go的ws应用，caddy2或nginx反向代理。）  
 10、trojan\trojan-go+caddy2\nginx（trojan或trojan-go应用，非trojan或trojan-go应用回落给caddy2或nginx。）  
 11、naiveproxy(caddy2+forwardproxy) （naiveproxy应用，http/2或http/3代理。）  
 
