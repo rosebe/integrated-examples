@@ -1,6 +1,6 @@
 一、回落终极部署
 
-v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配合提供服务。配置1/配置2/配置3实现 vless tcp 以 http/1.1 代理科学上网，分流出ws，回落给 trojan，由 trojan 处理后再回落给 nginx。（套娃方式）v2ray 包括应用如下：
+v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配合提供服务。配置1/配置2/配置3实现 vless tcp 以 http/1.1 代理科学上网，分流出ws，回落给 trojan（trojan+tcp），由 trojan（trojan+tcp） 处理后再回落给 nginx。（套娃方式）v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -27,7 +27,7 @@ v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配�
 
 二、nginx SNI分流优化共用443端口
 
-利用 nginx 支持 SNI 分流特性，对 v2ray vless+tcp、v2ray trojan、naiveproxy(caddy2) 进行端口分流（四层转发），实现共用443端口。配置4/配置5/配置6实现 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws，回落给 nginx。同时 v2ray trojan也以 http/1.1 代理科学上网，回落给 nginx。v2ray 包括应用如下：
+利用 nginx 支持 SNI 分流特性，对 v2ray vless+tcp、v2ray trojan、naiveproxy(caddy2) 进行端口分流（四层转发），实现共用443端口。配置4/配置5/配置6实现 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws，回落给 nginx。同时 v2ray trojan（trojan+tcp）也以 http/1.1 代理科学上网，回落给 nginx。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
