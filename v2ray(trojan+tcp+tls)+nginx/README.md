@@ -1,6 +1,8 @@
 介绍：
 
-此配置为v2ray新增trojan协议。可以直接使用trojan客户端（完全兼容），以http/1.1代理科学上网，非v2ray\trojan的web回落给nginx。
+此配置为v2ray新增trojan协议，以tcp方式传输，实现了兼容trojan，即可直接使用trojan客户端连接。
+
+另外也实现了以http/1.1代理科学上网，非v2ray\trojan的web回落给nginx。
 
 原理图： v2ray\trojan client <------ tcp+tls ------> v2ray server <- web回落 -> nginx
 
