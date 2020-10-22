@@ -31,9 +31,9 @@ v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配�
 
 1、vless+tcp+tls（回落/分流配置。）
 
-2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vmess+ws+tls。）
+2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vmess+ws+tls或SS+v2ray-plugin+tls或trojan+ws+tls。）
 
-3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需要另外配置。）
+3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vless+ws+tls或vmess+ws+tls或trojan+ws+tls。）
 
 4、vless+h2c+tls（tls由caddy2提供及处理，不需要另外配置；另可改成vmess+h2c+tls。）
 
