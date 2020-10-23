@@ -75,7 +75,7 @@
         "security": "none",
         "network": "ws",
         "wsSettings": {
-          "acceptProxyProtocol": true, //开启 PROXY protocol 接收，接收真实来源 IP 和端口。
+          "acceptProxyProtocol": true, //开启 PROXY protocol 接收，接收vless+tcp 分流前请求的真实来源 IP 和端口。
           "path": "/HALdGZ9k" //修改成自己的path
         }
       },
