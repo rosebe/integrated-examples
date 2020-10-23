@@ -23,12 +23,13 @@
           {
             "address": "xx.yy", //改成服务端配置的对应域名
             "port": 443, //改成服务端配置的对应端口（如没有SNI分流共用端口，就是 trojan 监听端口。）
-            "password": "diy443" //修改成自己服务器端配置的密码
+            "password": "diy443", //修改成自己服务器端配置的密码
+            "flow": "xtls-rprx-origin"
           }
         ]
       },
       "streamSettings": {
-        "security": "tls",
+        "security": "xtls", //如启用xtls，tls必须改成xtls。
         "network": "tcp",
         "tcpSettings": {}
       }
