@@ -30,7 +30,7 @@
           {
             "path": "/HALdGZ9k", //通过路径分流出ws
             "dest": 2001, //分流后转发到2001端口
-            "xver": 0 //默认为0，此条参数可以省略不写。
+            "xver": 1 //开启PROXY protocol支持，传递请求的真实来源 IP 和端口给如下 ws 应用。1或2表示 PROXY protocol 插件版本。
           }
         ]
       },
