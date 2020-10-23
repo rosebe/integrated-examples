@@ -103,7 +103,7 @@
         "security": "none",
         "network": "tcp",
         "tcpSettings": {
-          "acceptProxyProtocol": true //开启 PROXY protocol 接收，接收vless+tcp 回落的传递请求的真实来源 IP 和端口。
+          "acceptProxyProtocol": true //开启 PROXY protocol 接收，接收vless+tcp 回落前请求的真实来源 IP 和端口。
         }
       },
       "sniffing": {
