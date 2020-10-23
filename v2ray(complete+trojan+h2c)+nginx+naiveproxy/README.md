@@ -49,6 +49,6 @@ v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配�
 
 3、nginx 预编译程序包不带支持SNI分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
 
-4、nginx 预编译程序包不带支持 PROXY protocol 协议的模块。如要使用此项协议应用，需加 http_realip_module 与 stream_realip_module 两模块构建自定义模板，再进行源代码编译和安装。另编译时选取源代码版本建议不要低于1.13.11。
+4、nginx 预编译程序包可能不带支持 PROXY protocol 协议的模块。如要使用此项协议应用，需加 http_realip_module 及 stream_realip_module 两模块构建自定义模板，再进行源代码编译和安装。另编译时选取源代码版本建议不要低于1.13.11。
 
 5、配置4：没有启用 PROXY protocol，仅端口回落。配置5：启用了 PROXY protocol，且端口回落。配置6：启用了 PROXY protocol，且进程回落。
