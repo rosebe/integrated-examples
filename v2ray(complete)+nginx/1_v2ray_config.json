@@ -172,6 +172,11 @@
       "settings": {}
     },
     {
+      "tag": "blocked",
+      "protocol": "blackhole",
+      "settings": {}
+    },
+    {
       "tag": "ss1mux",
       "protocol": "freedom",
       "streamSettings": {
@@ -181,11 +186,6 @@
           "abstract": true
         }
       }
-    },
-    {
-      "tag": "blocked",
-      "protocol": "blackhole",
-      "settings": {}
     }
   ],
   "routing": {
@@ -193,17 +193,17 @@
     "rules": [
       {
         "type": "field",
-        "inboundTag": [
-          "ss1ws"
-        ],
-        "outboundTag": "ss1mux"
-      },
-      {
-        "type": "field",
         "protocol": [
           "bittorrent"
         ],
         "outboundTag": "blocked"
+      },
+      {
+        "type": "field",
+        "inboundTag": [
+          "ss1ws"
+        ],
+        "outboundTag": "ss1mux"
       }
     ]
   }
