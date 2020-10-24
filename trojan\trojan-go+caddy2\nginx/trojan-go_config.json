@@ -5,7 +5,7 @@
   "remote_addr": "127.0.0.1",
   "remote_port": 80, //回落端口
   "log_level": 1,
-  "log_file": "",
+  "log_file": "/var/log/trojan-go/error.log", //修改成自己配置的路径，注意给够权限。
   "password": [
     "diy1155", //修改成自己配置的密码
     "diy9125" //密码可以多个，用‘，’隔开。也可删除仅保留一个。
@@ -36,7 +36,7 @@
     "prefer_ipv4": false
   },
   "router": {
-    "enabled": true, //可以关闭
+    "enabled": true, //开启路由策略，可以关闭，建议开启。
     "block": [
       "geoip:private"
     ],
