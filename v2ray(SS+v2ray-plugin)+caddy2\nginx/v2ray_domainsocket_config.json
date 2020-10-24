@@ -57,6 +57,11 @@
       "settings": {}
     },
     {
+      "tag": "blocked",
+      "protocol": "blackhole",
+      "settings": {}
+    },
+    {
       "tag": "ss1mux", //标签，与routing中标签对应。
       "protocol": "freedom",
       "streamSettings": {
@@ -66,11 +71,6 @@
           "abstract": true
         }
       }
-    },
-    {
-      "tag": "blocked",
-      "protocol": "blackhole",
-      "settings": {}
     }
   ],
   "routing": {
@@ -78,17 +78,17 @@
     "rules": [
       {
         "type": "field",
-        "inboundTag": [
-          "ss1ws" //与inbounds中标签对应
-        ],
-        "outboundTag": "ss1mux" //与outbounds中标签对应
-      },
-      {
-        "type": "field",
         "protocol": [
           "bittorrent"
         ],
         "outboundTag": "blocked"
+      },
+      {
+        "type": "field",
+        "inboundTag": [
+          "ss1ws" //与inbounds中标签对应
+        ],
+        "outboundTag": "ss1mux" //与outbounds中标签对应
       }
     ]
   }
