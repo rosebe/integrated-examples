@@ -11,8 +11,9 @@
       "settings": {
         "clients": [
           {
-            "email": "443@gmail.com",
-            "id": "888fd3ac-dd53-11e9-b357-5600024c1d6a"
+            "id": "888fd3ac-dd53-11e9-b357-5600024c1d6a",
+            "flow": "xtls-rprx-direct",
+            "email": "443@gmail.com"
           }
         ],
         "decryption": "none",
@@ -34,8 +35,8 @@
         ]
       },
       "streamSettings": {
-        "security": "tls",
-        "tlsSettings": {
+        "security": "xtls",
+        "xtlsSettings": {
           "alpn":[
             "http/1.1"
           ],
@@ -202,7 +203,7 @@
           {
             "email": "2053@gmail.com",
             "id": "0a652466-dd56-11e9-aa37-5600024c1d6a",
-            "alterId": 0 //为0启用VMessAEAD，大于0关闭VMessAEAD。
+            "alterId": 0
           }
         ],
         "disableInsecureEncryption": true
