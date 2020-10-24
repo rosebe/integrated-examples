@@ -12,7 +12,7 @@
         "clients": [
           {
             "id": "048e0bf2-dd56-11e9-aa37-5600024c1d6a", //修改成自己的UUID
-            "flow": "xtls-rprx-origin", //启用xtls，必须增加此条参数，参数可xtls-rprx-origin或xtls-rprx-direct可选；否则删除。另支持的v2ray版本应不小于v4.31.0。
+            "flow": "xtls-rprx-direct", //启用xtls，必须增加此条参数，参数可xtls-rprx-origin或xtls-rprx-direct可选；否则删除。另支持的v2ray版本应不小于v4.31.0。
             "email": "443@gmail.com"
           }
         ],
