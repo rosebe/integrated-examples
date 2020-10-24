@@ -11,12 +11,12 @@
         "sni": "xx.yy" //改成服务端配置的对应域名（通配域名）
     },
     "mux": {
-        "enabled": true, //多路复用开启，建议开启。
+        "enabled": true, //多路复用开启。建议开启。
         "concurrency": 4,
         "idle_timeout": 60
     },
     "router": {
-        "enabled": true,
+        "enabled": true, //路由策略开启。建议开启。
         "bypass": [
             "geoip:cn",
             "geoip:private",
