@@ -21,8 +21,8 @@
 3）、v2ray(complete+h2c)+caddy2 （v2ray综合应用+反向代理h2应用。）  
 4）、v2ray(complete+h2c)+naiveproxy （上一项应用+naiveproxy应用。）  
 5）、v2ray(complete+h2c)+naiveproxy+trojan （上一项应用+trojan应用。各程序监听端口对外公开，同级对等。）  
-
 6）、v2ray(complete+h2c)+naiveproxy+trojan+haproxy （用haproxy对上一项应用进行SNI分流，共用443端口。）  
+
 1）、v2ray(vless+tcp+tls+ws+trojan)+caddy2 （caddy2回落终极部署/套娃方式。）  
 2）、v2ray(complete+trojan+h2c)+naiveproxy （v2ray全部应用+naiveproxy应用。）  
 3）、v2ray(complete+trojan+h2c)+naiveproxy+haproxy （用haproxy对上一项应用进行SNI分流，共用443端口。）  
