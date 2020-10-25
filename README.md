@@ -24,7 +24,7 @@
 7）、v2ray(vless+tcp+tls+ws+trojan)+caddy2 （caddy2回落终极部署/套娃方式。）  
 8）、v2ray(complete+trojan+h2c)+naiveproxy （v2ray全部应用+naiveproxy应用。）  
 9）、v2ray(complete+trojan+h2c)+naiveproxy+haproxy （用haproxy对上一项应用进行SNI分流，共用443端口。）  
-2、v2ray为主，nginx为辅。（仅对要网站为主，且要求高的才推荐。）  
+2、v2ray为主，nginx为辅。（仅对需要网站为主，且要求高的才推荐。）  
 1）、v2ray(vless+tcp+tls+ws)+nginx （目前推荐部署，同时支持tcp与ws，回落给nginx。）  
 2）、v2ray(complete)+nginx （v2ray综合应用。）  
 3）、v2ray(complete)+nginx+trojan （上一项应用+trojan应用。可nginx SNI分流，共用443端口。）  
