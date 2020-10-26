@@ -31,10 +31,10 @@
 1）、v2ray(vless+tcp+tls+ws)+nginx （目前推荐部署，同时支持tcp与ws，回落给nginx。）  
 2）、v2ray(complete)+nginx （v2ray综合应用。）  
 3）、v2ray(complete)+nginx+trojan （上一项应用+trojan应用。可SNI分流共用443端口。）  
-4）、v2ray(complete+h2c)+nginx+trojan+naiveproxy （上一项应用+naiveproxy及反向代理h2应用。可SNI分流共用443端口。）  
+4）、v2ray(complete+h2c)+nginx+trojan+naiveproxy （上一项应用+naiveproxy及反向代理h2应用。可共用443端口。）  
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-1）、v2ray(vless+tcp+tls+ws+trojan)+nginx （nginx回落终极部署/套娃方式或nginx SNI分流共用443端口。）  
-2）、v2ray(complete+trojan+h2c)+nginx+naiveproxy （v2ray全部应用+naiveproxy应用。可SNI分流共用443端口。）  
+1）、v2ray(vless+tcp+tls+ws+trojan)+nginx （nginx回落终极部署/套娃方式或共用443端口。）  
+2）、v2ray(complete+trojan+h2c)+nginx+naiveproxy （v2ray全部应用+naiveproxy应用。可共用443端口。）  
 注意：  
 1、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。  
 2、complete表示包含v2ray的vless+tcp+tls、vless\vmess+ws+tls、SS+v2ray-plugin+tls、vless\vmess+kcp+seed的综合应用。  
