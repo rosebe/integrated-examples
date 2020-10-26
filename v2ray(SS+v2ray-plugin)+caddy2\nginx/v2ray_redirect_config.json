@@ -31,7 +31,7 @@
       }
     },
     {
-      "port": 2005,
+      "port": 2005, //此端口必须与下边"redirect"参数中端口对应
       "protocol": "shadowsocks",
       "settings": {
         "email": "2005@gmail.com",
@@ -57,7 +57,7 @@
       "tag": "ss1redirect", //标签，与routing中标签对应。
       "protocol": "freedom",
       "settings": {
-        "redirect": "127.0.0.1:2005"
+        "redirect": "127.0.0.1:2005" //此端口必须与上边2005端口对应
       }
     }
   ],
