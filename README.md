@@ -30,7 +30,7 @@
 2、v2ray为主，nginx为辅。（仅对需要网站为主，且要求高的才推荐。）  
 1）、v2ray(vless+tcp+tls+ws)+nginx （目前推荐部署，同时支持tcp与ws，回落给nginx。）  
 2）、v2ray(complete)+nginx （v2ray综合应用。）  
-3）、v2ray(complete)+nginx+trojan （上一项应用+trojan应用。可SNI分流共用443端口。）  
+3）、v2ray(complete)+nginx+trojan （上一项应用+trojan应用。可共用443端口。）  
 4）、v2ray(complete+h2c)+nginx+trojan+naiveproxy （上一项应用+naiveproxy及反向代理h2应用。可共用443端口。）  
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(vless+tcp+tls+ws+trojan)+nginx （nginx回落终极部署/套娃方式或共用443端口。）  
