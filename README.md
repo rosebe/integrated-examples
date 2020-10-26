@@ -33,7 +33,7 @@
 3）、v2ray(complete)+nginx+trojan （上一项应用+trojan应用，可共用端口。）  
 4）、v2ray(complete+h2c)+nginx+trojan+naiveproxy （上一项应用+naiveproxy及反向代理h2应用，可共用端口。）  
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-1）、v2ray(vless+tcp+tls+ws+trojan)+nginx （nginx回落终极部署/套娃方式或共用端口。）  
+1）、v2ray(vless+tcp+tls+ws+trojan)+nginx （nginx回落终极部署/套娃方式，或共用端口。）  
 2）、v2ray(complete+trojan+h2c)+nginx+naiveproxy （v2ray全部应用+naiveproxy应用，可共用端口。）  
 注意：  
 1、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。  
