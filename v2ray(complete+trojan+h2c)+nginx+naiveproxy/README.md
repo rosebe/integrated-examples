@@ -4,13 +4,13 @@ v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配�
 
 1、vless+tcp+tls（回落/分流配置。）
 
-2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vmess+ws+tls或SS+v2ray-plugin+tls或trojan+ws+tls。）
+2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vmess+ws+tls或SS+v2ray-plugin+tls或trojan+ws+tls，或添加它们。）
 
-3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vless+ws+tls或vmess+ws+tls或trojan+ws+tls。）
+3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vless+ws+tls或vmess+ws+tls或trojan+ws+tls，或添加它们。）
 
-4、vless+h2c+tls（tls由caddy2提供及处理，不需要另外配置；另可改成vmess+h2c+tls。）
+4、vless+h2c+tls（tls由caddy2提供及处理，不需要另外配置；另可改成vmess+h2c+tls，或添加它。）
 
-5、vmess+kcp+seed（可改成vless+kcp+seed。）
+5、vmess+kcp+seed（可改成vless+kcp+seed，或添加它。）
 
 6、trojan+tcp+tls（tls由vless+tcp+tls提供及处理，不需要另外配置。）
 
@@ -31,13 +31,13 @@ v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配�
 
 1、vless+tcp+tls（回落/分流配置。）
 
-2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vmess+ws+tls或SS+v2ray-plugin+tls或trojan+ws+tls。）
+2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vmess+ws+tls或SS+v2ray-plugin+tls或trojan+ws+tls，或添加它们。）
 
-3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vless+ws+tls或vmess+ws+tls或trojan+ws+tls。）
+3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vless+ws+tls或vmess+ws+tls或trojan+ws+tls，或添加它们。）
 
-4、vless+h2c+tls（tls由caddy2提供及处理，不需要另外配置；另可改成vmess+h2c+tls。）
+4、vless+h2c+tls（tls由caddy2提供及处理，不需要另外配置；另可改成vmess+h2c+tls，或添加它。）
 
-5、vmess+kcp+seed（可改成vless+kcp+seed。）
+5、vmess+kcp+seed（可改成vless+kcp+seed，或添加它。）
 
 6、trojan+tcp+tls（回落配置。）
 
@@ -76,7 +76,3 @@ v2ray 通过配置相关参数对 v2ray vless+tcp、v2ray trojan、naiveproxy(ca
 2、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程。v2ray 的 trojan 不支持端口或进程分离h2回落，只能采用h1回落。
 
 3、v2ray SNI分流不支持 PROXY protocol ，故配置7：没有启用 PROXY protocol，仅端口回落。
-
-
-
-
