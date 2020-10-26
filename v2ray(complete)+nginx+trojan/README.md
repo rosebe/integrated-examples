@@ -25,4 +25,4 @@
 
 6、nginx 预编译程序包不带支持SNI分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
 
-7、配置1：v2ray 与 trojan 各自公开一个监听端口，各自分别提供科学上网服务。配置2：v2ray 通过配置相关参数，为 v2ray、trojan(trojan-go) 进行 SNI 分流（四层转发），除 v2ray kcp 外，实现共用443端口。配置3：nginx 为 v2ray、trojan(trojan-go) 进行 SNI 分流（四层转发），除 v2ray kcp 外，实现共用443端口。
+7、配置1：v2ray 与 trojan 各自公开一个监听端口，各自分别提供科学上网服务。配置2：v2ray 通过配置相关参数为 v2ray、trojan(trojan-go) 进行 SNI 分流（四层转发），除 v2ray kcp 外，实现共用443端口。配置3：nginx 为 v2ray、trojan(trojan-go) 进行 SNI 分流（四层转发），除 v2ray kcp 外，实现共用443端口。
