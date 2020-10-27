@@ -27,7 +27,7 @@
 2）、v2ray(complete+trojan+h2c)+naiveproxy （v2ray全部应用+naiveproxy应用及共用端口。）  
 3）、v2ray(complete+trojan+h2c)+naiveproxy+haproxy （用haproxy对上一项应用进行SNI分流，共用端口。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-2、v2ray为主，nginx为辅。（以网站为主，且要求高（如稳定）才推荐。）  
+2、v2ray为主，nginx为辅。（以网站为主，且要求高（如稳定等）才推荐。）  
 1）、v2ray(complete-tcp)+nginx （nginx前置，反向代理ws的综合应用。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(vless+tcp+tls+ws)+nginx （目前推荐部署，同时支持tcp与ws，回落给nginx。）  
