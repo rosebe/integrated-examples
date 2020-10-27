@@ -22,11 +22,13 @@ v2ray vless+tcp 类应用直连，v2ray ws 类应用分流一次；v2ray trojan+
 
 2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
 
-3、caddy2 发行版不支持 PROXY protocol，如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译或选使用本人 github 文件即可。
+3、naiveproxy（caddy2）使用本人 github 文件，可同时支持 naiveproxy、回落 h2 及 v2ray h2 反向代理。
 
-4、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
+4、caddy2 发行版不支持 PROXY protocol，如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译或选使用本人 github 文件即可。
 
-5、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
+5、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
+
+6、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
 
 二、v2ray SNI分流优化共用443端口
 
@@ -52,7 +54,7 @@ v2ray vless+tcp 类应用直连，v2ray ws 类应用分流一次；v2ray trojan+
 
 2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
 
-3、caddy2 发行版不支持 PROXY protocol，如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译或选使用本人github文件即可。
+3、naiveproxy（caddy2）使用本人 github 文件，可同时支持 naiveproxy、回落 h2 及 v2ray h2 反向代理。
 
 4、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
 
