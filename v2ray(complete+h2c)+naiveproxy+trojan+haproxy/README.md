@@ -19,3 +19,7 @@
 2、naiveproxy（caddy2）使用本人 github 文件，可同时支持 naiveproxy、回落 h2 及v2ray h2 反向代理。
 
 3、nginx 预编译程序包不带支持SNI分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
+
+4、nginx 的 PROXY protocol 发送是针对共用端口全局模式，而 trojan(trojan-go) 不支持 PROXY protocol，故配置2不能用nginx SNI分流。
+
+5、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
