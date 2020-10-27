@@ -2,7 +2,7 @@
 
 单一应用集成服务器端配置示例  
 1、v2ray(vless\vmess+kcp+seed) （若网络极度差，推荐部署。）  
-2、v2ray(vless\vmess+ws)+caddy2\nginx （ws的caddy2或nginx反向代理；之前vmess协议时代，推荐的部署。）  
+2、v2ray(vless\vmess+ws)+caddy2\nginx （ws的caddy2或nginx反向代理；之前vmess协议时代，推荐部署。）  
 3、v2ray(vless\vmess+h2c)+caddy2 （h2的caddy2反向代理，自带链路复用。）  
 4、v2ray(SS+v2ray-plugin)+caddy2\nginx （兼容shadowsocks的ws应用，caddy2或nginx反向代理。）  
 5、v2ray(vless+tcp+tls)+caddy2 （回落给caddy2，支持http/1.1与h2回落。）  
@@ -15,7 +15,7 @@
 
 综合应用集成服务器端配置示例  
 1、v2ray为主，caddy2为辅。（推荐，功能多。）  
-1）、v2ray(complete+h2c-tcp)+caddy2 （caddy2前置，反向代理ws与h2的综合应用。）  
+1）、v2ray(complete+h2c-tcp)+caddy2 （caddy2前置，反向代理ws与h2的综合应用。之前vmess协议时代，推荐部署。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(vless+tcp+tls+ws)+caddy2 （目前推荐部署，同时支持tcp与ws，回落给caddy2。）  
 2）、v2ray(complete+h2c)+caddy2 （v2ray综合应用+反向代理h2应用。）  
@@ -28,7 +28,7 @@
 3）、v2ray(complete+trojan+h2c)+naiveproxy+haproxy （用haproxy对上一项应用进行SNI分流，共用端口。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 2、v2ray为主，nginx为辅。（以网站为主，且要求高（如稳定等）才推荐。）  
-1）、v2ray(complete-tcp)+nginx （nginx前置，反向代理ws的综合应用。）  
+1）、v2ray(complete-tcp)+nginx （nginx前置，反向代理ws的综合应用。之前vmess协议时代，推荐部署。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(vless+tcp+tls+ws)+nginx （目前推荐部署，同时支持tcp与ws，回落给nginx。）  
 2）、v2ray(complete)+nginx （v2ray综合应用。）  
