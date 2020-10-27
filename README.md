@@ -18,9 +18,9 @@
 1）、v2ray(complete+h2c-tcp)+caddy2 （caddy2前置，反向代理ws与h2的综合应用。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(vless+tcp+tls+ws)+caddy2 （目前推荐部署，同时支持tcp与ws，回落给caddy2。）  
-2）、v2ray(complete+h2c)+caddy2 （v2ray综合应用+反向代理h2应用及共用端口。）  
-3）、v2ray(complete+h2c)+naiveproxy （上一项应用+naiveproxy应用及共用端口）  
-4）、v2ray(complete+h2c)+naiveproxy+trojan （上一项应用+trojan应用及共用端口）  
+2）、v2ray(complete+h2c)+caddy2 （v2ray综合应用+反向代理h2应用。）  
+3）、v2ray(complete+h2c)+naiveproxy （上一项应用+naiveproxy应用。）  
+4）、v2ray(complete+h2c)+naiveproxy+trojan （上一项应用+trojan应用及共用端口。）  
 5）、v2ray(complete+h2c)+naiveproxy+trojan+haproxy （用haproxy对上一项应用进行SNI分流，共用端口。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(vless+tcp+tls+ws+trojan)+caddy2 （caddy2回落终极部署/套娃方式，或共用端口。）  
