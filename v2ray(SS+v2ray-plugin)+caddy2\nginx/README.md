@@ -12,4 +12,4 @@
 
 2、若系统版本过低，其对应发行版仓库自带 nginx 预编译程序包可能不支持 tls1.3；如需要支持 tls1.3，必须先升级 OpenSSl 版本大于 1.1.1，再进行 nginx 源代码编译和安装。
 
-3、v2ray中shadowsocks+v2ray-plugin 插件的 ws(WebSocket) 应用不等于shadowsocks+WebSocket，两者不兼容，它仅兼容shadowsocks（客户端）+v2ray-plugin（插件）。
+3、本配置shadowsocks+v2ray-plugin 插件的 ws(WebSocket) 应用不等于v2ray的shadowsocks+WebSocket应用，两者不兼容，它仅兼容shadowsocks（客户端）+v2ray-plugin（插件）。
