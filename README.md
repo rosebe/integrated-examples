@@ -2,7 +2,7 @@
 
 单一应用集成服务器端配置示例  
 1、v2ray(vless\vmess+kcp+seed) （若网络极度差，推荐部署。）  
-2、v2ray(vless\vmess+ws)+caddy2\nginx （ws的caddy2或nginx反向代理；之前vmess协议时代，推荐部署。）  
+2、v2ray(vless\vmess+ws)+caddy2\nginx （ws的caddy2或nginx反向代理；之前推荐部署。）  
 3、v2ray(vless\vmess+h2c)+caddy2 （h2的caddy2反向代理，自带链路复用。）  
 4、v2ray(SS+v2ray-plugin)+caddy2\nginx （兼容shadowsocks的ws应用，caddy2或nginx反向代理。）  
 5、v2ray(vless+tcp+tls)+caddy2 （回落给caddy2，支持http/1.1与h2回落。）  
