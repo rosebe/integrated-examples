@@ -1,6 +1,6 @@
-一、回落终极部署
+一、回落终极部署（套娃方式）
 
-v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配合提供服务。配置1/配置2/配置3实现 vless tcp 以 http/1.1 代理科学上网，分流出ws，回落给 trojan（trojan+tcp），由 trojan（trojan+tcp） 处理后再回落给 nginx。（套娃方式）v2ray 包括应用如下：
+v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配合提供服务。配置1/配置2/配置3实现 vless tcp 以 http/1.1 代理科学上网，分流出ws，回落给 trojan（trojan+tcp），由 trojan（trojan+tcp） 处理后再回落给 nginx。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
