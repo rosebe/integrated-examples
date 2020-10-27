@@ -4,15 +4,15 @@ v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配�
 
 1、vless+tcp+tls（回落/分流配置。）
 
-2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vmess+ws+tls或SS+v2ray-plugin+tls或trojan+ws+tls，或添加它们。）
+2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加vmess+ws+tls、SS+v2ray-plugin+tls、trojan+ws+tls应用。）
 
-3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vless+ws+tls或vmess+ws+tls或trojan+ws+tls，或添加它们。）
+3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加vless+ws+tls、vmess+ws+tls、trojan+ws+tls应用。）
 
-4、vless+h2c+tls（tls由caddy2提供及处理，不需要另外配置；另可改成vmess+h2c+tls，或添加它。）
+4、vless+h2c+tls（tls由caddy2提供及处理，不需配置；另可改成或添加vmess+h2c+tls应用。）
 
 5、vmess+kcp+seed（可改成vless+kcp+seed，或添加它。）
 
-6、trojan+tcp+tls（tls由vless+tcp+tls提供及处理，不需要另外配置。）
+6、trojan+tcp+tls（tls由vless+tcp+tls提供及处理，不需配置。）
 
 注意：
 
@@ -31,11 +31,11 @@ v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配�
 
 1、vless+tcp+tls（回落/分流配置。）
 
-2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vmess+ws+tls或SS+v2ray-plugin+tls或trojan+ws+tls，或添加它们。）
+2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加vmess+ws+tls、SS+v2ray-plugin+tls、trojan+ws+tls应用。）
 
-3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vless+ws+tls或vmess+ws+tls或trojan+ws+tls，或添加它们。）
+3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加vless+ws+tls、vmess+ws+tls、trojan+ws+tls应用。）
 
-4、vless+h2c+tls（tls由caddy2提供及处理，不需要另外配置；另可改成vmess+h2c+tls，或添加它。）
+4、vless+h2c+tls（tls由caddy2提供及处理，不需配置；另可改成或添加vmess+h2c+tls应用。）
 
 5、vmess+kcp+seed（可改成vless+kcp+seed，或添加它。）
 
@@ -59,11 +59,11 @@ v2ray 通过配置相关参数对 v2ray vless+tcp、v2ray trojan、naiveproxy(ca
 
 1、vless+tcp+tls（回落/分流配置。）
 
-2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vmess+ws+tls或SS+v2ray-plugin+tls或trojan+ws+tls，或添加它们。）
+2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加vmess+ws+tls、SS+v2ray-plugin+tls、trojan+ws+tls应用。）
 
-3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vless+ws+tls或vmess+ws+tls或trojan+ws+tls，或添加它们。）
+3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加vless+ws+tls、vmess+ws+tls、trojan+ws+tls应用。）
 
-4、vless+h2c+tls（tls由caddy2提供及处理，不需要另外配置；另可改成vmess+h2c+tls，或添加它。）
+4、vless+h2c+tls（tls由caddy2提供及处理，不需配置；另可改成或添加vmess+h2c+tls应用。）
 
 5、vmess+kcp+seed（可改成vless+kcp+seed，或添加它。）
 
