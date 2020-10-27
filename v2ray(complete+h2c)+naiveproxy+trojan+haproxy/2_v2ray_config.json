@@ -52,6 +52,7 @@
         "network": "tcp",
         "tcpSettings": {
           "acceptProxyProtocol": true
+        }
       },
       "sniffing": {
         "enabled": true,
