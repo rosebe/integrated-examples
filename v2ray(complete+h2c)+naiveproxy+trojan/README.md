@@ -1,23 +1,25 @@
 介绍：
 
-此配置包括 v2ray、naiveproxy(caddy2) 及 trojan(trojan-go) 集成。v2ray、naiveproxy(caddy2)、trojan(trojan-go) 各自公开一个监听端口，各自分别或配合提供服务。如 caddy2 还同时为 v2ray 与 trojan(trojan-go)提供回落服务。v2ray 包括应用如下：
+此配置包括 v2ray、naiveproxy(caddy2) 及 trojan(trojan-go) 集成。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
-2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vmess+ws+tls或SS+v2ray-plugin+tls或trojan+ws+tls。）
+2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vmess+ws+tls或SS+v2ray-plugin+tls或trojan+ws+tls，或添加它们。）
 
-3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vless+ws+tls或vmess+ws+tls或trojan+ws+tls。）
+3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需要另外配置；另可改成vless+ws+tls或vmess+ws+tls或trojan+ws+tls，或添加它们。）
 
-4、vless+h2c+tls（tls由caddy2提供及处理，不需要另外配置；另可改成vmess+h2c+tls。）
+4、vless+h2c+tls（tls由caddy2提供及处理，不需要另外配置；另可改成vmess+h2c+tls，或添加它。）
 
-5、vmess+kcp+seed（可改成vless+kcp+seed。）
+5、vmess+kcp+seed（可改成vless+kcp+seed，或添加它。）
 
 注意：
 
-1、v2ray tcp 类应用直连，v2ray ws 类应用分流一次。
+1、利用 vless tcp 强大的回落/分流特性，实现了vless tcp 与任意 ws 类应用完美共存；且vless tcp 以 http/1.1 或 http/2 自适应代理科学上网。
 
-2、naiveproxy 直连。v2ray h2 类应用分流（反代）一次。
+2、naiveproxy(caddy2) 使用本 github 文件，可同时支持 naiveproxy 及 v2ray h2 反向代理。
 
-3、trojan(trojan-go) 直连。
+3、caddy2 同时为 v2ray 与 trojan 提供 web 回落服务。
 
-4、naiveproxy（caddy2）使用本人 github 文件，可同时支持 naiveproxy、回落 h2 及 v2ray h2 反向代理。
+4、因 trojan(trojan-go) 不支持 PROXY protocol，故统一不启用此项应用。
+
+5、配置1：v2ray、naiveproxy(caddy2)、trojan(trojan-go) 各自公开一个监听端口，各自分别或配合提供服务。配置2：v2ray 通过配置相关参数为 v2ray、trojan(trojan-go)、naiveproxy(caddy2) 进行 SNI 分流（四层转发），实现共用443端口。
