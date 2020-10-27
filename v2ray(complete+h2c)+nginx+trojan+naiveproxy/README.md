@@ -1,6 +1,6 @@
 介绍：
 
-此配置包括 v2ray、trojan(trojan-go) 及 naiveproxy(caddy2) 应用。nginx 同时为 v2ray 与 trojan(trojan-go) 提供回落服务。v2ray 包括应用如下：
+此配置包括 v2ray、trojan(trojan-go) 及 naiveproxy(caddy2) 应用。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
