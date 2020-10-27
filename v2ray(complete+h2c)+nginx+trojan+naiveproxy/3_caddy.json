@@ -83,7 +83,8 @@
               }],
               "terminal": true
             }]
-          }
+          },
+          "experimental_http3": true //开启http3 server支持。
         }
       }
     },
