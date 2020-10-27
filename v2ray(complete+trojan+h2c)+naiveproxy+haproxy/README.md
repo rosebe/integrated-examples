@@ -26,7 +26,7 @@ v2ray vless+tcp 类应用直连，v2ray ws 类应用分流一次；v2ray trojan+
 
 4、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
 
-5、用haproxy 或 nginx 为 v2ray vless+tcp、v2ray trojan、naiveproxy(caddy2) 进行 SNI 分流（四层转发），实现共用443端口。
+5、用haproxy 或 nginx 为 v2ray vless+tcp、v2ray trojan+tcp、naiveproxy(caddy2) 进行 SNI 分流（四层转发），实现共用443端口。
 
 6、nginx 预编译程序包不带支持 SNI 分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
 
