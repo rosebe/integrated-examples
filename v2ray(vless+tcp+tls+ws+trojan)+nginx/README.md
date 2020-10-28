@@ -1,6 +1,6 @@
 一、回落终极部署（套娃方式）
 
-配置1/配置2/配置3实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出ws应用，分流出h1与h2回落。h1回落给 trojan，由 trojan 处理后再回落给 nginx；h2 直接回落给 nginx。其应用如下：
+配置1/配置2/配置3实现了 vless tcp 以 http/1.1 代理科学上网，分流出ws应用，回落给 trojan，由 trojan 处理后再回落给 nginx。其应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -14,7 +14,7 @@
 
 1、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
 
-2、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程；而v2ray的trojan不支持端口或进程分离h2回落，故套娃回落nginx只能全部采用h1回落；因trojan无h2连接，可能影响速度。
+2、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程；而v2ray的trojan不支持端口或进程分离h2回落，故套娃回落nginx只能全部采用h1回落；因vless+tcp与trojan+无h2连接，可能影响速度。
 
 3、nginx 预编译程序包可能不带支持 PROXY protocol 协议的模块。如要使用此项协议应用，需加 http_realip_module（必须加的） 及 stream_realip_module（可选加） 两模块构建自定义模板，再进行源代码编译和安装。另编译时选取源代码版本建议不要低于1.13.11。
 
