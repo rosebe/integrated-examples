@@ -1,4 +1,4 @@
-一、回落终极部署1
+一、回落终极部署
 
 v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配合提供服务。配置1/配置2实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出ws应用，回落给 trojan，由 trojan 处理后再回落给 caddy2。v2ray 应用如下：
 
