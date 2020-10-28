@@ -23,11 +23,6 @@
             "xver": 2
           },
           {
-            "alpn": "h2",
-            "dest": "/dev/shm/h2c.sock",
-            "xver": 2
-          },
-          {
             "path": "/HALdGZ9k",
             "dest": 2001,
             "xver": 1
@@ -43,7 +38,6 @@
         "security": "xtls",
         "xtlsSettings": {
           "alpn":[
-            "h2",
             "http/1.1"
           ],
           "certificates": [
