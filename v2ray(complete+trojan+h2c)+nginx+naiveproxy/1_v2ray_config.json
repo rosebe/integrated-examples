@@ -23,11 +23,6 @@
             "xver": 0
           },
           {
-            "alpn": "h2",
-            "dest": 88,
-            "xver": 0
-          },
-          {
             "path": "/HALdGZ9k",
             "dest": 2001,
             "xver": 0
@@ -43,7 +38,6 @@
         "security": "xtls",
         "xtlsSettings": {
           "alpn":[
-            "h2",
             "http/1.1"
           ],
           "certificates": [
