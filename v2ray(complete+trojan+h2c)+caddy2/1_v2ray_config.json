@@ -6,14 +6,14 @@
   },
   "inbounds": [
     {
-      "port": 8443,
+      "port": 443,
       "protocol": "vless",
       "settings": {
         "clients": [
           {
             "id": "888fd3ac-dd53-11e9-b357-5600024c1d6a",
             "flow": "xtls-rprx-direct",
-            "email": "8443@gmail.com"
+            "email": "443@gmail.com"
           }
         ],
         "decryption": "none",
