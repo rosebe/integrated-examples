@@ -32,7 +32,7 @@ v2ray vless+tcp 类应用直连，v2ray ws 类应用分流一次；v2ray trojan+
 
 二、回落终极部署2
 
-除 v2ray kcp 外，所用应用共用443端口。配置3/配置4实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出ws应用，分流出h1与h2回落。h1回落给 trojan，由 trojan 处理后再回落给 caddy2；h2回落给naiveproxy（caddy2）。v2ray 应用如下：
+除 v2ray kcp 外，所用应用共用443端口。配置3/配置4实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出ws应用，分流出h1与h2回落。h1回落给 trojan（trojan无h2连接，速度有点影响。），由 trojan 处理后再回落给 caddy2；h2回落给naiveproxy（caddy2）。v2ray 应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
