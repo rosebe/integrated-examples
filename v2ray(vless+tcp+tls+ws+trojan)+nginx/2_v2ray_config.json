@@ -23,11 +23,6 @@
             "xver": 2 //开启PROXY protocol发送，发送请求的真实来源 IP 和端口给如下 trojan 应用。1或2表示PROXY protocol插件版本。多级传递，建议配置2。
           },
           {
-            "alpn": "h2", //h2回落匹配 
-            "dest": 88, //h2回落端口
-            "xver": 2 //开启PROXY protocol发送，发送请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。
-          },
-          {
             "path": "/HALdGZ9k", //通过路径分流出ws
             "dest": 2001, //分流后转发到2001端口
             "xver": 1 //开启PROXY protocol发送，发送请求的真实来源 IP 和端口给如下 ws 应用。1或2表示 PROXY protocol 插件版本。
@@ -38,7 +33,6 @@
         "security": "xtls", //如启用xtls，tls必须改成xtls。
         "xtlsSettings": { //如启用xtls，tlsSettings必须改成xtlsSettings。
           "alpn":[
-            "h2", //启用h2连接，web回落也需配置支持h2回落；否则不一致（裸奔），容易被墙探测出，从而被封。
             "http/1.1" //启用http/1.1连接，web回落也需配置支持http/1.1回落；否则不一致（裸奔），容易被墙探测出，从而被封。
           ],
           "certificates": [
