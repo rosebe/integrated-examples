@@ -30,35 +30,9 @@ v2ray vless+tcp 类应用直连，v2ray ws 类应用分流一次；v2ray trojan+
 
 6、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
 
-二、回落终极部署2
+二、v2ray SNI分流优化共用443端口
 
-除 v2ray kcp 外，所用应用共用443端口。配置3/配置4实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出ws应用，分流出h1与h2回落。h1回落给 trojan，由 trojan 处理后再回落给 caddy2；h2 回落给 naiveproxy（caddy2）。v2ray 应用如下：
-
-1、vless+tcp+tls（回落/分流配置。）
-
-2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加vmess+ws+tls、SS+v2ray-plugin+tls、trojan+ws+tls应用。）
-
-3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加vless+ws+tls、vmess+ws+tls、trojan+ws+tls应用。）
-
-4、vless+h2c+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加vmess+h2c+tls应用。）
-
-5、vmess+kcp+seed（可改成vless+kcp+seed，或添加它。）
-
-6、trojan+tcp+tls（tls由vless+tcp+tls提供及处理，不需配置。）
-
-v2ray vless+tcp 类应用直连，v2ray ws 类应用分流一次，v2ray trojan+tcp 分流两次，naiveproxy 分流一次，v2ray h2 应用分流加反代共两次。
-
-注意：
-
-1、trojan无h2连接，速度有点影响。
-
-2、其它与回落终极部署1注意事项一样。
-
-3、配置3：没有启用 PROXY protocol，仅端口回落。配置4：启用了 PROXY protocol，且端口回落。
-
-三、v2ray SNI分流优化共用443端口
-
-v2ray 通过配置相关参数对 v2ray vless+tcp、v2ray trojan+tcp、 naiveproxy(caddy2) 进行端口分流（四层转发），实现共用443端口。配置5实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws，回落给 caddy2。同时 v2ray trojan（trojan+tcp）也以 http/1.1 或 http/2 自适应代理科学上网，回落给 caddy2。v2ray 包括应用如下：
+v2ray 通过配置相关参数对 v2ray vless+tcp、v2ray trojan+tcp、 naiveproxy(caddy2) 进行端口分流（四层转发），实现共用443端口。配置3实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws，回落给 caddy2。同时 v2ray trojan（trojan+tcp）也以 http/1.1 或 http/2 自适应代理科学上网，回落给 caddy2。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -84,4 +58,4 @@ v2ray vless+tcp 类应用直连，v2ray ws 类应用分流一次；v2ray trojan+
 
 4、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
 
-5、v2ray SNI分流不支持 PROXY protocol ，故配置5：没有启用 PROXY protocol，仅端口回落。
+5、v2ray SNI分流不支持 PROXY protocol ，故配置3：没有启用 PROXY protocol，仅端口回落。
