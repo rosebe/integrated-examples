@@ -1,6 +1,6 @@
 介绍：
 
-此配置为v2ray新增trojan协议，以ws方式传输，实现了兼容trojan-go的ws模式，即直接使用trojan-go客户端连接。
+此配置为v2ray新增trojan协议，以ws(WebSocket) 方式传输，实现了兼容trojan-go的ws(WebSocket) 模式，即直接使用trojan-go客户端连接。
 
 另外通过 caddy2 或 nginx 前置 v2ray server 实现 ws 反向代理，tls 由 caddy2 或 nginx 提供及处理。
 
