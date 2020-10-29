@@ -16,7 +16,7 @@
       "sniffing": {
         "enabled": true,
         "destOverride": [
-          "tls"//不解tls分流。
+          "tls" //不解tls分流。
         ]
       }
     },
