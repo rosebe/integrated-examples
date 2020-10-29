@@ -2,22 +2,22 @@
   "log": {
     "error": "/var/log/v2ray/error.log",
     "access": "/var/log/v2ray/access.log",
-    "loglevel": "info"
+    "loglevel": "warning"
   },
   "inbounds": [
     {
       "port": 443,
       "protocol": "dokodemo-door",
+      "settings": {
+        "address": "0.0.0.0",
+        "network": "tcp",
+        "followRedirect": false
+      },
       "sniffing": {
         "enabled": true,
         "destOverride": [
           "tls"
         ]
-      },
-      "settings": {
-        "address": "0.0.0.0",
-        "network": "tcp",
-        "followRedirect": false
       }
     },
     {
