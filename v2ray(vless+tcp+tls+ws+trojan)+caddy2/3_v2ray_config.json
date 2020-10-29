@@ -6,18 +6,18 @@
   },
   "inbounds": [
     {
-      "port": 443,
+      "port": 443, //监听端口
       "protocol": "dokodemo-door",
-      "sniffing": {
-        "enabled": true,
-        "destOverride": [
-          "tls"
-        ]
-      },
       "settings": {
         "address": "0.0.0.0",
         "network": "tcp",
         "followRedirect": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "tls" //不解tls分流。
+        ]
       }
     },
     {
