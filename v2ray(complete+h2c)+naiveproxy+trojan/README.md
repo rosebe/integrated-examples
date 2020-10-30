@@ -16,7 +16,7 @@
 
 1、利用 vless tcp 强大的回落/分流特性，实现了vless tcp 与任意 ws（WebSocket） 类应用完美共存；且vless tcp 以 http/1.1 或 http/2 自适应代理科学上网。
 
-2、naiveproxy(caddy2) 使用本 github 文件，可同时支持 naiveproxy 及 v2ray h2 反向代理。
+2、naiveproxy(caddy2) 使用本 github 文件，可同时支持 naiveproxy 及 v2ray h2（http/2）反向代理。
 
 3、caddy2 同时为 v2ray 与 trojan 提供 web 回落服务。
 
