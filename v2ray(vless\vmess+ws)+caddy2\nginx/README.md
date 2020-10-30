@@ -1,6 +1,6 @@
 介绍：
 
-通过 caddy2 或 nginx 前置 v2ray server 实现 WebSocket 反向代理，tls 由 caddy2 或 nginx 提供及处理。
+通过 caddy2 或 nginx 前置 v2ray server 实现 WebSocket（ws） 反向代理，tls 由 caddy2 或 nginx 提供及处理。
 
 原理图： v2ray client <------ ws+tls ------> caddy2\nginx <- ws -> v2ray server
 
