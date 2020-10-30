@@ -13,7 +13,7 @@
 
 注意：
 
-1、利用 vless tcp 强大的回落/分流特性，实现了 vless tcp 与任意 ws 类应用完美共存，且vless tcp 以 http/1.1 或 http/2 自适应代理科学上网。
+1、利用 vless tcp 强大的回落/分流特性，实现了 vless tcp 与任意 ws（WebSocket）类应用完美共存，且vless tcp 以 http/1.1 或 http/2 自适应代理科学上网。
 
 2、nginx 同时为 v2ray 与 trojan 提供 web 回落服务。
 
