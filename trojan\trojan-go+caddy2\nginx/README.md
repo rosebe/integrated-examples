@@ -2,7 +2,7 @@
 
 本配置是 trojan 或 trojan-go 应用，非trojan 或 trojan-go 应用回落给 caddy2 或 nginx。
 
-原理图： trojan\trojan-go client <------ https ------> trojan\trojan-go server <- web回落 -> caddy2\nginx
+原理图： trojan\trojan-go client <------ https（http+tls） ------> trojan\trojan-go server <- web回落 -> caddy2\nginx
 
 注意：
 
