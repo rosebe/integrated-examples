@@ -1,6 +1,6 @@
 介绍：
 
-通过 caddy2 前置 v2ray server 实现 h2（h2c+tls） 反向代理，tls 由 caddy2 提供及处理。
+通过 caddy2 前置 v2ray server 实现 http/2（h2c+tls） 反向代理，tls 由 caddy2 提供及处理。
 
 原理图： v2ray client <------ h2 ------> caddy2 <- h2c -> v2ray server
 
