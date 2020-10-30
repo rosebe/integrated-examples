@@ -16,7 +16,7 @@
 
 1、除 v2ray kcp 外,所用应用共用443端口。此端口由 v2ray 监听（即 v2ray 前置），利用 vless tcp 回落/分流特性实现。
 
-2、v2ray tcp 类应用直连。v2ray ws 类应用分流（回落）一次。v2ray h2 类应用回落一次，反代（分流）一次，共计两次。
+2、v2ray tcp 类应用直连。v2ray ws（WebSocket）类应用分流（回落）一次。v2ray h2（http/2）类应用回落一次，反代（分流）一次，共计两次。
 
 3、caddy2 等于或大于 v2.2.0-rc.1 版才支持反向代理 v2ray h2(http/2) 应用。
 
