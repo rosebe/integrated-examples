@@ -1,6 +1,6 @@
 一、回落终极部署（套娃方式）
 
-配置1/配置2/实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 WebSocket（ws），回落给 trojan，由 trojan 处理后再回落给 caddy2。其应用如下：
+配置1/配置2/实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket），回落给 trojan，由 trojan 处理后再回落给 caddy2。其应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -24,7 +24,7 @@
 
 二、v2ray SNI分流优化共用443端口
 
-v2ray 通过配置相关参数对 v2ray vless+tcp、v2ray trojan+tcp 进行端口分流（四层转发），实现共用443端口。配置3实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 WebSocket（ws），回落给 caddy2。同时 v2ray trojan（trojan+tcp）也以 http/1.1 或 http/2 自适应代理科学上网，回落给 caddy2。v2ray 包括应用如下：
+v2ray 通过配置相关参数对 v2ray vless+tcp、v2ray trojan+tcp 进行端口分流（四层转发），实现共用443端口。配置3实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket），回落给 caddy2。同时 v2ray trojan（trojan+tcp）也以 http/1.1 或 http/2 自适应代理科学上网，回落给 caddy2。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
