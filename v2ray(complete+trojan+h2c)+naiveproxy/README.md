@@ -1,6 +1,6 @@
 一、回落终极部署
 
-v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配合提供服务。配置1/配置2实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出ws应用，回落给 trojan，由 trojan 处理后再回落给 caddy2。v2ray 应用如下：
+v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配合提供服务。配置1/配置2实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket） 应用，回落给 trojan，由 trojan 处理后再回落给 caddy2。v2ray 应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -32,7 +32,7 @@ v2ray vless+tcp 类应用直连，v2ray ws 类应用分流一次；v2ray trojan+
 
 二、v2ray SNI分流优化共用443端口
 
-v2ray 通过配置相关参数对 v2ray vless+tcp、v2ray trojan+tcp、 naiveproxy(caddy2) 进行端口分流（四层转发），实现共用443端口。配置3实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws，回落给 caddy2。同时 v2ray trojan（trojan+tcp）也以 http/1.1 或 http/2 自适应代理科学上网，回落给 caddy2。v2ray 包括应用如下：
+v2ray 通过配置相关参数对 v2ray vless+tcp、v2ray trojan+tcp、 naiveproxy(caddy2) 进行端口分流（四层转发），实现共用443端口。配置3实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket） ，回落给 caddy2。同时 v2ray trojan（trojan+tcp）也以 http/1.1 或 http/2 自适应代理科学上网，回落给 caddy2。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
