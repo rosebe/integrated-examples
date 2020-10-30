@@ -14,7 +14,7 @@
 
 6、trojan+tcp+tls（回落配置。）
 
-v2ray vless+tcp 类应用直连，v2ray ws 类应用分流一次；v2ray trojan+tcp 直连；naiveproxy 直连，v2ray h2 类应用分流（反代）一次。
+v2ray vless+tcp 类应用直连，v2ray ws（WebSocket）类应用分流一次；v2ray trojan+tcp 直连；naiveproxy 直连，v2ray h2（http/2）类应用分流（反代）一次。
 
 注意：
 
