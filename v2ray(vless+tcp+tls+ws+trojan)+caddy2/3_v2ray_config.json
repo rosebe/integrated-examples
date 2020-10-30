@@ -14,9 +14,9 @@
         "followRedirect": false
       },
       "sniffing": {
-        "enabled": true,
+        "enabled": true, //开启流量探测
         "destOverride": [
-          "tls" //不解tls分流。
+          "tls" //tls探测,以实现SNI分流。
         ]
       }
     },
