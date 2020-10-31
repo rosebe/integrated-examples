@@ -1,6 +1,6 @@
 介绍：
 
-此配置包括 v2ray、naiveproxy(caddy2) 应用。用 haproxy 或 nginx 为 v2ray（vless+tcp+tls与trojan+tcp+tls）、naiveproxy(caddy2) 进行 SNI 分流（四层转发），实现共用443端口。另 caddy2 还同时为v2ray（vless+tcp+tls 与 trojan+tcp+tls）提供回落服务。v2ray包括应用如下：
+此配置包括 v2ray、naiveproxy(caddy2) 应用。用 haproxy 或 nginx 为 v2ray（vless+tcp 与 trojan+tcp）、naiveproxy(caddy2) 进行 SNI 分流（四层转发），实现共用443端口。另 caddy2 还同时为v2ray（vless+tcp 与 trojan+tcp）提供回落服务。v2ray包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -18,16 +18,12 @@ v2ray vless+tcp 类应用直连，v2ray ws（WebSocket）类应用分流一次�
 
 注意：
 
-1、caddy2 目前只能 json 配置才能开启 h2c server，故要实现回落 h2 就不能采用 Caddyfile 配置；另外 caddy2 版本不能低于 v2.1.0 ，否则不支持 h2c server。
+1、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
 
-2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
+2、naiveproxy（caddy2）使用本人 github 中编译好的 caddy2 文件，可同时支持 naiveproxy、回落 h2 、vless/vmess+h2c 反向代理及 PROXY protocol的应用。
 
-3、caddy2 发行版不支持 PROXY protocol，如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译或选使用本人 github 文件即可。
+3、v2ray v4.31.0 版本及以后才支持 trojan+tcp 及完整回落。
 
-4、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
+4、nginx 预编译程序包不带支持 SNI 分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
 
-5、用haproxy 或 nginx 为 v2ray vless+tcp、v2ray trojan+tcp、naiveproxy(caddy2) 进行 SNI 分流（四层转发），实现共用443端口。
-
-6、nginx 预编译程序包不带支持 SNI 分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
-
-7、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
+5、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
