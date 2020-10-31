@@ -18,6 +18,6 @@
 
 1、v2ray tcp 类应用直连。v2ray ws 类应用分流一次。naiveproxy 回落(分流)一次。v2ray h2 类应用回落一次，分流（反代）一次，共计两次。
 
-2、1、naiveproxy（caddy2）使用本人 github 中编译好的 caddy2 文件，可同时支持 naiveproxy、回落 h2 、vless/vmess+h2c 反向代理及 PROXY protocol。
+2、1、naiveproxy（caddy2）使用本人 github 中编译好的 caddy2 文件，可同时支持 naiveproxy、回落 h2 、vless/vmess+h2c 反向代理及 PROXY protocol的应用。
 
 3、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
