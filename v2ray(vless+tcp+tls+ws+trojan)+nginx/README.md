@@ -1,7 +1,7 @@
 一、回落终极部署（套娃方式）
 
 利用 vless 强大的回落/分流特性，实现了共用 443 端口，同时支持 vless+tcp 与任意 ws（WebSocket） 类及 trojan+tcp 应用完美共存。配置1/配置2/配置3实现了 vless+tcp 以 http/1.1 代理科学上网，分流出 ws（WebSocket）应用，回落给 trojan+tcp，trojan+tcp 处理后再回落给 nginx。其应用如下：
-  
+
 1、vless+tcp+tls（回落/分流配置。）
 
 2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加vmess+ws+tls、SS+v2ray-plugin+tls、trojan+ws+tls应用。）
@@ -48,8 +48,8 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行端口分流（�
 
 注意：
 
-1、v2ray v4.31.0 版本及以后才支持 trojan+tcp 及完整回落。 
- 
+1、v2ray v4.31.0 版本及以后才支持 trojan+tcp 及完整回落。
+
 2、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程。v2ray的 trojan+tcp 不支持端口或进程分离 h2 回落，故只能采用 h1 回落；因 trojan+tcp 无 h2 连接，可能影响速度。
 
 3、nginx 预编译程序包不带支持 SNI 分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
