@@ -1,6 +1,6 @@
 介绍：
 
-此配置为 v2ray 新增 trojan 协议，以 WebSocket 方式传输，实现了兼容 rojan-go 的 WebSocket 应用（服务端），客户端直接使用 trojan-go 即可。通过 caddy2 或 nginx 前置 v2ray server 实现 ws（WebSocket） 反向代理，tls 由 caddy2 或 nginx 提供及处理。
+此配置为 v2ray 新增 trojan 协议，以 WebSocket 方式传输，实现了兼容 rojan-go 的 WebSocket 应用（服务端），客户端直接使用 trojan-go 即可。另通过 caddy2 或 nginx 前置 v2ray server 实现 ws（WebSocket） 反向代理，tls 由 caddy2 或 nginx 提供及处理。
 
 原理图： trojan-go client <------ ws+tls ------> caddy2\nginx <- ws -> v2ray server
 
