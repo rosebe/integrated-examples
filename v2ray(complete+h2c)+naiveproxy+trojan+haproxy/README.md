@@ -14,10 +14,18 @@
 
 注意：
 
-1、naiveproxy（caddy2）使用本人 github 中编译好的 caddy2 文件，可同时支持 naiveproxy、h2 回落、v2ray h2(http/2) 反向代理及 PROXY protocol的应用。
+1、caddy2 目前只能 json 配置才能开启 h2c server，故要实现 h2 回落就不能采用 Caddyfile 配置；另外caddy2 版本不能低于 v2.1.0 ，否则不支持 h2c server。
 
-2、nginx 预编译程序包不带支持 SNI 分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
+2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
 
-3、nginx 的 PROXY protocol 发送是针对共用端口全局模式，而 trojan(trojan-go) 不支持 PROXY protocol，故配置2不能用nginx SNI分流。
+3、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
 
-4、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
+4、caddy2 发行版不支持 PROXY protocol。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译。
+
+5、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2 回落、h2（http/2）反向代理及 PROXY protocol的应用。
+
+6、nginx 预编译程序包不带支持 SNI 分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
+
+7、nginx 的 PROXY protocol 发送是针对共用端口全局模式，而 trojan(trojan-go) 不支持 PROXY protocol，故配置2不能用nginx SNI分流。
+
+8、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
