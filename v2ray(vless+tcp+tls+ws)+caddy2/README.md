@@ -1,12 +1,12 @@
 介绍：
 
-此配置实现 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket），非 v2ray 的 web 回落给 caddy2。其应用如下：
+利用 vless 强大的回落/分流特性，实现了共用443端口，同时支持 vless+tcp 与任意 ws（WebSocket） 类应用完美共存。vless+tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket），非 v2ray 的 web 回落给 caddy2。其应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
 2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加vmess+ws+tls、SS+v2ray-plugin+tls、trojan+ws+tls应用。）
 
-利用 vless tcp 强大的回落/分流特性，实现了共用 443 端口，同时支持 vless tcp 与任意 ws 类应用完美共存。
+
 
 注意：
 
@@ -14,6 +14,6 @@
 
 2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
 
-3、caddy2 发行版不支持 PROXY protocol，如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译或选使用本人github文件即可。
+3、caddy2 发行版不支持 PROXY protocol。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译，或下载本人 github 中编译好的 caddy2 来使用即可。
 
 4、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
