@@ -1,6 +1,6 @@
 介绍：
 
-此配置包括 v2ray、naiveproxy(caddy2) 应用。用 haproxy 或 nginx 为 vless+tcp、trojan+tcp、naiveproxy(caddy2) 进行 SNI 分流（四层转发），实现共用443端口。另 caddy2 同时为 v2ray（vless+tcp）与 v2ray（trojan+tcp）提供回落服务，为 v2ray（vless/vmess+h2c）提供反向代理，为 naiveproxy 提供正向代理。v2ray包括应用如下：
+此配置包括 v2ray、naiveproxy(caddy2) 应用。用 haproxy 或 nginx 为 vless+tcp、trojan+tcp、naiveproxy(caddy2) 进行 SNI 分流（四层转发），实现共用443端口。另 caddy2 同时为 vless+tcp 与 trojan+tcp 提供回落服务，为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
