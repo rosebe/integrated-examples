@@ -14,7 +14,7 @@
 
 注意：
 
-1、naiveproxy（caddy2）使用本人 github 中编译好的 caddy2 文件，可同时支持 naiveproxy、h2回落、v2ray h2(http/2) 反向代理及 PROXY protocol的应用。
+1、naiveproxy（caddy2）使用本人 github 中编译好的 caddy2 文件，可同时支持 naiveproxy、h2 回落、v2ray h2(http/2) 反向代理及 PROXY protocol的应用。
 
 2、nginx 预编译程序包不带支持 SNI 分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
 
