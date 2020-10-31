@@ -1,6 +1,6 @@
 一、回落终极部署
 
-v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配合提供服务。配置1/配置2实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket） 应用，回落给 trojan，由 trojan 处理后再回落给 caddy2。v2ray 应用如下：
+v2ray、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配合提供服务。配置1/配置2实现了 vless+tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket） 应用，回落给 trojan+tcp，trojan+tcp 处理后再回落给 caddy2。v2ray 应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -22,17 +22,15 @@ v2ray vless+tcp 类应用直连，v2ray ws 类应用分流一次；v2ray trojan+
 
 2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
 
-3、naiveproxy（caddy2）使用本人 github 文件，可同时支持 naiveproxy、回落 h2 及 v2ray h2 反向代理。
+3、naiveproxy（caddy2）使用本人 github 中编译好的 caddy2 文件，可同时支持 naiveproxy、回落 h2 、vless/vmess+h2c 反向代理及 PROXY protocol的应用。
 
-4、caddy2 发行版不支持 PROXY protocol，如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译或选使用本人 github 文件即可。
+4、v2ray v4.31.0 版本及以后才支持 trojan+tcp 及完整回落。
 
-5、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
-
-6、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
+5、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
 
 二、v2ray SNI分流优化共用443端口
 
-v2ray 通过配置相关参数对 v2ray vless+tcp、v2ray trojan+tcp、 naiveproxy(caddy2) 进行端口分流（四层转发），实现共用443端口。配置3实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket） ，回落给 caddy2。同时 v2ray trojan（trojan+tcp）也以 http/1.1 或 http/2 自适应代理科学上网，回落给 caddy2。v2ray 包括应用如下：
+v2ray 通过配置相关参数对 vless+tcp、trojan+tcp、 naiveproxy(caddy2) 进行端口分流（四层转发），实现共用443端口。配置3实现了 vless+tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket） ，回落给 caddy2。同时 trojan+tcp 也以 http/1.1 或 http/2 自适应代理科学上网，回落给 caddy2。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -54,7 +52,7 @@ v2ray vless+tcp 类应用直连，v2ray ws 类应用分流一次；v2ray trojan+
 
 2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
 
-3、naiveproxy（caddy2）使用本人 github 文件，可同时支持 naiveproxy、回落 h2 及 v2ray h2 反向代理。
+3、naiveproxy（caddy2）使用本人 github 中编译好的 caddy2 文件，可同时支持 naiveproxy、回落 h2 、vless/vmess+h2c 反向代理的应用。
 
 4、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
 
