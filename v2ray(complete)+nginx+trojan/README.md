@@ -13,11 +13,11 @@
 
 注意：
 
-1、利用 vless tcp 强大的回落/分流特性，实现了 vless tcp 与任意 ws（WebSocket）类应用完美共存，且vless tcp 以 http/1.1 或 http/2 自适应代理科学上网。
+1、vless+tcp 以 http/1.1 或 http/2 自适应代理科学上网。
 
-2、nginx 同时为 v2ray 与 trojan 提供 web 回落服务。
+2、nginx 同时为 v2ray（vless+tcp） 与 trojan 提供 web 回落服务。
 
-3、因 trojan（trojan-go）不支持 PROXY protocol，故统一不启用此项应用。
+3、trojan（trojan-go）不支持 PROXY protocol，同时 nginx 也不支持针对trojan（trojan-go）端口关闭 PROXY protocol，故无法统一启用此项应用。
 
 4、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c serve r共用一个端口或一个进程，故回落端口或进程必须分开。
 
