@@ -16,7 +16,7 @@ v2ray tcp 类应用直连，且以 http/1.1 或 http/2 自适应代理科学上�
 
 1、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程，故回落端口或进程必须分开。
 
-2、nginx 不支持 h2c proxy，故无法搭建 vless\vmess+h2 反代应用。
+2、nginx 不支持 h2c proxy，故 nginx 不能实现 v2ray 的 h2（http/2）反向代理。
 
 3、nginx 预编译程序包可能不带支持 PROXY protocol 协议的模块。如要使用此项协议应用，需加 http_realip_module（必须加） 及 stream_realip_module（可选加） 两模块构建自定义模板，再进行源代码编译和安装。另编译时选取源代码版本建议不要低于1.13.11。
 
