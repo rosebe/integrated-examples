@@ -12,7 +12,7 @@
 
 1、v2ray v4.31.0 版本及以后才支持 trojan+tcp 及完整回落。
 
-2、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程；而 v2ray 的 trojan+tcp 不支持端口或进程分离 h2 回落，故套娃回落 nginx 只能全部采用h1回落；因vless+tcp 与 trojan+tcp 无 h2 连接，可能影响速度。
+2、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程；而 v2ray 的 trojan+tcp 不支持端口或进程分离 h2 回落，故套娃回落 nginx 只能全部采用h1回落；因 vless+tcp 与 trojan+tcp 无 h2 连接，可能影响速度。
 
 3、nginx 预编译程序包可能不带支持 PROXY protocol 协议的模块。如要使用此项协议应用，需加 http_realip_module（必须加） 及 stream_realip_module（可选加） 两模块构建自定义模板，再进行源代码编译和安装。另编译时选取源代码版本建议不要低于1.13.11。
 
