@@ -18,7 +18,7 @@
 
 4、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。配置3：启用了 PROXY protocol，且进程回落。
 
-二、v2ray SNI分流优化共用443端口
+二、v2ray SNI 分流优化共用443端口
 
 v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行端口分流（四层转发），实现共用443端口。配置4实现了 vless tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket）应用，回落给 nginx。同时 v2ray trojan（trojan+tcp）也以 http/1.1 代理科学上网，回落给 nginx。v2ray 包括应用如下：
 
@@ -36,7 +36,7 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行端口分流（�
 
 3、v2ray SNI 分流不支持 PROXY protocol ，故配置4：没有启用 PROXY protocol，仅端口回落。
 
-三、nginx SNI分流优化共用443端口
+三、nginx SNI 分流优化共用443端口
 
 利用 nginx 支持 SNI 分流特性，对 vless+tcp 与 trojan+tcp 进行端口分流（四层转发），实现共用443端口。配置5/配置6/配置7实现了 vless+tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket）应用，回落给 nginx。同时 trojan+tcp 也以 http/1.1 代理科学上网，回落给 nginx。其应用如下：
 
