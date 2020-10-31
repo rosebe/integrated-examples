@@ -14,8 +14,14 @@
 
 注意：
 
-1、因 trojan(trojan-go) 不支持 PROXY protocol，故统一不启用此项应用。
+1、caddy2 目前只能 json 配置才能开启 h2c server，故要实现 h2 回落就不能采用 Caddyfile 配置；另外caddy2 版本不能低于 v2.1.0 ，否则不支持 h2c server。
 
-2、naiveproxy（caddy2）使用本人 github 中编译好的 caddy2 文件，可同时支持 naiveproxy、h2 回落、 h2（http/2）反向代理的应用。
+2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
 
-3、配置1：v2ray、naiveproxy(caddy2)、trojan(trojan-go) 各自公开一个监听端口，各自分别或配合提供服务。配置2：v2ray 通过配置相关参数为 v2ray、naiveproxy(caddy2)、trojan(trojan-go) 进行 SNI 分流（四层转发），实现共用443端口。
+3、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
+
+4、因 trojan(trojan-go) 不支持 PROXY protocol，故统一不启用此项应用。
+
+5、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2 回落、h2（http/2）反向代理的应用。
+
+6、配置1：v2ray、naiveproxy(caddy2)、trojan(trojan-go) 各自公开一个监听端口，各自分别或配合提供服务。配置2：v2ray 通过配置相关参数为 v2ray、naiveproxy(caddy2)、trojan(trojan-go) 进行 SNI 分流（四层转发），实现共用443端口。
