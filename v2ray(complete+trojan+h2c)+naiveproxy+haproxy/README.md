@@ -20,7 +20,7 @@ v2ray vless+tcp 类应用直连，v2ray ws（WebSocket）类应用分流一次�
 
 1、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
 
-2、naiveproxy（caddy2）使用本人 github 中编译好的 caddy2 文件，可同时支持 naiveproxy、回落 h2 、vless/vmess+h2c 反向代理及 PROXY protocol的应用。
+2、naiveproxy（caddy2）使用本人 github 中编译好的 caddy2 文件，可同时支持 naiveproxy、h2 回落 、vless/vmess+h2c 反向代理及 PROXY protocol的应用。
 
 3、v2ray v4.31.0 版本及以后才支持 trojan+tcp 及完整回落。
 
