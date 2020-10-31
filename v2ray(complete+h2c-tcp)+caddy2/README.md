@@ -14,4 +14,4 @@
 
 1、v2ray ws 类应用分流（反代）一次。v2ray h2 类应用分流（反代）一次。
 
-2、caddy2 等于或大于 v2.2.0-rc.1 版才支持反向代理 vless/vmess+h2c 应用。
+2、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
