@@ -13,7 +13,7 @@ v2ray\trojan client <------ tcp+tls ------> v2ray server <- web回落 -> caddy2
 
 2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
 
-3、caddy2 发行版不支持 PROXY protocol。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译；或下载本人 github 中编译好的 caddy2 来使用即可。
+3、caddy2 发行版不支持 PROXY protocol。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译，或下载本人 github 中编译好的 caddy2 来使用即可。
 
 4、v2ray v4.31.0 版本及以后才支持 trojan+tcp 及完整回落。 
 
