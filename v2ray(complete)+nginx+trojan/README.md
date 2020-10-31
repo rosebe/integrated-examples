@@ -17,7 +17,7 @@
 
 2、nginx 同时为 v2ray（vless+tcp） 与 trojan 提供 web 回落服务。
 
-3、trojan（trojan-go）不支持 PROXY protocol，同时 nginx 也不支持针对trojan（trojan-go）端口关闭 PROXY protocol，故无法统一启用此项应用。
+3、trojan（trojan-go）不支持 PROXY protocol，同时 nginx 也不支持针对trojan（trojan-go）端口关闭 PROXY protocol支持，故无法统一启用此项应用。
 
 4、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c serve r共用一个端口或一个进程，故回落端口或进程必须分开。
 
