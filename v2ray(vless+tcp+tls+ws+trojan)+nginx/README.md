@@ -1,12 +1,14 @@
-一、回落终极部署（套娃方式）
+一、回落终极部署（配置1/配置2/配置3套娃方式）
 
-利用 vless 强大的回落/分流特性，实现了共用 443 端口，同时支持 vless+tcp 与任意 ws（WebSocket） 类及 trojan+tcp 应用完美共存。配置1/配置2/配置3实现了 vless+tcp 以 http/1.1 代理科学上网，分流出 ws（WebSocket）应用，回落给 trojan+tcp，trojan+tcp 处理后再回落给 nginx。其应用如下：
+v2ray 前置（监听443端口），vless+tcp 以 http/1.1 代理科学上网，分流出 ws（WebSocket）应用，回落给 trojan+tcp，trojan+tcp 处理后再回落给 nginx。其应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
 2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加vmess+ws+tls、SS+v2ray-plugin+tls、trojan+ws+tls应用。）
 
 3、trojan+tcp+tls（tls由vless+tcp+tls提供及处理，不需配置。）
+
+利用 vless 强大的回落/分流特性，实现了共用 443 端口，支持 vless+tcp 与任意 ws（WebSocket） 类及 trojan+tcp 应用完美共存。
 
 注意：
 
@@ -18,9 +20,9 @@
 
 4、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。配置3：启用了 PROXY protocol，且进程回落。
 
-二、v2ray SNI 分流优化共用443端口
+二、v2ray SNI 分流优化共用443端口（配置4）
 
-v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行端口分流（四层转发），实现共用443端口。配置4实现了 vless+tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket）应用，回落给 nginx。同时 trojan+tcp 也以 http/1.1 代理科学上网，回落给 nginx。v2ray 包括应用如下：
+v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行端口分流（四层转发），实现共用443端口。vless+tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket）应用，回落给 nginx。同时 trojan+tcp 也以 http/1.1 代理科学上网，回落给 nginx。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -36,9 +38,9 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行端口分流（�
 
 3、v2ray SNI 分流不支持 PROXY protocol ，故配置4：没有启用 PROXY protocol，仅端口回落。
 
-三、nginx SNI 分流优化共用443端口
+三、nginx SNI 分流优化共用443端口（配置5/配置6/配置7）
 
-利用 nginx 支持 SNI 分流特性，对 vless+tcp 与 trojan+tcp 进行端口分流（四层转发），实现共用443端口。配置5/配置6/配置7实现了 vless+tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket）应用，回落给 nginx。同时 trojan+tcp 也以 http/1.1 代理科学上网，回落给 nginx。其应用如下：
+利用 nginx 支持 SNI 分流特性，对 vless+tcp 与 trojan+tcp 进行端口分流（四层转发），实现共用443端口。vless+tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket）应用，回落给 nginx。同时 trojan+tcp 也以 http/1.1 代理科学上网，回落给 nginx。其应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
