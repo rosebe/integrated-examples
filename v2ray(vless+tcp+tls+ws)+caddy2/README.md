@@ -1,12 +1,12 @@
 介绍：
 
-此配置利用 vless+tcp 强大的回落/分流特性，实现了共用443端口，支持 vless+tcp 与任意 ws（WebSocket） 类应用完美共存。v2ray 前置（监听443端口），vless+tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket），非 v2ray 的 web 回落给 caddy2。其应用如下：
+v2ray 前置（监听443端口），vless+tcp 以 http/1.1 或 http/2 自适应代理科学上网，分流出 ws（WebSocket），非 v2ray 的 web 回落给 caddy2。其应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
 2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加vmess+ws+tls、SS+v2ray-plugin+tls、trojan+ws+tls应用。）
 
-
+此配置利用 vless+tcp 强大的回落/分流特性，实现了共用443端口，支持 vless+tcp 与任意 ws（WebSocket） 类应用完美共存。
 
 注意：
 
