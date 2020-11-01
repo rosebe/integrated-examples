@@ -1,8 +1,10 @@
 介绍：
 
-此配置为 v2ray 新增 trojan 协议，以 tcp 方式传输，实现了兼容 trojan，即可直接使用 trojan 客户端连接。v2ray 前置（监听443端口），trojan+tcp 以 http/1.1 代理科学上网，非 v2ray\trojan 的 web 回落给 nginx。
+v2ray 前置（监听443端口），trojan+tcp 以 http/1.1 代理科学上网，非 v2ray\trojan 的 web 回落给 nginx。
 
 原理图： v2ray\trojan client <------ tcp+tls ------> v2ray server <- web回落 -> nginx
+
+此配置为 v2ray 新增 trojan 协议，以 tcp 方式传输，实现了兼容 trojan，即可直接使用 trojan 客户端连接。
 
 注意：
 
