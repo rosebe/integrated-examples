@@ -12,7 +12,7 @@
 
 5、vmess+kcp+seed（可改成vless+kcp+seed，或添加它。）
 
-v2ray tcp 类应用直连。v2ray ws（WebSocket）类应用分流（回落）一次。v2ray h2（http/2）类应用回落一次，反代（分流）一次，共计两次
+v2ray tcp 类应用直连。v2ray ws（WebSocket）类应用分流（回落）一次。v2ray h2（http/2）类应用回落一次，反代（分流）一次，共计两次。
 
 注意：
 
