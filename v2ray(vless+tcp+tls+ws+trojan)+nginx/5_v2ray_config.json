@@ -6,8 +6,8 @@
   },
   "inbounds": [
     {
-      "port": 8443, //监听端口
       "listen": "127.0.0.1", //只监听本机，避免除本机外的机器探测到上面监听端口。
+      "port": 8443, //监听端口
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -36,6 +36,7 @@
         ]
       },
       "streamSettings": {
+        "network": "tcp",
         "security": "xtls", //如启用xtls，tls必须改成xtls。
         "xtlsSettings": { //如启用xtls，tlsSettings必须改成xtlsSettings。
           "alpn":[
@@ -48,8 +49,7 @@
               "keyFile": "/etc/ssl/tls/xx.yy.key" //换成你的私钥，绝对路径。
             }
           ]
-        },
-        "network": "tcp"
+        }
       },
       "sniffing": {
         "enabled": true,
@@ -60,8 +60,8 @@
       }
     },
     {
-      "port": 2001, //监听端口
       "listen": "127.0.0.1", //只监听本机，避免除本机外的机器探测到上面监听端口。
+      "port": 2001, //监听端口
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -73,8 +73,8 @@
         "decryption": "none"
       },
       "streamSettings": {
-        "security": "none",
         "network": "ws",
+        "security": "none",
         "wsSettings": {
           "path": "/HALdGZ9k" //修改成自己的path
         }
@@ -88,8 +88,8 @@
       }
     },
     {
-      "port": 2006, //监听端口
       "listen": "127.0.0.1", //只监听本机，避免除本机外的机器探测到上面监听端口。
+      "port": 2006, //监听端口
       "protocol": "trojan",
       "settings": {
         "clients": [
@@ -107,6 +107,7 @@
         ]
       },
       "streamSettings": {
+        "network": "tcp",
         "security": "xtls", //如启用xtls，tls必须改成xtls。
         "xtlsSettings": { //如启用xtls，tlsSettings必须改成xtlsSettings。
           "alpn":[
@@ -118,8 +119,7 @@
               "keyFile": "/etc/ssl/tls/xx.yy.key" //换成你的私钥，绝对路径。
             }
           ]
-        },
-        "network": "tcp"
+        }
       },
       "sniffing": {
         "enabled": true,
