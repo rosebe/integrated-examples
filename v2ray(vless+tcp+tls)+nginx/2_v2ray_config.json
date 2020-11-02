@@ -30,6 +30,7 @@
         ]
       },
       "streamSettings": {
+        "network": "tcp",
         "security": "xtls", //如启用xtls，tls必须改成xtls。
         "xtlsSettings": { //如启用xtls，tlsSettings必须改成xtlsSettings。
           "alpn":[
@@ -42,8 +43,7 @@
               "keyFile": "/etc/ssl/tls/xx.yy.key" //换成你的私钥，绝对路径。
             }
           ]
-        },
-        "network": "tcp"
+        }
       },
       "sniffing": {
         "enabled": true,
