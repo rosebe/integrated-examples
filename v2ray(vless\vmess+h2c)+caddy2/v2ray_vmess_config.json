@@ -6,8 +6,8 @@
   },
   "inbounds": [
     {
-      "port": 2002, //监听端口，此端口收发web代理服务器(如caddy2、nginx等）转来的v2ray数据流。
       "listen": "127.0.0.1", //只监听本机，避免除本机外的机器探测到上面监听端口。
+      "port": 2002, //监听端口，此端口收发web代理服务器(如caddy2、nginx等）转来的v2ray数据流。
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -20,8 +20,8 @@
         "disableInsecureEncryption": true
       },
       "streamSettings": {
-        "security": "none",
         "network": "h2",
+        "security": "none",
         "httpSettings": {
           "host": [
             "xx.yy" //修改成自己的域名
