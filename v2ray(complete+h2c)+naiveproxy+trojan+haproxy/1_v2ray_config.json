@@ -6,8 +6,8 @@
   },
   "inbounds": [
     {
-      "port": 8443,
       "listen": "127.0.0.1",
+      "port": 8443,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -36,6 +36,7 @@
         ]
       },
       "streamSettings": {
+        "network": "tcp",
         "security": "xtls",
         "xtlsSettings": {
           "alpn":[
@@ -48,8 +49,7 @@
               "keyFile": "/etc/ssl/tls/xx.yy.key"
             }
           ]
-        },
-        "network": "tcp"
+        }
       },
       "sniffing": {
         "enabled": true,
@@ -60,8 +60,8 @@
       }
     },
     {
-      "port": 2001,
       "listen": "127.0.0.1",
+      "port": 2001,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -73,8 +73,8 @@
         "decryption": "none"
       },
       "streamSettings": {
-        "security": "none",
         "network": "ws",
+        "security": "none",
         "wsSettings": {
           "path": "/HALdGZ9k"
         }
@@ -88,8 +88,8 @@
       }
     },
     {
-      "port": 2002,
       "listen": "127.0.0.1",
+      "port": 2002,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -101,8 +101,8 @@
         "decryption": "none"
       },
       "streamSettings": {
-        "security": "none",
         "network": "h2",
+        "security": "none",
         "httpSettings": {
           "host": [
             "xx.yy"
@@ -120,8 +120,8 @@
     },
     {
       "tag": "ss1ws",
-      "port": "2004",
       "listen": "127.0.0.1",
+      "port": "2004",
       "protocol": "dokodemo-door",
       "settings": {
         "address": "v1.mux.cool",
@@ -129,8 +129,8 @@
         "followRedirect": false
       },
       "streamSettings": {
-        "security": "none",
         "network": "ws",
+        "security": "none",
         "wsSettings": {
           "path": "/SS1v2ray"
         }
@@ -154,8 +154,8 @@
         "network": "tcp,udp"
       },
       "streamSettings": {
-        "security": "none",
         "network": "domainsocket",
+        "security": "none",
         "dsSettings": {
           "path": "ss1",
           "abstract": true
@@ -176,8 +176,8 @@
         "disableInsecureEncryption": true
       },
       "streamSettings": {
-        "security": "none",
         "network": "kcp",
+        "security": "none",
         "kcpSettings": {
           "congestion": true,
           "seed": "60VoqhfjP79nBQyU"
