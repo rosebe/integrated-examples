@@ -41,8 +41,8 @@
         "network": "tcp,udp"
       },
       "streamSettings": {
-        "security": "none",
         "network": "domainsocket",
+        "security": "none",
         "dsSettings": {
           "path": "ss1", //与outbounds中对应
           "abstract": true
