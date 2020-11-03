@@ -172,6 +172,13 @@
     "rules": [
       {
         "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "blocked"
+      },
+      {
+        "type": "field",
         "domain": [
           "zv.xx.yy" //修改成自己域名
         ],
@@ -183,13 +190,6 @@
           "zt.xx.yy" //修改成自己域名
         ],
         "outboundTag": "zt" //与outbounds中标签对应
-      },
-      {
-        "type": "field",
-        "protocol": [
-          "bittorrent"
-        ],
-        "outboundTag": "blocked"
       }
     ]
   }
