@@ -299,6 +299,20 @@
     "rules": [
       {
         "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "blocked"
+      },
+      {
+        "type": "field",
+        "inboundTag": [
+          "ss1ws"
+        ],
+        "outboundTag": "ss1mux"
+      },
+      {
+        "type": "field",
         "domain": [
           "zv.xx.yy"
         ],
@@ -317,20 +331,6 @@
           "zc.xx.yy"
         ],
         "outboundTag": "zc"
-      },
-      {
-        "type": "field",
-        "protocol": [
-          "bittorrent"
-        ],
-        "outboundTag": "blocked"
-      },
-      {
-        "type": "field",
-        "inboundTag": [
-          "ss1ws"
-        ],
-        "outboundTag": "ss1mux"
       }
     ]
   }
