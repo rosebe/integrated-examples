@@ -223,20 +223,6 @@
     "rules": [
       {
         "type": "field",
-        "domain": [
-          "zv.xx.yy"
-        ],
-        "outboundTag": "zv"
-      },
-      {
-        "type": "field",
-        "domain": [
-          "zt.xx.yy"
-        ],
-        "outboundTag": "zt"
-      },
-      {
-        "type": "field",
         "protocol": [
           "bittorrent"
         ],
@@ -248,6 +234,20 @@
           "ss1ws"
         ],
         "outboundTag": "ss1mux"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "zv.xx.yy"
+        ],
+        "outboundTag": "zv"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "zt.xx.yy"
+        ],
+        "outboundTag": "zt"
       }
     ]
   }
