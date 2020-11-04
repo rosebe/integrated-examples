@@ -19,7 +19,7 @@
         "decryption": "none",
         "fallbacks": [
           {
-            "dest": 80, //h2与http/1.1共用此端口回落到web服务器,即web服务器同时支持h2c server与http/1.1 server应用。
+            "dest": 80, //h2与http/1.1回落共用此端口，回落到web服务器。需web服务器同一端口，同时支持h2c server与http/1.1 server应用。
             "xver": 1 //caddy2用支持PROXY protocol插件的定制版，可设置1或2。1或2表示PROXY protocol插件版本。
           }
         ]
