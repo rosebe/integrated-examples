@@ -8,7 +8,7 @@ v2ray 前置（监听443端口），trojan+tcp 以 http/1.1 代理科学上网�
 
 注意：
 
-1、v2ray v4.31.0 版本及以后才支持 trojan+tcp 及完整回落。
+1、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
 
 2、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程；而 v2ray 的 trojan+tcp 不支持端口或进程分离 h2 回落，故回落 nginx 只能仅采用 h1 回落；因 trojan+tcp 无 h2 连接，可能影响速度。
 
