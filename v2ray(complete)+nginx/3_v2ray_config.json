@@ -19,12 +19,12 @@
         "decryption": "none",
         "fallbacks": [
           {
-            "dest": "/dev/shm/h1.sock",
+            "alpn": "h2",
+            "dest": "/dev/shm/h2c.sock",
             "xver": 1
           },
           {
-            "alpn": "h2",
-            "dest": "/dev/shm/h2c.sock",
+            "dest": "/dev/shm/h1.sock",
             "xver": 1
           },
           {
