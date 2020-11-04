@@ -20,12 +20,12 @@
         "decryption": "none",
         "fallbacks": [
           {
-            "dest": "/dev/shm/h1.sock", //http/1.1回落进程
+            "alpn": "h2", //h2回落匹配 
+            "dest": "/dev/shm/h2c.sock", //h2回落进程
             "xver": 2 //开启PROXY protocol发送，发送请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。多级传递，建议配置2。
           },
           {
-            "alpn": "h2", //h2回落匹配 
-            "dest": "/dev/shm/h2c.sock", //h2回落进程
+            "dest": "/dev/shm/h1.sock", //http/1.1回落进程
             "xver": 2 //开启PROXY protocol发送，发送请求的真实来源 IP 和端口给 nginx。1或2表示 PROXY protocol 插件版本。多级传递，建议配置2。
           },
           {
