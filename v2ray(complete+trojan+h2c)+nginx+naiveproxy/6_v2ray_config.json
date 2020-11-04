@@ -20,12 +20,12 @@
         "decryption": "none",
         "fallbacks": [
           {
-            "dest": 80,
+            "alpn": "h2",
+            "dest": 88,
             "xver": 2
           },
           {
-            "alpn": "h2",
-            "dest": 88,
+            "dest": 80,
             "xver": 2
           },
           {
