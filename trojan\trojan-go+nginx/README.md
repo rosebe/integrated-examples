@@ -6,7 +6,7 @@
 
 注意：
 
-1、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口；而 trojan-go 回落，不支持回落 http/1.1 与回落 h2 端口分开。故采用 nginx 做回落服务器，trojan-go 只能 http/1.1 与 h2 二选一连接与回落。
+1、nginx 支持 h2c server，但不支持与 http/1.1 server 共用一个端口；而 trojan-go 回落，不支持 http/1.1 与 h2 分开。故采用 nginx 做回落服务器，trojan-go 只能 http/1.1 与 h2 二选一连接与回落。
 
 2、trojan-go使用go实现的完整trojan代理兼容。
 
