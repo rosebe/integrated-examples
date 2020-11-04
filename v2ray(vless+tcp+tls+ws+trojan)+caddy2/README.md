@@ -18,7 +18,7 @@ v2ray 前置（监听443端口），vless+tcp 以 http/1.1 或 http/2 自适应�
 
 3、caddy2 发行版不支持 PROXY protocol。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译；或下载本人 github 中编译好的 caddy2 来使用即可。
 
-4、v2ray v4.31.0 版本及以后才支持 trojan+tcp 及完整回落。
+4、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
 
 5、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
 
@@ -38,6 +38,6 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行端口分流（�
 
 2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
 
-3、v2ray v4.31.0 版本及以后才支持 trojan+tcp 及完整回落。
+3、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
 
 4、v2ray SNI分流不支持 PROXY protocol ，故配置3：没有启用 PROXY protocol，仅端口回落。
