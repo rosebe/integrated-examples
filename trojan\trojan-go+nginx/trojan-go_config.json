@@ -22,7 +22,7 @@
     "prefer_server_cipher": true,
     "sni": "*.xx.yy", //修改成自己域名（通配域名）
     "alpn": [
-      "http/1.1"
+      "http/1.1" //仅启用http/1.1连接。
     ],
     "session_ticket": true,
     "reuse_session": true,
