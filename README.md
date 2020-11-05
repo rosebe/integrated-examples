@@ -11,10 +11,10 @@
 8、v2ray(trojan+tcp+tls)+nginx （兼容trojan应用，仅支持http/1.1回落给nginx。）  
 9、v2ray(trojan+ws)+caddy2\nginx （兼容trojan-go的ws应用，caddy2或nginx反向代理。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-10、trojan\trojan-go+caddy2 （trojan或trojan-go应用，回落给caddy2。）  
-11、trojan\trojan-go+nginx （trojan或trojan-go应用，回落给nginx。）  
+1、trojan\trojan-go+caddy2 （trojan或trojan-go应用，回落给caddy2。）  
+2、trojan\trojan-go+nginx （trojan或trojan-go应用，回落给nginx。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-12、naiveproxy(caddy2+forwardproxy) （naiveproxy应用，http/2或http/3正向代理。）  
+1、naiveproxy(caddy2+forwardproxy) （naiveproxy应用，http/2或http/3正向代理。）  
 
 综合应用集成服务器端配置示例  
 1、v2ray为主，caddy2为辅。（推荐，功能多。）  
