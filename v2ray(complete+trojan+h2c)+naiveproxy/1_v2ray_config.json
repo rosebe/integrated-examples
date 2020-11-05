@@ -118,7 +118,6 @@
       }
     },
     {
-      "tag": "ss1ws",
       "listen": "127.0.0.1",
       "port": "2004",
       "protocol": "dokodemo-door",
@@ -134,6 +133,7 @@
           "path": "/SS1v2ray"
         }
       },
+      "tag": "ss1ws",
       "sniffing": {
         "enabled": true,
         "destOverride": [
@@ -221,15 +221,28 @@
       }
     }
   ],
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "type": "field",
+        "inboundTag": [
+          "ss1ws"
+        ],
+        "outboundTag": "ss1mux"
+      },
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "blocked"
+      }
+    ]
+  },
   "outbounds": [
     {
-      "tag": "direct",
       "protocol": "freedom",
-      "settings": {}
-    },
-    {
-      "tag": "blocked",
-      "protocol": "blackhole",
       "settings": {}
     },
     {
@@ -242,25 +255,11 @@
           "abstract": true
         }
       }
+    },
+    {
+      "tag": "blocked",
+      "protocol": "blackhole",
+      "settings": {}
     }
-  ],
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "type": "field",
-        "protocol": [
-          "bittorrent"
-        ],
-        "outboundTag": "blocked"
-      },
-      {
-        "type": "field",
-        "inboundTag": [
-          "ss1ws"
-        ],
-        "outboundTag": "ss1mux"
-      }
-    ]
-  }
+  ]
 }
