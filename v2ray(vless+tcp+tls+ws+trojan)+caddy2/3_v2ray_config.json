@@ -141,15 +141,35 @@
       }
     }
   ],
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "zv.xx.yy" //修改成自己域名
+        ],
+        "outboundTag": "zv" //与outbounds中标签对应
+      },
+      {
+        "type": "field",
+        "domain": [
+          "zt.xx.yy" //修改成自己域名
+        ],
+        "outboundTag": "zt" //与outbounds中标签对应
+      },
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "blocked"
+      }
+    ]
+  },
   "outbounds": [
     {
-      "tag": "direct",
       "protocol": "freedom",
-      "settings": {}
-    },
-    {
-      "tag": "blocked",
-      "protocol": "blackhole",
       "settings": {}
     },
     {
@@ -165,32 +185,11 @@
       "settings": {
         "redirect": "127.0.0.1:2006" //与trojan+tcp端口对应
       }
+    },
+    {
+      "tag": "blocked",
+      "protocol": "blackhole",
+      "settings": {}
     }
-  ],
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "type": "field",
-        "protocol": [
-          "bittorrent"
-        ],
-        "outboundTag": "blocked"
-      },
-      {
-        "type": "field",
-        "domain": [
-          "zv.xx.yy" //修改成自己域名
-        ],
-        "outboundTag": "zv" //与outbounds中标签对应
-      },
-      {
-        "type": "field",
-        "domain": [
-          "zt.xx.yy" //修改成自己域名
-        ],
-        "outboundTag": "zt" //与outbounds中标签对应
-      }
-    ]
-  }
+  ]
 }
