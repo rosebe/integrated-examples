@@ -6,7 +6,6 @@
   },
   "inbounds": [
     {
-      "tag": "ss1ws", //标签，与routing中标签对应。
       "listen": "127.0.0.1", //只监听本机，避免本机外的机器探测到下面端口。
       "port": "2004", //监听端口，此端口收发web代理服务器(如caddy2、nginx等）转来的数据。
       "protocol": "dokodemo-door",
@@ -22,6 +21,7 @@
           "path": "/SS1v2ray" //修改成自己的path
         }
       },
+      "tag": "ss1ws", //标签，与routing中标签对应。
       "sniffing": {
         "enabled": true,
         "destOverride": [
@@ -42,15 +42,28 @@
       }
     }
   ],
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "type": "field",
+        "inboundTag": [
+          "ss1ws" //与inbounds中标签对应
+        ],
+        "outboundTag": "ss1redirect" //与outbounds中标签对应
+      },
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "blocked"
+      }
+    ]
+  },
   "outbounds": [
     {
-      "tag": "direct",
       "protocol": "freedom",
-      "settings": {}
-    },
-    {
-      "tag": "blocked",
-      "protocol": "blackhole",
       "settings": {}
     },
     {
@@ -59,25 +72,11 @@
       "settings": {
         "redirect": "127.0.0.1:2005" //此端口必须与上边2005端口对应
       }
+    },
+    {
+      "tag": "blocked",
+      "protocol": "blackhole",
+      "settings": {}
     }
-  ],
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "type": "field",
-        "protocol": [
-          "bittorrent"
-        ],
-        "outboundTag": "blocked"
-      },
-      {
-        "type": "field",
-        "inboundTag": [
-          "ss1ws" //与inbounds中标签对应
-        ],
-        "outboundTag": "ss1redirect" //与outbounds中标签对应
-      }
-    ]
-  }
+  ]
 }
