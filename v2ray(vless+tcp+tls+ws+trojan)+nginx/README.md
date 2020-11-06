@@ -12,7 +12,7 @@ v2ray 前置（监听443端口），vless+tcp 以 http/1.1 代理科学上网，
 
 注意：
 
-1、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
+1、v2ray v4.31.0 版本及以后才支持 trojan 协议。 
 
 2、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程；而 v2ray 的 trojan+tcp 不支持端口或进程分离 h2 回落，故套娃回落 nginx 只能全部采用h1回落；因 vless+tcp 与 trojan+tcp 无 h2 连接，可能影响速度。
 
@@ -32,7 +32,7 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行端口分流（�
 
 注意：
 
-1、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
+1、v2ray v4.31.0 版本及以后才支持 trojan 协议。 
 
 2、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程；而 v2ray 的 trojan+tcp 不支持端口或进程分离 h2 回落，故回落 nginx 只能仅采用 h1 回落；因  trojan+tcp 无 h2 连接，可能影响速度。
 
@@ -50,7 +50,7 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行端口分流（�
 
 注意：
 
-1、v2ray v4.31.0 版本及以后才支持 trojan 及完整回落。
+1、v2ray v4.31.0 版本及以后才支持 trojan 协议。 
 
 2、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程。v2ray 的 trojan+tcp 不支持端口或进程分离 h2 回落，故只能采用 h1 回落；因 trojan+tcp 无 h2 连接，可能影响速度。
 
