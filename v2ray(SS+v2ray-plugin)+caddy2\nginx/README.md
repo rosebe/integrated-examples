@@ -8,8 +8,8 @@
 
 注意：
 
-1、v2ray_domainsocket_config.json 效率高，但旧版 windows 服务器不支持；而 v2ray_redirect_config.json 效率稍低，可适用全部服务器。
+1、本配置 shadowsocks+v2ray-plugin 插件的 WebSocket 应用不等于 v2ray 的 shadowsocks+WebSocket 应用，两者不兼容，它仅兼容 shadowsocks 客户端的 WebSocket 应用。
 
-2、若系统版本过低，其对应发行版仓库自带 nginx 预编译程序包可能不支持 tls1.3；如需要支持 tls1.3，必须先升级 OpenSSl 版本大于 1.1.1，再进行 nginx 源代码编译和安装。
+2、v2ray_domainsocket_config.json 效率高，但旧版 windows 服务器不支持；而 v2ray_redirect_config.json 效率稍低，可适用全部服务器。
 
-3、本配置 shadowsocks+v2ray-plugin 插件的 WebSocket 应用不等于 v2ray 的 shadowsocks+WebSocket 应用，两者不兼容，它仅兼容 shadowsocks 客户端（WebSocket应用）。
+3、若系统版本过低，其对应发行版仓库自带 nginx 预编译程序包可能不支持 tls1.3；如需要支持 tls1.3，必须先升级 OpenSSl 版本大于 1.1.1，再进行 nginx 源代码编译和安装。
