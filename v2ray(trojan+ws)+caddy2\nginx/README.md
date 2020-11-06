@@ -8,6 +8,6 @@
 
 1、v2ray v4.31.0 版本及以后才支持 trojan 协议。 
 
-2、此应用使用 trojan-go 客户端及 v2ray 官方客户端连接无问题，使用第三方的 v2ray 客户端基本不行。trojan-go安卓手机客户端可本人 github 中下载。
+2、此应用使用 trojan-go 客户端及 v2ray 官方客户端连接无问题，使用第三方的 v2ray 客户端基本不行。另 trojan-go安卓手机客户端可本人 github 中下载。
 
 3、若系统版本过低，其对应发行版仓库自带 nginx 预编译程序包可能不支持 tls1.3；如需要支持 tls1.3，必须先升级 OpenSSl 版本大于 1.1.1，再进行 nginx 源代码编译和安装。
