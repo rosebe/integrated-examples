@@ -51,11 +51,11 @@
 1、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。  
 2、complete表示包含v2ray的vless+tcp+tls、vless\vmess+ws+tls、SS+v2ray-plugin+tls、vless\vmess+kcp+seed的综合应用。  
 
-service  
-各程序service文件目录
-
 client  
-各客户端配置示例目录
+客户端配置示例目录，目录内包含对应服务端应用的客户端配置示例。
+
+service  
+程序service文件目录，目录内包含各个程序service配置示例。
 
 使用/贡献指南  
 1、若程序增加新功能，开始主要单一应用集成服务器端配置示例中添加；过一段时间稳定后才会全部配置示例中添加。如除trojan+tcp套娃外，vless+tcp及trojan+tcp的xtls已全部加上。  
