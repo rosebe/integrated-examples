@@ -19,13 +19,13 @@
         "decryption": "none",
         "fallbacks": [
           {
-            "dest": 80, //h2与http/1.1回落共用此端口，回落到web服务器。需web服务器同一端口，同时支持h2c server与http/1.1 server应用。
-            "xver": 1 //开启PROXY protocol发送，发送请求的真实来源 IP 和端口给 caddy2。1或2表示 PROXY protocol 插件版本。
-          },
-          {
             "path": "/HALdGZ9k", //通过路径分流出ws
             "dest": 2001, //分流后转发到2001端口
             "xver": 1 //开启PROXY protocol发送，发送请求的真实来源 IP 和端口给如下 ws 应用。1或2表示 PROXY protocol 插件版本。
+          },
+          {
+            "dest": 80, //h2与http/1.1回落共用此端口，回落到web服务器。需web服务器同一端口，同时支持h2c server与http/1.1 server应用。
+            "xver": 1 //开启PROXY protocol发送，发送请求的真实来源 IP 和端口给 caddy2。1或2表示 PROXY protocol 插件版本。
           }
         ]
       },
