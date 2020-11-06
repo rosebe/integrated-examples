@@ -6,7 +6,7 @@
 
 注意：
 
-1、v2ray v4.31.0 版本及以后才支持 trojan 。
+1、v2ray v4.31.0 版本及以后才支持 trojan 协议。 
 
 2、此应用目前仅 trojan-go 类客户端及 v2ray 官方客户端才支持连接，v2ray 第三方客户端基本不支持。另 trojan-go 安卓手机客户端可本人 github 中下载。
 
