@@ -125,7 +125,7 @@
           ]
         },
         "tcpSettings": {
-          "acceptProxyProtocol": true //开启PROXY protocol接收，接收nginx SNI分流前请求的真实来源 IP 和端口。
+          "acceptProxyProtocol": true //开启PROXY protocol接收，接收nginx SNI分流前请求的真实来源IP和端口。
         }
       },
       "sniffing": {
