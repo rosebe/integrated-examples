@@ -20,12 +20,12 @@
         "fallbacks": [
           {
             "dest": 2006, //回落给trojan处理。
-            "xver": 2 //开启PROXY protocol发送，发送请求的真实来源 IP 和端口给如下 trojan 应用。1或2表示PROXY protocol插件版本。多级传递，建议配置2。
+            "xver": 2 //开启PROXY protocol发送，发送请求的真实来源IP和端口给如下trojan应用。1或2表示PROXY protocol插件版本。多级传递，建议配置2。
           },
           {
             "path": "/HALdGZ9k", //通过路径分流出ws
             "dest": 2001, //分流后转发到2001端口
-            "xver": 1 //开启PROXY protocol发送，发送请求的真实来源 IP 和端口给如下 ws 应用。1或2表示 PROXY protocol 插件版本。
+            "xver": 1 //开启PROXY protocol发送，发送请求的真实来源IP和端口给如下ws应用。1或2表示PROXY protocol插件版本。
           }
         ]
       },
@@ -70,7 +70,7 @@
         "network": "ws",
         "security": "none",
         "wsSettings": {
-          "acceptProxyProtocol": true, //开启 PROXY protocol 接收，接收vless+tcp 分流前请求的真实来源 IP 和端口。
+          "acceptProxyProtocol": true, //开启PROXY protocol接收，接收vless+tcp分流前请求的真实来源IP和端口。
           "path": "/HALdGZ9k" //修改成自己的path
         }
       },
@@ -104,7 +104,7 @@
         "network": "tcp",
         "security": "none",
         "tcpSettings": {
-          "acceptProxyProtocol": true //开启 PROXY protocol 接收，接收vless+tcp 回落前请求的真实来源 IP 和端口。
+          "acceptProxyProtocol": true //开启PROXY protocol接收，接收vless+tcp回落前请求的真实来源IP和端口。
         }
       },
       "sniffing": {
