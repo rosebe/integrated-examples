@@ -8,7 +8,7 @@
 
 注意：
 
-1、本配置 shadowsocks+v2ray-plugin 插件的 WebSocket 应用不等于 v2ray 的 shadowsocks+WebSocket 应用，两者不兼容，它仅兼容 shadowsocks 客户端的 WebSocket 应用。
+1、本配置 shadowsocks+v2ray-plugin 插件的 WebSocket 应用不等于 v2ray 的 shadowsocks+WebSocket 应用，两者不兼容；它仅兼容 shadowsocks 客户端的 WebSocket 应用，即只能使用 shadowsocks 客户端配合 v2ray-plugin 插件使用。
 
 2、v2ray_domainsocket_config.json 效率高，但旧版 windows 服务器不支持；而 v2ray_redirect_config.json 效率稍低，可适用全部服务器。
 
