@@ -12,7 +12,7 @@ v2ray 前置（监听443端口），trojan+tcp 以 http/1.1 或 http/2 自适应
 
 1、v2ray v4.31.0 版本及以后才支持 trojan 协议。
 
-2、trojan+ws+tls应用使用 trojan-go 客户端及 v2ray 官方客户端连接无问题，使用第三方的 v2ray 客户端基本不行。trojan-go安卓手机客户端可本人 github 中下载。
+2、trojan+ws+tls 应用使用 trojan-go 客户端及 v2ray 官方客户端连接无问题，使用第三方的 v2ray 客户端基本不行。另 trojan-go 安卓手机客户端可本人 github 中下载。
 
 3、caddy2 目前只能 json 配置才能开启 h2c server，故要实现 h2 回落就不能采用 Caddyfile 配置；另外caddy2 版本不能低于 v2.1.0 ，否则不支持 h2c server。
 
