@@ -19,7 +19,7 @@
         "fallbacks": [
           {
             "dest": 80, //http/1.1回落端口
-            "xver": 1 //nginx 支持 PROXY protocol，开启传递请求的真实来源 IP 和端口给 nginx。
+            "xver": 1 //开启PROXY protocol支持，传递请求的真实来源IP和端口给nginx。1或2表示PROXY protocol插件版本。。
           }
         ]
       },
