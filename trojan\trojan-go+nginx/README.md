@@ -1,6 +1,6 @@
 介绍：
 
-本配置是 trojan 或 trojan-go 应用，非trojan 或 trojan-go 的 https 回落给 nginx。
+本配置是 trojan 或 trojan-go 应用。trojan 以 http/1.1 或 http/2 自适应代理科学上网，trojan-go 以 http/1.1 或 http/2 二选一代理科学上网；非trojan 或 trojan-go 的 https 回落给 nginx。
 
 原理图： trojan\trojan-go client <------ https ------> trojan\trojan-go server <- web回落 -> nginx
 
