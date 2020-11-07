@@ -186,7 +186,7 @@
         ],
         "fallbacks": [
           {
-            "dest": 80,
+            "dest": 88,
             "xver": 2
           }
         ]
@@ -196,7 +196,7 @@
         "security": "xtls",
         "xtlsSettings": {
           "alpn":[
-            "http/1.1"
+            "h2"
           ],
           "certificates": [
             {
