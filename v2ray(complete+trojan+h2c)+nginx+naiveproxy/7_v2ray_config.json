@@ -186,7 +186,7 @@
         ],
         "fallbacks": [
           {
-            "dest": "/dev/shm/h1.sock",
+            "dest": "/dev/shm/h2c.sock",
             "xver": 2
           }
         ]
@@ -196,7 +196,7 @@
         "security": "xtls",
         "xtlsSettings": {
           "alpn":[
-            "http/1.1"
+            "h2"
           ],
           "certificates": [
             {
