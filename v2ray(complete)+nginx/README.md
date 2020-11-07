@@ -10,7 +10,7 @@
 
 4、vmess+kcp+seed（可改成vless+kcp+seed，或添加它。）
 
-v2ray tcp 类应用直连，且以 http/1.1 或 http/2 自适应代理科学上网；v2ray ws（WebSocket）类应用分流一次。
+v2ray tcp 类应用直连，且以 http/2 或 http/1.1 自适应代理科学上网；v2ray ws（WebSocket）类应用分流一次。
 
 注意：
 
