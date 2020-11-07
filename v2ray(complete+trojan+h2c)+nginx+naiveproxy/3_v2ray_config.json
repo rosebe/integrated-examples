@@ -19,7 +19,12 @@
         "decryption": "none",
         "fallbacks": [
           {
+            "alpn": "h2",
             "dest": 2006,
+            "xver": 2
+          },
+          {
+            "dest": "/dev/shm/h1.sock",
             "xver": 2
           },
           {
@@ -39,6 +44,7 @@
         "security": "xtls",
         "xtlsSettings": {
           "alpn":[
+            "h2",
             "http/1.1"
           ],
           "certificates": [
@@ -175,7 +181,7 @@
         ],
         "fallbacks": [
           {
-            "dest": "/dev/shm/h1.sock",
+            "dest": "/dev/shm/h2c.sock",
             "xver": 2
           }
         ]
