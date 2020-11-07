@@ -1,6 +1,6 @@
 介绍：
 
-v2ray 前置（监听443端口），trojan+tcp 以 http/1.1 代理科学上网，非 v2ray\trojan 的 web 回落给 nginx。
+v2ray 前置（监听443端口），trojan+tcp 以 http/2 代理科学上网，非 v2ray\trojan 的 web 回落给 nginx。
 
 原理图： v2ray\trojan client <------ tcp+tls ------> v2ray server <- web回落 -> nginx
 
