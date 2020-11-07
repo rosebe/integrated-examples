@@ -39,7 +39,7 @@
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(complete-tcp)+nginx （nginx前置，反向代理ws的综合应用。之前推荐部署。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-1）、v2ray(vless+tcp+tls+ws)+nginx （目前推荐部署，同时支持tcp与ws，回落给nginx。）  
+1）、v2ray(vless+tcp+tls+ws)+nginx （目前推荐部署，同时支持vless+tcp与ws类应用，回落给nginx。）  
 2）、v2ray(complete)+nginx （v2ray综合应用。）  
 3）、v2ray(complete)+nginx+trojan （上一项应用+trojan应用及共用端口。）  
 4）、v2ray(complete+h2c)+nginx+trojan+naiveproxy （上一项应用+naiveproxy+反向代理h2应用及共用端口。）  
