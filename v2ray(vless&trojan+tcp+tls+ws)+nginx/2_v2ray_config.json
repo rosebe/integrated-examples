@@ -25,7 +25,7 @@
           },
           {
             "dest": 80, //http/1.1回落端口
-            "xver": 2 //开启PROXY protocol发送，发送请求的真实来源IP和端口给nginx。1或2表示PROXY protocol插件版本。
+            "xver": 2 //开启PROXY protocol发送，发送请求的真实来源IP和端口给nginx。1或2表示PROXY protocol插件版本。与上一致，此处建议配置2。
           },
           {
             "path": "/HALdGZ9k", //通过路径分流出ws
