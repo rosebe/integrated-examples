@@ -16,9 +16,7 @@
 
 5、专用的 dokodemo-door 协议的入口，tag 为 api
 
-6、routing 里面有 inboundTag:api -> outboundTag:api 的规则
-
-注意： 统计的 email/tag 是当前的 V2Ray 进程实例的数据，比如在服务器上统计，客户端写的 email 对服务器没有意义；如果在客户端统计，输出的就是客户端本身的数据。  
+6、routing 里面有 inboundTag:api -> outboundTag:api 的规则 
 
 三、流量信息的处理
 
