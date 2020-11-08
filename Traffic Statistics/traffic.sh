@@ -1,7 +1,7 @@
 #!/bin/bash
 
-_APISERVER=127.0.0.1:10085 //此端口必须与v2ray config.json中对应端口匹配。
-_V2CTL=/usr/local/bin/v2ray/v2ctl //此路径必须与v2ray的v2ctl实际路径匹配。
+_APISERVER=127.0.0.1:10085 //此端口必须与v2ray config.json中对应端口匹配
+_V2CTL=/usr/local/bin/v2ray/v2ctl //此路径必须与v2ray的v2ctl实际路径匹配
 
 apidata () {
     local ARGS=
