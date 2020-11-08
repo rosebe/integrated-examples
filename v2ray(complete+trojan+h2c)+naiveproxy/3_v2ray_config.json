@@ -255,13 +255,6 @@
     "rules": [
       {
         "type": "field",
-        "inboundTag": [
-          "ss1ws"
-        ],
-        "outboundTag": "ss1mux"
-      },
-      {
-        "type": "field",
         "domain": [
           "zv.xx.yy"
         ],
@@ -283,6 +276,13 @@
       },
       {
         "type": "field",
+        "inboundTag": [
+          "ss1ws"
+        ],
+        "outboundTag": "ss1mux"
+      },
+      {
+        "type": "field",
         "protocol": [
           "bittorrent"
         ],
@@ -294,17 +294,6 @@
     {
       "protocol": "freedom",
       "settings": {}
-    },
-    {
-      "tag": "ss1mux",
-      "protocol": "freedom",
-      "streamSettings": {
-        "network": "domainsocket",
-        "dsSettings": {
-          "path": "ss1",
-          "abstract": true
-        }
-      }
     },
     {
       "tag": "zv",
@@ -325,6 +314,17 @@
       "protocol": "freedom",
       "settings": {
         "redirect": "127.0.0.1:8443"
+      }
+    },
+    {
+      "tag": "ss1mux",
+      "protocol": "freedom",
+      "streamSettings": {
+        "network": "domainsocket",
+        "dsSettings": {
+          "path": "ss1",
+          "abstract": true
+        }
       }
     },
     {
