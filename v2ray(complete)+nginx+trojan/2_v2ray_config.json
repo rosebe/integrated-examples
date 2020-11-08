@@ -186,13 +186,6 @@
     "rules": [
       {
         "type": "field",
-        "inboundTag": [
-          "ss1ws"
-        ],
-        "outboundTag": "ss1mux"
-      },
-      {
-        "type": "field",
         "domain": [
           "zv.xx.yy"
         ],
@@ -204,6 +197,13 @@
           "zt.xx.yy"
         ],
         "outboundTag": "zt"
+      },
+      {
+        "type": "field",
+        "inboundTag": [
+          "ss1ws"
+        ],
+        "outboundTag": "ss1mux"
       },
       {
         "type": "field",
@@ -220,17 +220,6 @@
       "settings": {}
     },
     {
-      "tag": "ss1mux",
-      "protocol": "freedom",
-      "streamSettings": {
-        "network": "domainsocket",
-        "dsSettings": {
-          "path": "ss1",
-          "abstract": true
-        }
-      }
-    },
-    {
       "tag": "zv",
       "protocol": "freedom",
       "settings": {
@@ -242,6 +231,17 @@
       "protocol": "freedom",
       "settings": {
         "redirect": "127.0.0.1:2083"
+      }
+    },
+    {
+      "tag": "ss1mux",
+      "protocol": "freedom",
+      "streamSettings": {
+        "network": "domainsocket",
+        "dsSettings": {
+          "path": "ss1",
+          "abstract": true
+        }
       }
     },
     {
