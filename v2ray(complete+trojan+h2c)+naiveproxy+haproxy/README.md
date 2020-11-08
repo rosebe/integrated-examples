@@ -1,6 +1,6 @@
 介绍：
 
-此配置包括 v2ray、naiveproxy(caddy2) 应用。用 haproxy 或 nginx 为 vless+tcp、trojan+tcp、naiveproxy(caddy2) 进行 SNI 分流（四层转发），实现共用443端口。另 caddy2 同时为 vless+tcp 与 trojan+tcp 提供回落服务，为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray包括应用如下：
+此配置包括 v2ray、naiveproxy(caddy2) 应用。用 haproxy 或 nginx 为 vless+tcp、trojan+tcp、naiveproxy(caddy2) 进行 SNI 分流（四层转发），实现共用443端口。另 caddy2 同时为 vless+tcp 与 trojan+tcp 提供回落服务，为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -20,7 +20,7 @@ v2ray vless+tcp 类应用直连，v2ray ws（WebSocket）类应用分流一次�
 
 1、v2ray v4.31.0 版本及以后才支持 trojan 协议。 
 
-2、caddy2 目前只能 json 配置才能开启 h2c server，故要实现 h2 回落就不能采用 Caddyfile 配置；另外caddy2 版本不能低于 v2.1.0 ，否则不支持 h2c server。
+2、caddy2 目前只能 json 配置才能开启 h2c server，故要实现 h2 回落就不能采用 Caddyfile 配置；另外 caddy2 版本不能低于 v2.1.0 ，否则不支持 h2c server。
 
 3、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
 
