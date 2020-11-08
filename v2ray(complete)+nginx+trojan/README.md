@@ -17,7 +17,7 @@
 
 2、nginx 不支持 h2c proxy，故 nginx 不能实现 v2ray 的 h2（http/2）反向代理。
 
-3、nginx 预编译程序包不带支持SNI分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
+3、nginx 预编译程序包一般不带支持 SNI 分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
 
 4、trojan（trojan-go）不支持 PROXY protocol，同时 nginx 也不支持针对trojan（trojan-go）端口关闭 PROXY protocol支持，故无法统一启用此项应用。
 
