@@ -8,21 +8,7 @@
 
 2、用户的统计（推荐），依据 email 区分用户流量。socks, shadowsocks, http 等其他协议内的用户不支持被统计。  
 
-三、要实现流量统计功能，配置内需要确保存在以下配置：
-
-1、"stats":{} 对象的存在
-
-2、"api" 配置对象里面有 StatsService
-
-3、"policy" 中的统计开关为 true，除了各个用户的统计，还有全局统计
-
-4、clients 里面要有 email
-
-5、专用的 dokodemo-door 协议的入口，tag 为 api
-
-6、routing 里面有 inboundTag:api -> outboundTag:api 的规则 
-
-四、流量信息的处理
+三、流量信息的处理
 
 1、把 traffic.sh 脚本上传到服务器 root 目录，并授予执行权限。另外注意调整修改 _APISERVER 一行的连接具体的端口参数。
 
