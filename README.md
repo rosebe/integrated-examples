@@ -24,7 +24,7 @@
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(complete+h2c-tcp)+caddy2 （caddy2前置，反向代理WebSocket与http/2的综合应用。之前推荐部署。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-1）、v2ray(vless+tcp+tls+ws)+caddy2 （目前推荐部署，同时支持vless+tcp与WebSocket类应用，回落给caddy2。）  
+1）、v2ray(vless+tcp&ws+tls)+caddy2 （目前推荐部署，同时支持vless+tcp与WebSocket类应用，回落给caddy2。）  
 2）、v2ray(complete+h2c)+caddy2 （v2ray综合应用+反向代理http/2应用。）  
 3）、v2ray(complete+h2c)+naiveproxy （上一项应用+naiveproxy应用。）  
 4）、v2ray(complete+h2c)+naiveproxy+trojan （上一项应用+trojan应用及共用端口。）  
@@ -39,7 +39,7 @@
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(complete-tcp)+nginx （nginx前置，反向代理WebSocket的综合应用。之前推荐部署。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-1）、v2ray(vless+tcp+tls+ws)+nginx （目前推荐部署，同时支持vless+tcp与WebSocket类应用，回落给nginx。）  
+1）、v2ray(vless+tcp&ws+tls)+nginx （目前推荐部署，同时支持vless+tcp与WebSocket类应用，回落给nginx。）  
 2）、v2ray(complete)+nginx （v2ray综合应用。）  
 3）、v2ray(complete)+nginx+trojan （上一项应用+trojan应用及共用端口。）  
 4）、v2ray(complete+h2c)+nginx+trojan+naiveproxy （上一项应用+naiveproxy+反向代理http/2应用及共用端口。）  
