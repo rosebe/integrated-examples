@@ -41,7 +41,7 @@
 //如下配置插入"inbounds"末尾。
     {
       "listen": "127.0.0.1",
-      "port": 10085,
+      "port": 10085, //此端口与traffic.sh中端口对应
       "protocol": "dokodemo-door",
       "settings": {
         "address": "127.0.0.1"
