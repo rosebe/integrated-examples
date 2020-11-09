@@ -2,7 +2,7 @@
   "log": {
     "error": "/var/log/v2ray/error.log",
     "access": "/var/log/v2ray/access.log",
-    "loglevel": "info"
+    "loglevel": "warning"
   },
   "inbounds": [
     {
@@ -12,19 +12,21 @@
         "clients": [
           {
             "password":"diy443", //修改成自己密码
+            "flow": "xtls-rprx-direct", //启用xtls，必须增加此条参数，参数可xtls-rprx-origin或xtls-rprx-direct可选；否则删除。另支持的v2ray版本应不小于v4.31.3。
             "email": "443@gmail.com"
           }
         ],
         "fallbacks": [
           {
-            "dest": 80, //h2与http/1.1共用此端口回落到web服务器,即web服务器同时支持h2c server与http/1.1 server应用。
+            "dest": 80, //h2与http/1.1回落共用此端口，回落到web服务器。需web服务器同一端口，同时支持h2c server与http/1.1 server应用。
             "xver": 1 //caddy2用支持PROXY protocol插件的定制版，可设置1或2。1或2表示PROXY protocol插件版本。
           }
         ]
       },
       "streamSettings": {
-        "security": "tls",
-        "tlsSettings": {
+        "network": "tcp",
+        "security": "xtls", //如启用xtls，tls必须改成xtls。
+        "xtlsSettings": { //如启用xtls，tlsSettings必须改成xtlsSettings。
           "alpn":[
             "h2", //启用h2连接，web回落也需配置支持h2回落；否则不一致（裸奔），容易被墙探测出，从而被封。
             "http/1.1" //启用http/1.1连接，web回落也需配置支持http/1.1回落；否则不一致（裸奔），容易被墙探测出，从而被封。
@@ -35,8 +37,7 @@
               "keyFile": "/etc/ssl/tls/xx.yy.key" //换成你的私钥，绝对路径。
             }
           ]
-        },
-        "network": "tcp"
+        }
       },
       "sniffing": {
         "enabled": true,
@@ -47,20 +48,8 @@
       }
     }
   ],
-  "outbounds": [
-    {
-      "tag": "direct",
-      "protocol": "freedom",
-      "settings": {}
-    },
-    {
-      "tag": "blocked",
-      "protocol": "blackhole",
-      "settings": {}
-    }
-  ],
   "routing": {
-    "domainStrategy": "AsIs",
+    "domainStrategy": "IPIfNonMatch",
     "rules": [
       {
         "type": "field",
@@ -70,5 +59,16 @@
         "outboundTag": "blocked"
       }
     ]
-  }
+  },
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "tag": "blocked",
+      "protocol": "blackhole",
+      "settings": {}
+    }
+  ]
 }

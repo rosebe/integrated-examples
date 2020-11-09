@@ -2,7 +2,7 @@
   "log": {
     "error": "/var/log/v2ray/error.log",
     "access": "/var/log/v2ray/access.log",
-    "loglevel": "info"
+    "loglevel": "warning"
   },
   "inbounds": [
     {
@@ -11,19 +11,20 @@
       "settings": {
         "clients": [
           {
-            "email": "443@gmail.com",
-            "id": "888fd3ac-dd53-11e9-b357-5600024c1d6a"
+            "id": "888fd3ac-dd53-11e9-b357-5600024c1d6a",
+            "flow": "xtls-rprx-direct",
+            "email": "443@gmail.com"
           }
         ],
         "decryption": "none",
         "fallbacks": [
           {
-            "dest": 80,
+            "alpn": "h2",
+            "dest": 88,
             "xver": 0
           },
           {
-            "alpn": "h2",
-            "dest": 88,
+            "dest": 80,
             "xver": 0
           },
           {
@@ -39,8 +40,9 @@
         ]
       },
       "streamSettings": {
-        "security": "tls",
-        "tlsSettings": {
+        "network": "tcp",
+        "security": "xtls",
+        "xtlsSettings": {
           "alpn":[
             "h2",
             "http/1.1"
@@ -51,8 +53,7 @@
               "keyFile": "/etc/ssl/tls/xx.yy.key"
             }
           ]
-        },
-        "network": "tcp"
+        }
       },
       "sniffing": {
         "enabled": true,
@@ -63,8 +64,8 @@
       }
     },
     {
-      "port": 2001,
       "listen": "127.0.0.1",
+      "port": 2001,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -76,8 +77,8 @@
         "decryption": "none"
       },
       "streamSettings": {
-        "security": "none",
         "network": "ws",
+        "security": "none",
         "wsSettings": {
           "path": "/HALdGZ9k"
         }
@@ -91,9 +92,8 @@
       }
     },
     {
-      "tag": "ss1ws",
-      "port": "2004",
       "listen": "127.0.0.1",
+      "port": "2004",
       "protocol": "dokodemo-door",
       "settings": {
         "address": "v1.mux.cool",
@@ -101,11 +101,19 @@
         "followRedirect": false
       },
       "streamSettings": {
-        "security": "none",
         "network": "ws",
+        "security": "none",
         "wsSettings": {
           "path": "/SS1v2ray"
         }
+      },
+      "tag": "ss1ws",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
       }
     },
     {
@@ -119,18 +127,12 @@
         "network": "tcp,udp"
       },
       "streamSettings": {
-        "security": "none",
         "network": "domainsocket",
+        "security": "none",
         "dsSettings": {
-          "path": "/var/run/ss1-loop.sock"
+          "path": "ss1",
+          "abstract": true
         }
-      },
-      "sniffing": {
-        "enabled": true,
-        "destOverride": [
-          "http",
-          "tls"
-        ]
       }
     },
     {
@@ -141,14 +143,14 @@
           {
             "email": "2053@gmail.com",
             "id": "0a652466-dd56-11e9-aa37-5600024c1d6a",
-            "alterId": 0 //为0启用VMessAEAD，大于0关闭VMessAEAD。
+            "alterId": 0
           }
         ],
         "disableInsecureEncryption": true
       },
       "streamSettings": {
-        "security": "none",
         "network": "kcp",
+        "security": "none",
         "kcpSettings": {
           "congestion": true,
           "seed": "60VoqhfjP79nBQyU"
@@ -163,30 +165,8 @@
       }
     }
   ],
-  "outbounds": [
-    {
-      "tag": "direct",
-      "protocol": "freedom",
-      "settings": {}
-    },
-    {
-      "tag": "ss1mux",
-      "protocol": "freedom",
-      "streamSettings": {
-        "network": "domainsocket",
-        "dsSettings": {
-          "path": "/var/run/ss1-loop.sock"
-        }
-      }
-    },
-    {
-      "tag": "blocked",
-      "protocol": "blackhole",
-      "settings": {}
-    }
-  ],
   "routing": {
-    "domainStrategy": "AsIs",
+    "domainStrategy": "IPIfNonMatch",
     "rules": [
       {
         "type": "field",
@@ -203,5 +183,27 @@
         "outboundTag": "blocked"
       }
     ]
-  }
+  },
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "tag": "ss1mux",
+      "protocol": "freedom",
+      "streamSettings": {
+        "network": "domainsocket",
+        "dsSettings": {
+          "path": "ss1",
+          "abstract": true
+        }
+      }
+    },
+    {
+      "tag": "blocked",
+      "protocol": "blackhole",
+      "settings": {}
+    }
+  ]
 }

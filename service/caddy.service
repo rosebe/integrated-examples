@@ -5,8 +5,8 @@ After=network.targett
 
 [Service]
 User=root
-ExecStart=/usr/local/bin/caddy/caddy run --environ --config /usr/local/etc/caddy/caddy2.json
-ExecReload=/usr/local/bin/caddy/caddy reload --config /usr/local/etc/caddy/caddy2.json
+ExecStart=/usr/local/bin/caddy/caddy run --environ --config /usr/local/etc/caddy/caddy.json //json配置调用。如是Caddyfile配置，直接修改caddy.json为Caddyfile即可。
+ExecReload=/usr/local/bin/caddy/caddy reload --config /usr/local/etc/caddy/caddy.json //json配置调用。如是Caddyfile配置，直接修改caddy.json为Caddyfile即可。
 TimeoutStopSec=5s
 LimitNOFILE=1048576
 LimitNPROC=512
