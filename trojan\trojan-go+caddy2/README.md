@@ -10,4 +10,4 @@
 
 2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
 
-3、trojan-go使用go实现了兼容trojan。trojan-go支持使用多路复用提升并发性能，使用路由模块实现国内直连；支持CDN流量中转(基于WebSocket over TLS/SSL)；支持使用AEAD对trojan流量二次加密(基于Shadowsocks AEAD)；支持可插拔的传输层插件，允许替换TLS，使用其他加密隧道传输trojan协议流量。
+3、trojan-go使用go实现了兼容trojan，还有自己的特色。trojan-go支持使用多路复用提升并发性能，使用路由模块实现国内直连；支持CDN流量中转(基于WebSocket over TLS/SSL)；支持使用AEAD对trojan流量二次加密(基于Shadowsocks AEAD)；支持可插拔的传输层插件，允许替换TLS，使用其他加密隧道传输trojan协议流量。
