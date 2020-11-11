@@ -20,11 +20,11 @@
         "fallbacks": [
           {
             "alpn": "h2", //h2回落匹配 
-            "dest": 88, //h2回落端口
+            "dest": 82, //h2回落端口
             "xver": 1 //开启PROXY protocol发送，发送请求的真实来源IP和端口给nginx。1或2表示PROXY protocol插件版本。
           },
           {
-            "dest": 80, //http/1.1回落端口
+            "dest": 81, //http/1.1回落端口
             "xver": 1 //开启PROXY protocol发送，发送请求的真实来源IP和端口给nginx。1或2表示PROXY protocol插件版本。
           },
           {
