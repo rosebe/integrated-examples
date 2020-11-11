@@ -3,7 +3,7 @@
   "local_addr": "0.0.0.0",
   "local_port": 443, //监听端口
   "remote_addr": "127.0.0.1",
-  "remote_port": 88, //h2回落端口
+  "remote_port": 82, //h2回落端口
   "log_level": 1,
   "log_file": "/var/log/trojan-go/error.log", //修改成自己配置的路径，注意给够权限。
   "password": [
