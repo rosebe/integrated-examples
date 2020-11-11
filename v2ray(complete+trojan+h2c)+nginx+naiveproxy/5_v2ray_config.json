@@ -21,11 +21,11 @@
         "fallbacks": [
           {
             "alpn": "h2",
-            "dest": 88,
+            "dest": 82,
             "xver": 0
           },
           {
-            "dest": 80,
+            "dest": 81,
             "xver": 0
           },
           {
@@ -181,7 +181,7 @@
         ],
         "fallbacks": [
           {
-            "dest": 88,
+            "dest": 82,
             "xver": 0
           }
         ]
