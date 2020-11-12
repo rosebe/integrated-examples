@@ -40,7 +40,7 @@
               "handler": "static_response",
               "status_code": "301", 
               "headers": {
-              	"Location": ["https://{http.request.host}{http.request.uri}"] #http自动跳转https,让网站看起来更真实。
+              	"Location": ["https://{http.request.host}{http.request.uri}"] //http自动跳转https,让网站看起来更真实。
               }
             }],
             "terminal": true
