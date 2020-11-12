@@ -20,7 +20,7 @@
     "http": {
       "servers": {
         "srv0": {
-          "listen": ["127.0.0.1:80"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。
+          "listen": ["127.0.0.1:88"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。
           "routes": [{
             "handle": [{
               "handler": "file_server",
@@ -29,7 +29,7 @@
             "terminal": true
           }],
           "automatic_https": {
-          	"disable": true //禁用自动HTTPS
+          	"disable": true //禁用自动https
           },
           "allow_h2c": true //开启h2c server支持。
         },
@@ -40,13 +40,13 @@
               "handler": "static_response",
               "status_code": "301", 
               "headers": {
-              	"Location": ["https://xx.yy{uri}"] #改成自己域名。HTTP自动跳转HTTPS,让网站看起来更真实。
+              	"Location": ["https://{http.request.host}{http.request.uri}"] //http自动跳转https,让网站看起来更真实。
               }
             }],
             "terminal": true
           }],
           "automatic_https": {
-            "disable": true //禁用自动HTTPS
+            "disable": true //禁用自动https
           }
         }
       }
