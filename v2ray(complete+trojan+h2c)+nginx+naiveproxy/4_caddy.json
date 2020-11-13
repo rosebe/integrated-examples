@@ -74,15 +74,8 @@
             "alpn": ["h2","http/1.1"],
             "default_sni": "xx.yy" //修改成自己的域名
           }],
-          "errors": {
-            "routes": [{
-              "handle": [{
-                "handler": "error",
-                "error": "warning",
-                "status_code": "404"
-              }],
-              "terminal": true
-            }]
+          "automatic_https": {
+            "disable_redirects": true //禁用自动http->https重定向
           }
         }
       }
