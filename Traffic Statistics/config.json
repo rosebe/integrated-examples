@@ -50,7 +50,7 @@
     }
      .........<省略>........ 
 
-//如下配置插入routing首位
+//如下配置插入routing首位（如有v2ray SNI域名配置，插入它们之后。）
       {
         "type": "field",
         "inboundTag": [
