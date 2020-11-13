@@ -22,14 +22,14 @@
     },
     {
       "listen": "127.0.0.1",
-      "port": 8443,
+      "port": 7443,
       "protocol": "vless",
       "settings": {
         "clients": [
           {
             "id": "888fd3ac-dd53-11e9-b357-5600024c1d6a",
             "flow": "xtls-rprx-direct",
-            "email": "8443@gmail.com"
+            "email": "7443@gmail.com"
           }
         ],
         "decryption": "none",
@@ -234,14 +234,14 @@
       "tag": "zv",
       "protocol": "freedom",
       "settings": {
-        "redirect": "127.0.0.1:8443"
+        "redirect": "127.0.0.1:7443"
       }
     },
     {
       "tag": "zt",
       "protocol": "freedom",
       "settings": {
-        "redirect": "127.0.0.1:2083"
+        "redirect": "127.0.0.1:8443"
       }
     },
     {
