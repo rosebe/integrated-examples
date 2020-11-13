@@ -6,8 +6,8 @@
   },
   "inbounds": [
     {
-      "port": 7443,
       "listen": "127.0.0.1",      
+      "port": 7443,
       "protocol": "vless",
       "settings": {
         "clients": [
