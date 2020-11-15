@@ -1,0 +1,26 @@
+{
+.........<省略>........
+//在inbounds中为每个端口添加如下参数（如此端口禁用BT）
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      }
+.........<省略>........
+//如下配置插入routing末尾
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "blocked"
+      }
+.........<省略>........
+//如下配置插入outbounds末尾
+    {
+      "tag": "blocked",
+      "protocol": "blackhole",
+      "settings": {}
+    }
