@@ -58,7 +58,13 @@ client
 service  
 程序service文件目录，目录内包含各个程序service配置示例。
 
-Traffic Statistics  
+v2ray(Restricting BitTorrent)  
+禁用BT配置方法
+
+v2ray(SNI shunt)  
+v2ray SNI分流配置方法
+
+v2ray(traffic statistics)  
 添加流量统计配置方法。
 
 使用/贡献指南  
