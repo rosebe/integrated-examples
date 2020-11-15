@@ -10,6 +10,6 @@
 
 三、流量信息的处理
 
-1、把 traffic.sh 脚本上传到服务器 root 目录，并授予执行权限。
+1、把 traffic.sh 脚本上传到服务器 root 目录，并授予执行权限（chmod +x traffic.sh）。
 
 2、执行 ./traffic.sh 即可查看流量统计。
