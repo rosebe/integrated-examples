@@ -1,1 +1,1 @@
-v2ray SNI 分流配置
+v2ray SNI 分流配置方法
