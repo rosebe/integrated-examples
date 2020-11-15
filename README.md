@@ -59,13 +59,13 @@ service
 程序service文件目录，目录内包含各个程序service配置示例。
 
 v2ray(Restricting BitTorrent)  
-禁用BT配置方法
+v2ray禁用BT配置方法
 
 v2ray(SNI shunt)  
 v2ray SNI分流配置方法
 
 v2ray(traffic statistics)  
-添加流量统计配置方法。
+v2ray添加流量统计配置方法。
 
 使用/贡献指南  
 1、若程序增加新功能，开始主要单一应用集成服务器端配置示例中添加；过一段时间稳定后才会全部配置示例中添加。如除trojan+tcp套娃外，vless+tcp及trojan+tcp的xtls已全部加上。  
