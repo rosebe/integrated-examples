@@ -1,5 +1,5 @@
 .........<省略>........
-//在inbounds中为每个端口添加如下参数（如此端口禁用BT）
+//在inbounds中为每个端口添加如下参数（如此端口需禁用BT）
       "sniffing": {
         "enabled": true,
         "destOverride": [
