@@ -1,5 +1,5 @@
 .........<省略>........
-//在inbounds中为每个端口添加如下参数（若此端口需禁用BT）
+//在inbounds中为每个端口添加如下参数（若此端口需禁用BT）（单项参数）
       "sniffing": {
         "enabled": true,
         "destOverride": [
@@ -8,7 +8,7 @@
         ]
       }
 .........<省略>........
-//如下配置插入routing末尾
+//如下配置插入routing末尾（全局参数）
       {
         "type": "field",
         "protocol": [
@@ -17,7 +17,7 @@
         "outboundTag": "blocked"
       }
 .........<省略>........
-//如下配置插入outbounds末尾
+//如下配置插入outbounds末尾（全局参数）
     {
       "tag": "blocked",
       "protocol": "blackhole",
