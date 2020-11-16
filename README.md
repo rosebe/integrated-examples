@@ -58,7 +58,7 @@ client
 service  
 程序service文件目录，目录内包含各个程序service配置示例。
 
-v2ray(Other configuration)  
+v2ray(other configuration)  
 v2ray其它特殊配置方法。
 
 使用/贡献指南  
