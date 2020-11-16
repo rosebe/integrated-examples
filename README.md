@@ -50,7 +50,7 @@
 注意：  
 1、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。  
 2、complete表示包含v2ray的vless+tcp+tls、vless\vmess+ws+tls、SS+v2ray-plugin+tls、vless\vmess+kcp+seed的综合应用。  
-3、所有配置文件都配置了禁用BT。如不需要，可以删除相关配置。
+3、所有配置文件都配置了禁用BT。如不需要，可以删除相关配置（参考v2ray(other configuration)中BT_config.json文件）。
 
 client  
 官方客户端文本配置示例目录，目录内包含对应服务端应用的官方客户端文本配置示例。（使用图形界面客户端仅参考即可）
