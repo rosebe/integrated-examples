@@ -2,8 +2,8 @@
 
 单一应用集成服务器端配置示例  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-1、v2ray(vless\vmess+kcp+seed) （若网络极度差，推荐部署。）  
-2、v2ray(vless\vmess+ws)+caddy2\nginx （WebSocket的caddy2或nginx反向代理；之前推荐部署。）  
+1、v2ray(vless\vmess+kcp+seed) （若网络极差，推荐部署。）  
+2、v2ray(vless\vmess+ws)+caddy2\nginx （WebSocket的caddy2或nginx反向代理，之前推荐部署。）  
 3、v2ray(vless\vmess+h2c)+caddy2 （http/2的caddy2反向代理。）  
 4、v2ray(SS+v2ray-plugin)+caddy2\nginx （兼容shadowsocks的WebSocket应用，caddy2或nginx反向代理。）  
 5、v2ray(vless+tcp+tls)+caddy2 （回落给caddy2，以http/2或http/1.1自适应代理。）  
@@ -22,7 +22,7 @@
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1、v2ray为主，caddy2为辅。  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-1）、v2ray(complete+h2c-tcp)+caddy2 （caddy2前置，反向代理WebSocket与http/2的综合应用。之前推荐部署。）  
+1）、v2ray(complete+h2c-tcp)+caddy2 （caddy2前置，反向代理WebSocket与http/2的综合应用；之前推荐部署。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(vless+tcp&ws+tls)+caddy2 （目前推荐部署，同时支持vless+tcp与WebSocket类应用，回落给caddy2。）  
 2）、v2ray(complete+h2c)+caddy2 （v2ray综合应用+反向代理http/2应用。）  
@@ -37,7 +37,7 @@
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 2、v2ray为主，nginx为辅。  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-1）、v2ray(complete-tcp)+nginx （nginx前置，反向代理WebSocket的综合应用。之前推荐部署。）  
+1）、v2ray(complete-tcp)+nginx （nginx前置，反向代理WebSocket的综合应用；之前推荐部署。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(vless+tcp&ws+tls)+nginx （目前推荐部署，同时支持vless+tcp与WebSocket类应用，回落给nginx。）  
 2）、v2ray(complete)+nginx （v2ray综合应用。）  
