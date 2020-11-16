@@ -16,7 +16,7 @@
       }
     },
 .........<省略>........
-//如下配置插入routing首位
+//如下配置插入routing首位（如下是两个域名示例，若多个就增加相关部分即可。）
       {
         "type": "field",
         "domain": [
@@ -32,7 +32,7 @@
         "outboundTag": "zt" //与outbounds中标签对应
       },
 .........<省略>........
-//如下配置插入outbounds末尾标记blocked部分之前
+//如下配置插入outbounds末尾标记blocked部分之前（如下是两个域名/端口示例，若多个就增加相关部分即可。）
     {
       "tag": "zv", //标签，与routing中标签对应。
       "protocol": "freedom",
