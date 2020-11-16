@@ -4,7 +4,7 @@
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1、v2ray(vless\vmess+kcp+seed) （若网络极度差，推荐部署。）  
 2、v2ray(vless\vmess+ws)+caddy2\nginx （WebSocket的caddy2或nginx反向代理；之前推荐部署。）  
-3、v2ray(vless\vmess+h2c)+caddy2 （http/2的caddy2反向代理，http/2自带链路复用。）  
+3、v2ray(vless\vmess+h2c)+caddy2 （http/2的caddy2反向代理。）  
 4、v2ray(SS+v2ray-plugin)+caddy2\nginx （兼容shadowsocks的WebSocket应用，caddy2或nginx反向代理。）  
 5、v2ray(vless+tcp+tls)+caddy2 （回落给caddy2，以http/2或http/1.1自适应代理。）  
 6、v2ray(vless+tcp+tls)+nginx （回落给nginx，以http/2或http/1.1自适应代理。）  
