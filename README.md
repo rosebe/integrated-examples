@@ -56,7 +56,7 @@ client
 官方客户端文本配置示例目录，目录内包含对应服务端应用的各客户端文本配置示例。（使用第三方或图形客户端仅参考即可）
 
 service  
-程序service文件目录，目录内包含各个程序service配置示例。（手工配置可参考）
+程序service文件目录，目录内包含各个程序service配置示例。（手工配置程序自动启动可参考）
 
 v2ray(other configuration)  
 v2ray其它特殊配置方法。
