@@ -20,7 +20,7 @@
         "fallbacks": [
           {
             "alpn": "h2", //h2回落匹配 
-            "dest": 2006, //回落给trojan处理。
+            "dest": 2006, //回落给trojan处理
             "xver": 0 //关闭PROXY protocol，不开启传递请求的真实来源IP和端口给trojan。另默认为0，此条参数可以省略不写。
           },
           {
