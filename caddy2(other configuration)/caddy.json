@@ -29,3 +29,38 @@
             "terminal": true
 .........<省略>........
 
+//建议实际修改成如下配置：
+.........<省略>........
+            "match": [{
+              "host": ["za.xx.yy"] //修改成自己分流的域名
+            }],
+            "handle": [{
+              "handler": "encode", //编码压缩（此部分参数是网站应用优化，虽与回落分流无关，但建议添加此部分。）
+              "encodings": {
+                "gzip": {"level": 4},//gzip压缩等级（此部分参数是网站应用优化，虽与回落分流无关，但建议添加此部分。）
+                "zstd": {}
+              }
+            },
+            {
+              "handler": "file_server",
+              "root": "/var/www/za" //修改为域名对应存放的web文件路径
+            }],
+            "terminal": true
+          },
+          {
+            "match": [{
+              "host": ["zb.xx.yy"] //修改成自己分流的域名
+            }],
+            "handle": [{
+              "handler": "encode", //编码压缩（此部分参数是网站应用优化，虽与回落分流无关，但建议添加此部分。）
+              "encodings": {
+                "gzip": {"level": 4},//gzip压缩等级（此部分参数是网站应用优化，虽与回落分流无关，但建议添加此部分。）
+                "zstd": {}
+              }
+            },
+            {
+              "handler": "file_server",
+              "root": "/var/www/zb" //修改为域名对应存放的web文件路径
+            }],
+            "terminal": true
+.........<省略>........
