@@ -14,7 +14,7 @@
             }],
             "handle": [{
               "handler": "file_server",
-              "root": "/var/www/za" //修改成上边域名对应存放的web文件路径
+              "root": "/var/www/za" //修改为域名对应存放的web文件路径
             }],
             "terminal": true
           },
@@ -24,7 +24,7 @@
             }],
             "handle": [{
               "handler": "file_server",
-              "root": "/var/www/zb" //修改成上边域名对应存放的web文件路径
+              "root": "/var/www/zb" //修改为域名对应存放的web文件路径
             }],
             "terminal": true
 .........<省略>........
