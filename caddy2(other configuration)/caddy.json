@@ -1,0 +1,30 @@
+.........<省略>........
+            "handle": [{
+              "handler": "file_server",
+              "root": "/var/www/html"
+            }],
+            "terminal": true
+.........<省略>........
+
+//如上改成如下：
+.........<省略>........
+            "match": [{
+              "host": ["za.xx.yy"] //修改成自己分流的域名
+            }],
+            "handle": [{
+              "handler": "file_server",
+              "root": "/var/www/za" //修改成上边域名对应存放的web文件路径
+            }],
+            "terminal": true
+          },
+          {
+            "match": [{
+              "host": ["zb.xx.yy"] //修改成自己分流的域名
+            }],
+            "handle": [{
+              "handler": "file_server",
+              "root": "/var/www/zb" //修改成上边域名对应存放的web文件路径
+            }],
+            "terminal": true
+.........<省略>........
+
