@@ -20,7 +20,7 @@
         "fallbacks": [
           {
             "alpn": "h2", //h2回落匹配
-            "dest": 2006, //回落给trojan处理
+            "dest": 2006, //回落给trojan+tcp处理
             "xver": 2 //开启PROXY protocol发送，发送请求的真实来源IP和端口给如下trojan应用。1或2表示PROXY protocol插件版本。多级传递，建议配置2。
           },
           {
