@@ -64,6 +64,9 @@ v2ray其它特殊用途配置方法。
 caddy2(other configuration)  
 caddy2其它特殊用途配置方法。
 
+nginx(other configuration)
+nginx其它特殊用途配置方法。
+
 使用/贡献指南  
 1、若程序增加新功能，开始主要单一应用集成服务器端配置示例中添加；过一段时间稳定后才会全部配置示例中添加。如除trojan+tcp套娃外，vless+tcp及trojan+tcp的xtls已全部加上。  
 2、欢迎你提交 PR ,如对现行配置示例优化修订，或将自己使用的配置制作模板提交等。
