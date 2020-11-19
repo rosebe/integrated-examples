@@ -2,4 +2,4 @@
 
 此方法解决v2ray前置监听443后，不影响原来caddy2前置时，不同域名访问不同网站问题。
 
-注意：也可以用 haproxy SNI 分流来解决问题（不同方法，达到相同效果。）。配置示例参考示例中用haproxy SNI分流的 haproxy 配置。
+注意：也可以用 haproxy或v2ray SNI 分流来解决问题（不同方法，达到相同效果。）。haproxy SNI 配置示例参考示例中用haproxy SNI分流的 haproxy 配置。v2ray SNI 配置示例参考‘v2ray(other configuration)’中 SNI_config.json 配置。
