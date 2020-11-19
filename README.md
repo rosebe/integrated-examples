@@ -64,7 +64,7 @@ v2ray其它特殊用途配置方法。
 caddy2(other configuration)  
 caddy2其它特殊用途配置方法。
 
-nginx(other configuration)
+nginx(other configuration)  
 nginx其它特殊用途配置方法。
 
 使用/贡献指南  
