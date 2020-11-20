@@ -1,9 +1,9 @@
-回落caddy2多个网站的分流配置方法
+回落 caddy2 多个网站的分流配置方法
 
-此方法解决v2ray前置监听443后，不影响原来caddy2前置时，不同域名访问不同网站问题。
+此方法解决 v2ray 前置监听443后，不影响原来 caddy2 前置时，不同域名访问不同网站问题。
 
 注意：
 
-1、若不同域名的证书不同（即非通配证书），那么还需要在v2ray 配置多个并列证书。
+1、若不同域名的证书不同（非通配证书），那么还需要在 v2ray 中配置多个并列证书。
 
-2、也可以用 haproxy或v2ray SNI 分流来解决问题（不同方法，达到相同效果。）。haproxy SNI 配置示例参考示例中用haproxy SNI分流的 haproxy 配置。v2ray SNI 配置示例参考‘v2ray(other configuration)’中 SNI_config.json 配置。
+2、也可以用 haproxy 或 v2ray SNI 分流来解决问题（不同方法，达到相同效果。）。haproxy SNI 配置示例参考示例中用 haproxy SNI 分流的 haproxy 配置。v2ray SNI 配置示例参考 ‘v2ray(other configuration)’ 中 SNI_config.json 配置。
