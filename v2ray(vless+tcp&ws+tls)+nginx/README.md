@@ -1,6 +1,6 @@
 介绍：
 
-v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流/转发 ws（WebSocket）应用，非 v2ray 的 web 回落给 nginx。其应用如下：
+v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流 ws（WebSocket）连接，非 v2ray 的 web 连接回落给 nginx。其应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
