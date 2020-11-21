@@ -6,10 +6,10 @@
 2、v2ray(vless\vmess+ws)+caddy2\nginx （WebSocket的caddy2或nginx反向代理，之前推荐部署。）  
 3、v2ray(vless\vmess+h2c)+caddy2 （http/2的caddy2反向代理。）  
 4、v2ray(SS+v2ray-plugin)+caddy2\nginx （兼容shadowsocks的WebSocket应用，caddy2或nginx反向代理。）  
-5、v2ray(vless+tcp+tls)+caddy2 （回落给caddy2，以h2或http/1.1自适应协商连接代理。）  
-6、v2ray(vless+tcp+tls)+nginx （回落给nginx，以h2或http/1.1自适应协商连接代理。）  
-7、v2ray(trojan+tcp+tls)+caddy2 （兼容trojan应用，回落给caddy2，以h2或http/1.1自适应协商连接代理。）  
-8、v2ray(trojan+tcp+tls)+nginx （兼容trojan应用，回落给nginx，以h2或http/1.1协商连接代理。）  
+5、v2ray(vless+tcp+tls)+caddy2 （以h2或http/1.1自适应协商连接实现代理，回落给caddy2。）  
+6、v2ray(vless+tcp+tls)+nginx （以h2或http/1.1自适应协商连接实现代理，回落给nginx。）  
+7、v2ray(trojan+tcp+tls)+caddy2 （兼容trojan应用，以h2或http/1.1自适应协商连接实现代理，回落给caddy2。）  
+8、v2ray(trojan+tcp+tls)+nginx （兼容trojan应用，以h2或http/1.1协商连接实现代理，回落给nginx。）  
 9、v2ray(trojan+ws)+caddy2\nginx （兼容trojan-go的WebSocket应用，caddy2或nginx反向代理。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1、trojan\trojan-go+caddy2 （trojan或trojan-go应用，回落给caddy2，以http/2或http/1.1自适应代理。）  
