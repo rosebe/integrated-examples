@@ -1,6 +1,6 @@
 介绍：
 
-此配置实现了 v2ray 前置（监听443端口），vless+tcp 以 http/2 或 http/1.1 自适应代理科学上网，非 v2ray 的 web 回落给 caddy2。
+此配置实现了 v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协商连接，非 v2ray 的 web 回落给 caddy2。
 
 原理图：
 v2ray client <------ tcp+tls ------> v2ray server <- web回落 -> caddy2
