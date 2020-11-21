@@ -24,7 +24,7 @@ v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协�
 
 二、v2ray SNI 分流优化共用443端口（配置3）
 
-v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行端口分流（四层转发），实现共用443端口。vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流 ws（WebSocket）连接，非 v2ray 的 web 连接回落给 caddy2。同时 trojan+tcp 也以 h2 或 http/1.1 自适应协商连接，非 v2ray 的 web 连接回落给 caddy2。v2ray 包括应用如下：
+v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行端口分流（四层转发），实现共用443端口。vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流 ws（WebSocket）连接，非 v2ray 的 web 连接回落给 caddy2。trojan+tcp 也以 h2 或 http/1.1 自适应协商连接，非 v2ray 的 web 连接也回落给 caddy2。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
