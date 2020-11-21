@@ -1,8 +1,8 @@
 介绍：
 
-本配置采用 v2ray 自带 shadowsocks 协议及自身 v2ray ‘分离’ 出的 v2ray-plugin 插件，直接实现 shadowsocks 加 v2ray-plugin 插件的 WebSocket 应用（服务端），客户端直接使用 shadowsocks 即可。
+1、本配置采用 v2ray 自带 shadowsocks 协议及自身 v2ray ‘分离’ 出的 v2ray-plugin 插件，直接实现 shadowsocks 加 v2ray-plugin 插件的 WebSocket 应用（服务端），客户端直接使用 shadowsocks 即可。
 
-另外通过 caddy2 或 nginx 前置 v2ray server 实现 ws（WebSocket） 反向代理，tls 由 caddy2 或 nginx 提供及处理。
+2、通过 caddy2 或 nginx 前置 v2ray server 实现 ws（WebSocket） 反向代理，tls 由 caddy2 或 nginx 提供及处理。
 
 原理图： shadowsocks client <------ ws+tls ------> caddy2\nginx <- ws -> v2ray server
 
