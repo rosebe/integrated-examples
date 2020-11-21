@@ -12,8 +12,8 @@
 8、v2ray(trojan+tcp+tls)+nginx （兼容trojan应用，以h2或http/1.1协商连接实现代理，回落给nginx。）  
 9、v2ray(trojan+ws)+caddy2\nginx （兼容trojan-go的WebSocket应用，caddy2或nginx反向代理。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-1、trojan\trojan-go+caddy2 （trojan或trojan-go应用，回落给caddy2，以http/2或http/1.1自适应代理。）  
-2、trojan\trojan-go+nginx （trojan或trojan-go应用，回落给nginx，以http/2或http/1.1代理。）  
+1、trojan\trojan-go+caddy2 （trojan或trojan-go应用，以http/2或http/1.1自适应代理，回落给caddy2。）  
+2、trojan\trojan-go+nginx （trojan或trojan-go应用，以http/2或http/1.1代理，回落给nginx。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1、naiveproxy(caddy2+forwardproxy) （naiveproxy应用，以http/2或http/3自适应代理。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
