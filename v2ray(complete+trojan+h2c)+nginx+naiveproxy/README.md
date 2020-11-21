@@ -1,6 +1,6 @@
 一、回落终极部署（配置1/配置2/配置3套娃方式）
 
-v2ray、naiveproxy(caddy2) 各自公开一个对外端口，分别或配合提供服务。vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流出 ws（WebSocket）连接，http/1.1 连接回落直接回落给 nginx，而 h2 连接回落给 trojan+tcp，trojan+tcp 处理后再回落给 nginx。另 caddy2 同时为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
+v2ray、naiveproxy(caddy2) 各自公开一个对外端口，分别或配合提供服务。vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流出 ws（WebSocket）连接，http/1.1 连接直接回落给 nginx，而 h2 连接回落给 trojan+tcp，trojan+tcp 处理后再回落给 nginx。另 caddy2 同时为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
