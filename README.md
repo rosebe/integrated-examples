@@ -15,7 +15,7 @@
 1、trojan\trojan-go+caddy2 （trojan或trojan-go应用，以h2或http/1.1任意连接实现代理，回落给caddy2。）  
 2、trojan\trojan-go+nginx （trojan或trojan-go应用，以h2或http/1.1连接实现代理，回落给nginx。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-1、naiveproxy(caddy2+forwardproxy) （naiveproxy应用，以http/2或http/3自适应代理。）  
+1、naiveproxy(caddy2+forwardproxy) （naiveproxy应用，以http/2或http/3代理。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 
 综合应用集成服务器端配置示例  
