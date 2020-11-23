@@ -34,9 +34,6 @@
             }]
           },
           {
-            "match": [{
-              "host": ["xx.yy"] //修改为自己域名
-            }],
             "handle": [{
               "handler": "subroute",
               "routes": [{
