@@ -57,7 +57,7 @@
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(other configuration) （v2ray禁用BT的配置方法、v2ray SNI分流的配置方法、v2ray流量统计的配置方法。）  
 2）、caddy2(other configuration) （分别回落caddy2不同网站的配置方法。）  
-3）、nginx(other configuration) （nginx SNI分流v2ray应用与网站应用的配置方法。）  
+3）、nginx(other configuration) （nginx SNI分流v2ray回落应用与网站应用的配置方法。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 
 client  
