@@ -47,6 +47,13 @@
 1）、v2ray(vless&trojan+tcp&ws+tls)+nginx （回落终极部署/套娃方式，或共用端口。）  
 2）、v2ray(complete+trojan+h2c)+nginx+naiveproxy （v2ray全部应用+naiveproxy应用及共用端口。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
+3、其它特殊用途应用。  
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
+1）、v2ray(other configuration) （v2ray其它特殊用途配置方法。）  
+2）、caddy2(other configuration) （caddy2其它特殊用途配置方法。）  
+3）、nginx(other configuration) （nginx其它特殊用途配置方法。）  
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 注意：  
 1、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。  
 2、complete表示包含v2ray的vless+tcp+tls、vless+ws+tls、SS+v2ray-plugin+tls、vmess+kcp+seed的综合应用。  
@@ -57,15 +64,6 @@ client
 
 service  
 程序service文件目录，目录内包含各个程序service配置示例。（手工配置程序由操作系统管理及自动运行可参考）
-
-v2ray(other configuration)  
-v2ray其它特殊用途配置方法。
-
-caddy2(other configuration)  
-caddy2其它特殊用途配置方法。
-
-nginx(other configuration)  
-nginx其它特殊用途配置方法。
 
 使用/贡献指南  
 1、若程序增加新功能，开始主要单一应用集成服务器端配置示例中添加；过一段时间稳定后才会全部配置示例中添加。如除trojan+tcp套娃外，vless+tcp及trojan+tcp的xtls已全部加上。  
