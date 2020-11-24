@@ -47,17 +47,18 @@
 1）、v2ray(vless&trojan+tcp&ws+tls)+nginx （回落终极部署/套娃方式，或共用端口。）  
 2）、v2ray(complete+trojan+h2c)+nginx+naiveproxy （v2ray全部应用+naiveproxy应用及共用端口。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
+注意：  
+1、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。  
+2、complete表示包含v2ray的vless+tcp+tls、vless+ws+tls、SS+v2ray-plugin+tls、vmess+kcp+seed的综合应用。  
+3、所有配置文件都配置了禁用BT。如不需要，可以删除相关配置（参考v2ray(other configuration)中BT_config.json文件）。
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-3、其它特殊应用。  
+
+特殊应用集成服务器端配置示例  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(other configuration) （v2ray禁用BT的配置方法、v2ray SNI分流的配置方法、v2ray流量统计的配置方法。）  
 2）、caddy2(other configuration) （分别回落caddy2不同网站的配置方法。）  
 3）、nginx(other configuration) （nginx SNI分流v2ray应用与网站应用的配置方法。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-注意：  
-1、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。  
-2、complete表示包含v2ray的vless+tcp+tls、vless+ws+tls、SS+v2ray-plugin+tls、vmess+kcp+seed的综合应用。  
-3、所有配置文件都配置了禁用BT。如不需要，可以删除相关配置（参考v2ray(other configuration)中BT_config.json文件）。
 
 client  
 官方客户端文本配置示例目录，目录内包含对应服务端应用的官方客户端文本配置示例。（使用图形界面客户端仅参考即可）
