@@ -48,11 +48,11 @@
 2）、v2ray(complete+trojan+h2c)+nginx+naiveproxy （v2ray全部应用+naiveproxy应用及共用端口。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-3、其它特殊用途应用。  
+3、其它特殊应用。  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-1）、v2ray(other configuration) （v2ray其它特殊用途配置方法。）  
-2）、caddy2(other configuration) （caddy2其它特殊用途配置方法。）  
-3）、nginx(other configuration) （nginx其它特殊用途配置方法。）  
+1）、v2ray(other configuration) （v2ray其它特殊应用配置方法。）  
+2）、caddy2(other configuration) （caddy2其它特殊应用配置方法。）  
+3）、nginx(other configuration) （nginx其它特殊应用配置方法。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 注意：  
 1、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。  
