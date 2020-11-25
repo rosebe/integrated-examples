@@ -4,4 +4,8 @@
 
 原理图： v2ray client <------ ws+tls ------> caddy2\nginx <- ws -> v2ray server
 
-注意：若系统版本过低，其对应发行版仓库自带 nginx 预编译程序包可能不支持 tls1.3；如需要支持 tls1.3，必须先升级 OpenSSl 版本大于 1.1.1，再进行 nginx 源代码编译和安装。
+注意：
+
+1、此示例中若采用caddy2反向代理，addyfile配置与caddy.json配置二选一（效果一样）。支持自动 https ，即自动申请证书与私钥，且自动更新，http重定向到https。
+
+2、此示例中若采用nginx反向代理，如果系统版本过低，其对应发行版仓库自带 nginx 预编译程序包可能不支持 tls1.3；如需要支持 tls1.3，必须先升级 OpenSSl 版本大于 1.1.1，再进行 nginx 源代码编译和安装。
