@@ -60,10 +60,10 @@
 3、nginx(other configuration) （nginx SNI分流v2ray回落应用与网站应用的配置方法。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 
-client  
+client configuration  
 官方客户端文本配置示例目录，目录内包含对应服务端应用的官方客户端文本配置示例。（使用图形界面客户端仅参考即可）
 
-service  
+service configuration  
 程序service文件目录，目录内包含各个程序service配置示例。（手工配置程序由操作系统管理及自动运行可参考）
 
 使用/贡献指南  
