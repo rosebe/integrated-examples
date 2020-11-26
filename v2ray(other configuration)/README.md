@@ -10,7 +10,7 @@
 
 注意：
 
-1、v2ray SNI分流不支持 PROXY protocol。
+1、v2ray SNI 分流不支持 PROXY protocol。
 
 2、本人 github 中的相关配置示例已配置 v2ray SNI 分流共用端口 ，此配置方法仅备份及参考等。
 
