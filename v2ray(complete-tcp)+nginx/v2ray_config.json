@@ -1,8 +1,8 @@
 {
   "log": {
     "loglevel": "warning",
-    "error": "/var/log/v2ray/error.log", //若使用xray，此处目录名称v2ray改成xray。
-    "access": "/var/log/v2ray/access.log" //若使用xray，此处目录名称v2ray改成xray。
+    "error": "/var/log/v2ray/error.log",
+    "access": "/var/log/v2ray/access.log"
   },
   "inbounds": [
     {
