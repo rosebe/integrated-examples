@@ -54,7 +54,7 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp、naiveproxy(caddy2) �
 
 4、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2（http/2）反向代理的应用。
 
-5、v2ray SNI 分流不支持 PROXY protocol ，故配置4：没有启用 PROXY protocol，仅端口回落。
+5、v2ray SNI 分流不支持 PROXY protocol ，故配置4没有启用 PROXY protocol，仅端口回落。
 
 三、nginx SNI分流优化共用443端口（配置5/配置6/配置7）
 
