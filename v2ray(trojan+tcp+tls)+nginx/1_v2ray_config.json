@@ -12,7 +12,7 @@
         "clients": [
           {
             "password":"diy443", //修改成自己密码
-            "flow": "xtls-rprx-direct", //启用xtls，必须增加此条参数，参数可xtls-rprx-origin或xtls-rprx-direct可选；否则删除。另支持的v2ray版本应不小于v4.31.3。
+            "flow": "xtls-rprx-direct", //启用xtls，必须增加此条参数；否则删除。v2ray从v4.33.0版开始删除了xtls应用，如要使用此应用，建议选用xray。
             "email": "443@gmail.com"
           }
         ],
@@ -25,8 +25,8 @@
       },
       "streamSettings": {
         "network": "tcp",
-        "security": "xtls", //如启用xtls，tls必须改成xtls。
-        "xtlsSettings": { //如启用xtls，tlsSettings必须改成xtlsSettings。
+        "security": "xtls", //如启用xtls，tls必须改成xtls；否则恢复tls。
+        "xtlsSettings": { //如启用xtls，tlsSettings必须改成xtlsSettings；否则恢复tlsSettings。
           "alpn":[
             "h2" //启用h2连接，web回落也需配置支持h2回落；否则不一致（裸奔），容易被墙探测出，从而被封。
           ],
