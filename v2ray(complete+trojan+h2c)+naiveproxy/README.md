@@ -64,4 +64,4 @@ v2ray vless+tcp 应用直连，v2ray ws 类应用分流一次，v2ray trojan+tcp
 
 6、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2 回落、h2（http/2）反向代理的应用。
 
-7、v2ray SNI分流不支持 PROXY protocol ，故配置3：没有启用 PROXY protocol，仅端口回落。
+7、v2ray SNI 分流不支持 PROXY protocol ，故配置3：没有启用 PROXY protocol，仅端口回落。
