@@ -1,7 +1,7 @@
 {
   "log": {
-    "error": "/var/log/v2ray/error.log",
-    "access": "/var/log/v2ray/access.log",
+    "error": "/var/log/v2ray/error.log", //若使用xray，v2ray改成xray。
+    "access": "/var/log/v2ray/access.log", //若使用xray，v2ray改成xray。
     "loglevel": "warning"
   },
   "inbounds": [
