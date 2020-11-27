@@ -40,4 +40,4 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行端口分流（�
 
 3、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
 
-4、v2ray SNI分流不支持 PROXY protocol ，故配置3：没有启用 PROXY protocol，仅端口回落。
+4、v2ray SNI 分流不支持 PROXY protocol ，故配置3：没有启用 PROXY protocol，仅端口回落。
