@@ -51,7 +51,7 @@
             "terminal": true
           }],
           "automatic_https": {
-            "disable": true //禁用自动https
+            "disable": true //禁用自己自动https
           }
         }
       }
