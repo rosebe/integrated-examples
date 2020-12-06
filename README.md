@@ -28,13 +28,13 @@
 1）、v2ray(complete+h2c-tcp)+caddy2 （caddy2前置，反向代理WebSocket与http/2的综合应用；之前推荐部署。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(vless+tcp&ws+tls)+caddy2 （目前推荐部署，同时支持vless+tcp与WebSocket类应用，回落给caddy2。）  
-2）、v2ray(complete+h2c)+caddy2 （v2ray综合应用+反向代理http/2应用。）  
+2）、v2ray(complete+h2c)+caddy2 （v2ray或Xray综合应用+反向代理http/2应用。）  
 3）、v2ray(complete+h2c)+naiveproxy （上一项应用+naiveproxy应用。）  
 4）、v2ray(complete+h2c)+naiveproxy+trojan （上一项应用+trojan应用及共用端口。）  
 5）、v2ray(complete+h2c)+naiveproxy+trojan+haproxy （用haproxy对上一项应用进行SNI分流，共用端口。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(vless&trojan+tcp&ws+tls)+caddy2 （回落终极部署/套娃方式，或共用端口。）  
-2）、v2ray(complete+trojan+h2c)+naiveproxy （v2ray全部应用+naiveproxy应用及共用端口。）  
+2）、v2ray(complete+trojan+h2c)+naiveproxy （v2ray或Xray全部应用+naiveproxy应用及共用端口。）  
 3）、v2ray(complete+trojan+h2c)+naiveproxy+haproxy （用haproxy对上一项应用进行SNI分流，共用端口。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
@@ -43,16 +43,16 @@
 1）、v2ray(complete-tcp)+nginx （nginx前置，反向代理WebSocket的综合应用；之前推荐部署。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(vless+tcp&ws+tls)+nginx （目前推荐部署，同时支持vless+tcp与WebSocket类应用，回落给nginx。）  
-2）、v2ray(complete)+nginx （v2ray综合应用。）  
+2）、v2ray(complete)+nginx （v2ray或Xray综合应用。）  
 3）、v2ray(complete)+nginx+trojan （上一项应用+trojan应用及共用端口。）  
 4）、v2ray(complete+h2c)+nginx+trojan+naiveproxy （上一项应用+naiveproxy+反向代理http/2应用及共用端口。）  
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(vless&trojan+tcp&ws+tls)+nginx （回落终极部署/套娃方式，或共用端口。）  
-2）、v2ray(complete+trojan+h2c)+nginx+naiveproxy （v2ray全部应用+naiveproxy应用及共用端口。）  
+2）、v2ray(complete+trojan+h2c)+nginx+naiveproxy （v2ray或Xray全部应用+naiveproxy应用及共用端口。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 注意：  
 1、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。  
-2、complete表示包含v2ray的vless+tcp+tls、vless+ws+tls、SS+v2ray-plugin+tls、vmess+kcp+seed的综合应用。  
+2、complete表示包含v2ray或Xray的vless+tcp+tls、vless+ws+tls、SS+v2ray-plugin+tls、vmess+kcp+seed的综合应用。  
 3、所有配置文件都配置了禁用BT。如不需要，可以删除相关配置（参考v2ray(other configuration)中BT_config.json文件）。  
 4、v2ray从版本v4.33.0删除了xtls应用，故若还想用xtls应用，请选Xray。Xray是v2ray分支，也是因为这个应用分家。另外注意：配置示例中log部分的路径名称，需修改为对应的xray或v2ray。  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
