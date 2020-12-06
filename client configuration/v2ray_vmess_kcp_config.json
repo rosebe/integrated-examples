@@ -21,7 +21,7 @@
       "settings": {
         "vnext": [
           {
-            "address": "xx.yy", //改成服务端配置的对应域名
+            "address": "xx.yy", //改成服务端配置的对应域名或ip
             "port": 2053, //改成服务端配置的对应端口
             "users": [
               {
