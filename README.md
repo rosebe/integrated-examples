@@ -19,6 +19,8 @@
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 注意：  
 1、v2ray从版本v4.33.0删除了xtls应用，故若还想用xtls应用，请选Xray。Xray是v2ray分支，也是因为这个应用分家。另外注意：配置示例中log部分的路径名称，需修改为对应的xray或v2ray。  
+2、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本人github下载即可。  
+3、除v2ray(vless\vmess+kcp+seed)示例外，回落或反代网站都支持http自动跳转到https。  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 
 综合应用服务器端配置示例  
@@ -51,10 +53,11 @@
 2）、v2ray(complete+trojan+h2c)+nginx+naiveproxy （v2ray或Xray全部应用+naiveproxy应用及共用端口。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 注意：  
-1、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。  
+1、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本人github下载即可。  
 2、complete表示包含v2ray或Xray的vless+tcp+tls、vless+ws+tls、SS+v2ray-plugin+tls、vmess+kcp+seed的综合应用。  
 3、所有配置文件都配置了禁用BT。如不需要，可以删除相关配置（参考v2ray(other configuration)中BT_config.json文件）。  
 4、v2ray从版本v4.33.0删除了xtls应用，故若还想用xtls应用，请选Xray。Xray是v2ray分支，也是因为这个应用分家。另外注意：配置示例中log部分的路径名称，需修改为对应的xray或v2ray。  
+5、除v2ray(vless\vmess+kcp+seed)应用外，回落或反代网站都支持http自动跳转到https。  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 
 特殊应用服务器端配置示例  
