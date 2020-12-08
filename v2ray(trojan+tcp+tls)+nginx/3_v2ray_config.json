@@ -19,7 +19,7 @@
         "fallbacks": [
           {
             "dest": "/dev/shm/h2c.sock", //h2回落进程
-            "xver": 1 //开启PROXY protocol发送，发送请求的真实来源IP和端口给nginx。1或2表示PROXY protocol插件版本。
+            "xver": 1 //开启PROXY protocol发送，发送真实来源IP和端口给nginx。1或2表示PROXY protocol插件版本。
           }
         ]
       },
