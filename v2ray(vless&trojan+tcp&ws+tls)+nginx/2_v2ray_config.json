@@ -101,7 +101,7 @@
         "fallbacks": [
           {
             "dest": 82, //h2回落端口
-            "xver": 2 //开启PROXY protocol支持，传递请求的真实来源IP和端口给nginx。1或2表示PROXY protocol插件版本。多级传递，建议配置2。
+            "xver": 2 //开启PROXY protocol发送，发送请求的真实来源IP和端口给nginx。1或2表示PROXY protocol插件版本。多级传递，建议配置2。
           }
         ]
       },
