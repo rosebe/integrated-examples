@@ -24,6 +24,6 @@
 
 5、因 trojan(trojan-go) 不支持 PROXY protocol，故不启用此项应用。
 
-5、因 v2ray SNI 分流不支持 PROXY protocol，故不启用此项应用。
+6、因 v2ray SNI 分流不支持 PROXY protocol，故不启用此项应用。
 
-6、配置1：v2ray、naiveproxy(caddy2)、trojan(trojan-go) 各自公开一个监听端口，各自分别或配合提供服务。配置2：v2ray 通过配置相关参数为 v2ray、naiveproxy(caddy2)、trojan(trojan-go) 进行 SNI 分流（四层转发），实现共用443端口。
+7、配置1：v2ray、naiveproxy(caddy2)、trojan(trojan-go) 各自公开一个监听端口，各自分别或配合提供服务。配置2：v2ray 通过配置相关参数为 v2ray、naiveproxy(caddy2)、trojan(trojan-go) 进行 SNI 分流（四层转发），实现共用443端口。
