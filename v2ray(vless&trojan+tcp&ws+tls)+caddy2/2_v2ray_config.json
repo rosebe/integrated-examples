@@ -20,7 +20,7 @@
         "fallbacks": [
           {
             "dest": 2006, //回落给trojan+tcp处理
-            "xver": 2 //开启PROXY protocol发送，发送真实来源IP和端口给如下trojan应用。1或2表示PROXY protocol插件版本。多级传递，建议配置2。
+            "xver": 2 //开启PROXY protocol发送，发送真实来源IP和端口给如下trojan+tcp应用。1或2表示PROXY protocol插件版本。多级传递，建议配置2。
           },
           {
             "path": "/HALdGZ9k", //通过路径分流出ws
