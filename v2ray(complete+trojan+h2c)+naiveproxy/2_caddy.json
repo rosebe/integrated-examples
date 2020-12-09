@@ -37,14 +37,6 @@
         },
         "srv1": {
           "listen": [":443"], //https默认监听端口，支持自动http->https。
-          "listener_wrappers": [{
-            "wrapper": "proxy_protocol", //开启PROXY protocol接收
-            "timeout": "5s",
-            "allow": ["127.0.0.1/24"]
-          }, 
-          {
-            "wrapper":"tls"
-          }],
           "routes": [{
             "handle": [{
               "handler": "forward_proxy",
