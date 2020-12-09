@@ -22,7 +22,7 @@
         "srv0": {
           "listen": ["127.0.0.1:88"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。
           "listener_wrappers": [{
-            "wrapper": "proxy_protocol", //开启proxy_protocol接受
+            "wrapper": "proxy_protocol", //开启PROXY protocol接收
             "timeout": "5s",
             "allow": ["127.0.0.1/24"]
           }],
@@ -51,7 +51,7 @@
         "srv2": {
           "listen": ["127.0.0.1:7443"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。因SNI分流统一监听端口为443，故此端口改成7443。
           "listener_wrappers": [{
-            "wrapper": "proxy_protocol", //开启proxy_protocol接受
+            "wrapper": "proxy_protocol", //开启PROXY protocol接收
             "timeout": "5s",
             "allow": ["127.0.0.1/24"]
           }, 
