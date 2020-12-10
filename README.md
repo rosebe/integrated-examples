@@ -15,7 +15,7 @@
 1、trojan\trojan-go+caddy2 （trojan或trojan-go应用，以h2或http/1.1任意连接实现代理，回落给caddy2。）  
 2、trojan\trojan-go+nginx （trojan或trojan-go应用，以h2或http/1.1连接实现代理，回落给nginx。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-1、naiveproxy(caddy2+forwardproxy) （naiveproxy应用，以http/2或http/3代理。）  
+1、naiveproxy(caddy2+forwardproxy) （naiveproxy应用，以http/2或http/3正向代理。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 注意：  
 1、v2ray从版本v4.33.0删除了xtls应用，故若还想用xtls应用，请选Xray。Xray是v2ray分支，也是因为这个应用分家。另外注意：配置示例中log部分的路径名称，需修改为对应的xray或v2ray。  
