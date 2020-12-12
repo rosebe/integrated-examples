@@ -36,7 +36,7 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行端口分流（�
 
 2、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程；而 v2ray 的 trojan+tcp 目前不支持端口或进程分离 http/1.1 与 h2 回落，故回落 nginx 只能采用 http/1.1 回落或 h2 回落（二选一）；建议尽可能采用 h2 连接及回落，毕竟 h2 连接自带链路复用，且延迟小一点。
 
-3、v2ray SNI 分流不支持 PROXY protocol（发送），故配置4没有启用 PROXY protocol 应用，仅端口回落。
+3、v2ray SNI 分流不支持 PROXY protocol（发送），故配置4没有启用 PROXY protocol，仅端口回落。
 
 三、nginx SNI 分流优化共用443端口（配置5/配置6/配置7） 
 
