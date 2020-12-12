@@ -22,9 +22,9 @@
 
 4、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2（http/2）反向代理的应用。
 
-5、因 v2ray SNI 分流不支持 PROXY protocol，故 v2ray SNI 分流时不能启用此项应用。
+5、因 v2ray SNI 分流不支持 PROXY protocol（发送），故配置2不启用此项应用。
 
-6、因 trojan(trojan-go) 不支持 PROXY protocol（接收），而 nginx SNI 中的 PROXY protocol 发送是针对共用端口全局模式，故 v2ray SNI 分流时不能启用此项应用。
+6、因 trojan(trojan-go) 不支持 PROXY protocol（接收），而 nginx SNI 中的 PROXY protocol 发送是针对共用端口全局模式，故配置3不启用此项应用。
 
 7、配置1：v2ray、trojan(trojan-go)、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配合提供服务。配置2：v2ray 通过配置相关参数为 v2ray、trojan(trojan-go)、naiveproxy(caddy2) 进行 SNI 分流（四层转发），除 v2ray kcp 外、实现共用443端口。配置3：nginx 为 v2ray、trojan(trojan-go)、naiveproxy(caddy2) 进行 SNI 分流（四层转发），除 v2ray kcp 外、实现共用443端口。
 
