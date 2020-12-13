@@ -14,6 +14,6 @@ v2ray 前置（监听443端口），利用 vless+tcp 强大的回落/分流特�
 
 2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
 
-3、使用本人 github 中编译好的 caddy2 文件，才可支持 naiveproxy 及 PROXY protocol 应用。
+3、使用本人 github 中编译好的 caddy2 文件，才支持 naiveproxy 及 PROXY protocol 应用。
 
 4、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
