@@ -23,6 +23,7 @@
 1、v2ray或Xray为主、caddy2为辅及其它应用。  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(complete+h2c-tcp)+caddy2 （caddy2前置，反向代理WebSocket与http/2的综合应用；之前推荐部署。）  
+2）、v2ray(complete+h2c-tcp)+naiveproxy （上一项应用+naiveproxy应用。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(vless+tcp&ws+tls)+caddy2 （推荐部署，同时支持vless+tcp与WebSocket类应用，web回落给caddy2。）  
 2）、v2ray(complete+h2c)+caddy2 （v2ray或Xray综合应用+反向代理http/2应用。）  
