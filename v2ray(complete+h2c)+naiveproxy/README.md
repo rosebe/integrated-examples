@@ -1,6 +1,6 @@
 介绍：
 
-此配置包括 v2ray 与 naiveproxy 集成。除 v2ray kcp 外，所用应用共用443端口。此端口由 v2ray 监听（即 v2ray 前置），利用 vless+tcp 回落/分流特性实现，分流出 ws（WebSocket）连接，其它连接回落给 caddy2。caddy2 再处理，对 vless/vmess+h2c 进行反向代理，对 naiveproxy 进行正向代理。包括应用如下：
+此配置包括 v2ray 与 naiveproxy 集成。除 v2ray kcp 外，所用应用共用443端口。此端口由 v2ray 监听（即 v2ray 前置），利用 vless+tcp 回落/分流特性实现，分流出 ws（WebSocket）连接，其它连接回落给 caddy2；caddy2 再处理，对 vless/vmess+h2c 进行反向代理，对 naiveproxy 进行正向代理。包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
