@@ -11,7 +11,7 @@
 4、vmess+kcp+seed（可改成vless+kcp+seed，或添加它。）
 
 5、naiveproxy （tls由caddy2提供及处理。）
-y
+
 注意：
 
 1、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
