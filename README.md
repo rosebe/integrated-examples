@@ -26,10 +26,11 @@
 2）、v2ray(complete+h2c-tcp)+naiveproxy （上一项应用+naiveproxy应用。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(vless+tcp&ws+tls)+caddy2 （推荐部署，同时支持vless+tcp与WebSocket类应用，web回落给caddy2。）  
-2）、v2ray(complete+h2c)+caddy2 （v2ray或Xray综合应用+反向代理http/2应用。）  
-3）、v2ray(complete+h2c)+naiveproxy （上一项应用+naiveproxy应用。）  
-4）、v2ray(complete+h2c)+naiveproxy+trojan （上一项应用+trojan应用及共用端口。）  
-5）、v2ray(complete+h2c)+naiveproxy+trojan+haproxy （用haproxy对上一项应用进行SNI分流，共用端口。）  
+2）、v2ray(vless+tcp&ws+tls)+naiveproxy （上一项应用+naiveproxy应用。）  
+3）、v2ray(complete+h2c)+caddy2 （v2ray或Xray综合应用+反向代理http/2应用。）  
+4）、v2ray(complete+h2c)+naiveproxy （上一项应用+naiveproxy应用。）  
+5）、v2ray(complete+h2c)+naiveproxy+trojan （上一项应用+trojan应用及共用端口。）  
+6）、v2ray(complete+h2c)+naiveproxy+trojan+haproxy （用haproxy对上一项应用进行SNI分流，共用端口。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、v2ray(vless&trojan+tcp&ws+tls)+caddy2 （回落终极部署/套娃方式，或共用端口。）  
 2）、v2ray(complete+trojan+h2c)+naiveproxy （v2ray或Xray全部应用+naiveproxy应用及共用端口。）  
