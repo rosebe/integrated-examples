@@ -9,7 +9,7 @@
 6. [v2ray(vless+tcp+tls)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%2Btcp%2Btls)%2Bnginx) （以h2或http/1.1任意连接实现正向代理，web回落给nginx。）  
 7. [v2ray(trojan+tcp+tls)+caddy2](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(trojan%2Btcp%2Btls)%2Bcaddy2) （兼容trojan应用，以h2或http/1.1任意连接实现正向代理，web回落给caddy2。）  
 8. [v2ray(trojan+tcp+tls)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(trojan%2Btcp%2Btls)%2Bnginx) （兼容trojan应用，以h2或http/1.1连接实现正向代理，web回落给nginx。）  
-<u>9. [v2ray(trojan+ws)+caddy2\nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(trojan%2Bws)%2Bcaddy2%5Cnginx) （兼容trojan-go的WebSocket应用，caddy2或nginx反向代理。）</u>  
+<u> 9. [v2ray(trojan+ws)+caddy2\nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(trojan%2Bws)%2Bcaddy2%5Cnginx) （兼容trojan-go的WebSocket应用，caddy2或nginx反向代理。）</u>  
 ---
 1. [trojan\trojan-go+caddy2](https://github.com/lxhao61/integrated-examples/tree/master/trojan%5Ctrojan-go%2Bcaddy2) （trojan或trojan-go应用，以h2或http/1.1任意连接实现正向代理，web回落给caddy2。）  
 2. [trojan\trojan-go+nginx](https://github.com/lxhao61/integrated-examples/tree/master/trojan%5Ctrojan-go%2Bnginx) （trojan或trojan-go应用，以h2或http/1.1连接实现正向代理，web回落给nginx。）  
