@@ -15,7 +15,7 @@
 2. [trojan\trojan-go+nginx](https://github.com/lxhao61/integrated-examples/tree/master/trojan%5Ctrojan-go%2Bnginx) （trojan或trojan-go应用，以h2或http/1.1连接实现正向代理，web回落给nginx。）  
 ****
 1. [naiveproxy(caddy2+forwardproxy)](https://github.com/lxhao61/integrated-examples/tree/master/naiveproxy(caddy2%2Bforwardproxy)) （naiveproxy应用，以http/2或http/3正向代理。）  
-_
+___
 
 # 综合应用服务器端配置示例  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
