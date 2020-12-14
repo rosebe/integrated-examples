@@ -44,7 +44,7 @@
 1）、[v2ray(vless+tcp&ws+tls)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%2Btcp%26ws%2Btls)%2Bnginx) （推荐部署，同时支持vless+tcp与WebSocket类应用，web回落给nginx。）  
 2）、[v2ray(complete)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete)%2Bnginx) （v2ray或Xray综合应用。）  
 3）、[v2ray(complete)+nginx+trojan](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete)%2Bnginx%2Btrojan) （上一项应用+trojan应用及共用端口。）  
-4）、[v2ray(complete+h2c)+nginx+trojan+naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bnaiveproxy) （上一项应用+naiveproxy+反向代理http/2应用及共用端口。）  
+4）、[v2ray(complete+h2c)+nginx+trojan+naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bnginx%2Btrojan%2Bnaiveproxy) （上一项应用+naiveproxy+反向代理http/2应用及共用端口。）  
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 1）、[v2ray(vless&trojan+tcp&ws+tls)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%26trojan%2Btcp%26ws%2Btls)%2Bnginx) （回落终极部署/套娃方式，或共用端口。）  
 2）、[v2ray(complete+trojan+h2c)+nginx+naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Btrojan%2Bh2c)%2Bnginx%2Bnaiveproxy) （v2ray或Xray全部应用+naiveproxy应用及共用端口。）  
