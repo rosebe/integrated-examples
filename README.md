@@ -1,4 +1,4 @@
-**这里是主流科学上网的优化配置及最优组合示例。如是不太了解科学上网，建议先依次从简单到复杂参考及部署。**
+** 这里是主流科学上网的优化配置及最优组合示例。如是不太了解科学上网，建议先依次从简单到复杂参考及部署。 **
 
 ### 单一应用服务器端配置示例
 1. [v2ray(vless\vmess+kcp+seed)](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%5Cvmess%2Bkcp%2Bseed)) （若网络极差，推荐部署。）  
@@ -43,12 +43,12 @@
 2. [v2ray(complete+trojan+h2c)+nginx+naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Btrojan%2Bh2c)%2Bnginx%2Bnaiveproxy) （v2ray或Xray全部应用+naiveproxy应用及共用端口。）  
 #### 3. trojan或trojan-go为主、naiveproxy为辅应用。
 1. [trojan\trojan-go+naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/trojan%5Ctrojan-go%2Bnaiveproxy) （trojan或trojan-go应用+naiveproxy应用。）  
-**以上所有实例（含单一与综合示例）注意：  
-1、所有v2ray或Xray配置文件都配置了禁用BT。如不需要，可以删除相关配置（参考v2ray(other configuration)中BT_config.json文件）。  
-2、v2ray从版本v4.33.0删除了xtls应用，故若还想用xtls应用，请选Xray。Xray是v2ray分支，也是因为这个应用分家。另外注意：配置示例中log部分的路径名称，需修改为对应的xray或v2ray。   
-3、除v2ray(vless\vmess+kcp+seed)示例外，回落或反代网站都支持http自动跳转到https。  
-4、complete表示包含v2ray或Xray的vless+tcp+tls、vless+ws+tls、SS+v2ray-plugin+tls、vmess+kcp+seed的综合应用。  
-5、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本人github下载即可。  **
+** 以上所有实例（含单一与综合示例）注意：  **
+1. 所有v2ray或Xray配置文件都配置了禁用BT。如不需要，可以删除相关配置（参考v2ray(other configuration)中BT_config.json文件）。  
+2. v2ray从版本v4.33.0删除了xtls应用，故若还想用xtls应用，请选Xray。Xray是v2ray分支，也是因为这个应用分家。另外注意：配置示例中log部分的路径名称，需修改为对应的xray或v2ray。   
+3. 除v2ray(vless\vmess+kcp+seed)示例外，回落或反代网站都支持http自动跳转到https。  
+4. complete表示包含v2ray或Xray的vless+tcp+tls、vless+ws+tls、SS+v2ray-plugin+tls、vmess+kcp+seed的综合应用。  
+5. naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本人github下载即可。  
 
 ### 特殊应用服务器端配置示例
 1、[v2ray(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(other%20configuration)) （v2ray或Xray其它多种特殊应用配置方法。）  
