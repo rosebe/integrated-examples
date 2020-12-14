@@ -12,8 +12,8 @@
 8、v2ray(trojan+tcp+tls)+nginx （兼容trojan应用，以h2或http/1.1连接实现正向代理，web回落给nginx。）  
 9、v2ray(trojan+ws)+caddy2\nginx （兼容trojan-go的WebSocket应用，caddy2或nginx反向代理。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-1、trojan\trojan-go+caddy2 （trojan或trojan-go应用，以h2或http/1.1任意连接实现正向代理，web回落给caddy2。）  
-2、trojan\trojan-go+nginx （trojan或trojan-go应用，以h2或http/1.1连接实现正向代理，web回落给nginx。）  
+[1、trojan\trojan-go+caddy2](https://github.com/lxhao61/integrated-examples/tree/master/trojan%5Ctrojan-go%2Bcaddy2) （trojan或trojan-go应用，以h2或http/1.1任意连接实现正向代理，web回落给caddy2。）  
+2、[trojan\trojan-go+nginx](https://github.com/lxhao61/integrated-examples/tree/master/trojan%5Ctrojan-go%2Bnginx) （trojan或trojan-go应用，以h2或http/1.1连接实现正向代理，web回落给nginx。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 [1、naiveproxy(caddy2+forwardproxy)](https://github.com/lxhao61/integrated-examples/tree/master/naiveproxy(caddy2%2Bforwardproxy)) （naiveproxy应用，以http/2或http/3正向代理。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
@@ -52,7 +52,7 @@
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 3、trojan或trojan-go为主、naiveproxy为辅应用。  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-1、trojan\trojan-go+naiveproxy （trojan或trojan-go应用+naiveproxy应用。）  
+[1、trojan\trojan-go+naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/trojan%5Ctrojan-go%2Bnaiveproxy) （trojan或trojan-go应用+naiveproxy应用。）  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 以上所有实例（含单一与综合示例）注意：  
 1、所有v2ray或Xray配置文件都配置了禁用BT。如不需要，可以删除相关配置（参考v2ray(other configuration)中BT_config.json文件）。  
