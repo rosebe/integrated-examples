@@ -17,7 +17,7 @@
 1. [naiveproxy(caddy2+forwardproxy)](https://github.com/lxhao61/integrated-examples/tree/master/naiveproxy(caddy2%2Bforwardproxy)) （naiveproxy应用，以http/2或http/3正向代理。）  
 
 ### 综合应用服务器端配置示例
-#### 1. v2ray或Xray为主、caddy2为辅及其它应用。
+&emsp;#### 1. v2ray或Xray为主、caddy2为辅及其它应用。
 1. [v2ray(complete+h2c-tcp)+caddy2](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c-tcp)%2Bcaddy2) （caddy2前置，反向代理WebSocket与http/2的综合应用；之前推荐部署。）  
 2. [v2ray(complete+h2c-tcp)+naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c-tcp)%2Bnaiveproxy) （上一项应用+naiveproxy应用。）  
 ---
