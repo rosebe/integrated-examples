@@ -2,7 +2,7 @@
 
 ### 单一应用服务器端配置示例
 1. [v2ray(vless\vmess+kcp+seed)](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%5Cvmess%2Bkcp%2Bseed)) （若网络极差，推荐部署。）  
-2. [v2ray(vless\vmess+ws)+caddy2\nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%5Cvmess%2Bws)%2Bcaddy2%5Cnginx) vless或vmess的WebSocket应用，caddy2或nginx反向代理。之前推荐部署。  
+2. [v2ray(vless\vmess+ws)+caddy2\nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%5Cvmess%2Bws)%2Bcaddy2%5Cnginx)（vless或vmess的WebSocket应用，caddy2或nginx反向代理。之前推荐部署。）  
 3. [v2ray(vless\vmess+h2c)+caddy2](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%5Cvmess%2Bh2c)%2Bcaddy2) （vless或vmess的http/2应用，caddy2反向代理。）  
 4. [v2ray(SS+v2ray-plugin)+caddy2\nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(SS%2Bv2ray-plugin)%2Bcaddy2%5Cnginx) （兼容shadowsocks的WebSocket应用，caddy2或nginx反向代理。）  
 5. [v2ray(vless+tcp+tls)+caddy2](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%2Btcp%2Btls)%2Bcaddy2) （以h2或http/1.1任意连接实现正向代理，web回落给caddy2。）  
