@@ -54,12 +54,10 @@ ___
 4、complete表示包含v2ray或Xray的vless+tcp+tls、vless+ws+tls、SS+v2ray-plugin+tls、vmess+kcp+seed的综合应用。  
 5、naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本人github下载即可。  
 
-# 特殊应用服务器端配置示例  
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
+# 特殊应用服务器端配置示例
 1、[v2ray(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(other%20configuration)) （v2ray或Xray其它多种特殊应用配置方法。）  
 2、[caddy2(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/caddy2(other%20configuration)) （分别回落caddy2不同网站的配置方法。）  
-3、[nginx(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/nginx(other%20configuration)) （nginx SNI分流v2ray或Xray回落应用与网站应用的配置方法。）  
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
+3、[nginx(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/nginx(other%20configuration)) （nginx SNI分流v2ray或Xray回落应用与网站应用的配置方法。） 
 
 # client configuration  
 [官方客户端文本配置示例](https://github.com/lxhao61/integrated-examples/tree/master/client%20configuration)（使用图形界面客户端仅参考即可）
