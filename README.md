@@ -49,7 +49,7 @@
 2. v2ray从版本v4.33.0删除了xtls应用，故若还想用xtls应用，请选Xray。Xray是v2ray分支，也是因为这个应用分家。另外注意：配置示例中log部分的路径名称，需修改为对应的xray或v2ray。   
 3. 除v2ray(vless\vmess+kcp+seed)示例外，回落或反代网站都支持http自动跳转到https。  
 4. complete表示包含v2ray或Xray的vless+tcp+tls、vless+ws+tls、SS+v2ray-plugin+tls、vmess+kcp+seed的综合应用。  
-5. naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本人github下载即可。  **
+5. naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本人github下载即可。  
 
 #### 特殊应用服务器端配置示例
 1. [v2ray(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(other%20configuration)) （v2ray或Xray其它多种特殊应用配置方法。）  
