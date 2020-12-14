@@ -57,10 +57,10 @@
 3. [nginx(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/nginx(other%20configuration)) （nginx SNI分流v2ray或Xray回落应用与网站应用的配置方法。） 
 
 ### client configuration  
->>[官方客户端文本配置示例](https://github.com/lxhao61/integrated-examples/tree/master/client%20configuration)（使用图形界面客户端仅参考即可）
+>[官方客户端文本配置示例](https://github.com/lxhao61/integrated-examples/tree/master/client%20configuration)（使用图形界面客户端仅参考即可）
 
 ### service configuration  
-   [程序service配置示例](https://github.com/lxhao61/integrated-examples/tree/master/service%20configuration)（手工配置程序由操作系统管理及自动运行可参考）
+>[程序service配置示例](https://github.com/lxhao61/integrated-examples/tree/master/service%20configuration)（手工配置程序由操作系统管理及自动运行可参考）
 
 ### 使用/贡献指南  
 1. 若程序增加新功能，开始在单一应用服务器端配置示例中添加；过一段时间稳定后才会综合应用服务器端配置示例中添加。如除trojan+tcp套娃外，vless+tcp及trojan+tcp的xtls已全部加上。  
