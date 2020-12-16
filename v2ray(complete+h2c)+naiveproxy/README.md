@@ -26,4 +26,4 @@ v2ray tcp 类应用直连。v2ray ws 类应用分流一次。naiveproxy 回落(�
 
 4、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2 回落、h2（http/2）反向代理及 PROXY protocol 应用。
 
-5、配置1：caddy2 没有启用 PROXY protocol（接收），仅端口回落。配置2：caddy2 没有启用 PROXY protocol（接收），仅进程回落。配置3：caddy2 启用了 PROXY protocol（接收），且进程回落。
+5、配置1：没有启用 PROXY protocol，端口回落。配置2：仅回落没有启用 PROXY protocol，进程回落。配置3：启用了 PROXY protocol，进程回落。
