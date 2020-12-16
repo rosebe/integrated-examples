@@ -16,7 +16,7 @@
 
 1、caddy2 目前只能 json 配置才能开启 h2c server，故要实现 h2 回落就不能采用 Caddyfile 配置；另外caddy2 版本不能低于 v2.1.0 ，否则不支持 h2c server。
 
-2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
+2、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）。
 
 3、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
 
@@ -30,4 +30,6 @@
 
 8、因 caddy2 同时为 vless+tcp 与 trojan(trojan-go) 提供回落服务，且 trojan(trojan-go) 不支持 PROXY protocol，故 caddy2 的 web 回落不能启用 PROXY protocol 接收，从而 vless+tcp 的 web 回落部分也不能启用 PROXY protocol 发送。
 
-9、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用 PROXY protocol（除 web 回落部分外），且端口回落。
+9、因 trojan(trojan-go) 不支持 Unix Domain Socket，故所有配置没有采用进程回落。
+
+10、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用 PROXY protocol（除 web 回落部分外），且端口回落。
