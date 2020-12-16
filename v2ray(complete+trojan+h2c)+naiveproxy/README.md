@@ -1,4 +1,4 @@
-一、回落终极部署（配置1/配置2套娃方式）
+一、回落终极部署（配置1/配置2/配置3套娃方式）
 
 v2ray、naiveproxy(caddy2) 各自公开一个对外端口，分别或配合提供服务。vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流出 ws（WebSocket）连接，回落给 trojan+tcp，trojan+tcp 处理后再回落给 caddy2。另 caddy2 还同时为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray 应用如下：
 
@@ -22,7 +22,7 @@ v2ray vless+tcp 应用直连，v2ray ws 类应用分流一次，v2ray trojan+tcp
 
 2、caddy2 目前只能 json 配置才能开启 h2c server，故要实现 h2 回落就不能采用 Caddyfile 配置；另外caddy2 版本不能低于 v2.1.0 ，否则不支持 h2c server。
 
-3、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
+3、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）。
 
 4、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
 
@@ -30,9 +30,9 @@ v2ray vless+tcp 应用直连，v2ray ws 类应用分流一次，v2ray trojan+tcp
 
 6、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2 回落、h2（http/2）反向代理及 PROXY protocol的应用。
 
-7、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。
+7、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。配置3：启用了 PROXY protocol，且进程回落。
 
-二、v2ray SNI分流优化共用443端口（配置3）
+二、v2ray SNI分流优化共用443端口（配置4/配置5）
 
 v2ray 通过配置相关参数对 vless+tcp、trojan+tcp、 naiveproxy(caddy2) 进行端口分流（四层转发），实现共用443端口。另 caddy2 同时为 vless+tcp 与 trojan+tcp 提供回落服务，为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
 
@@ -56,7 +56,7 @@ v2ray vless+tcp 应用直连，v2ray ws 类应用分流一次，v2ray trojan+tcp
 
 2、caddy2 目前只能 json 配置才能开启 h2c server，故要实现 h2 回落就不能采用 Caddyfile 配置；另外caddy2 版本不能低于 v2.1.0 ，否则不支持 h2c server。
 
-3、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口。
+3、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）。
 
 4、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
 
@@ -64,4 +64,4 @@ v2ray vless+tcp 应用直连，v2ray ws 类应用分流一次，v2ray trojan+tcp
 
 6、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2 回落、h2（http/2）反向代理的应用。
 
-7、v2ray SNI 分流不支持 PROXY protocol（发送），故配置3没有启用 PROXY protocol，仅端口回落。
+7、v2ray SNI 分流不支持 PROXY protocol（发送），故配置4：没有启用 PROXY protocol，仅端口回落；配置5：没有启用 PROXY protocol，仅进程回落。
