@@ -1,6 +1,6 @@
 介绍：
 
-此配置包括 v2ray、naiveproxy(caddy2) 及 trojan(trojan-go) 集成。caddy2 同时为 vless+tcp 与 trojan(trojan-go) 提供 web 回落服务，为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
+v2ray 通过配置相关参数为 v2ray、naiveproxy(caddy2)、trojan(trojan-go) 进行 SNI 分流（四层转发），实现共用443端口。caddy2 同时为 vless+tcp 与 trojan(trojan-go) 提供 web 回落服务，为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -27,5 +27,3 @@
 6、因 v2ray SNI 分流不支持 PROXY protocol（发送），故配置2不启用此项应用。
 
 7、因 trojan(trojan-go) 不支持 Unix Domain Socket，故所有配置没有采用进程回落。
-
-8、v2ray 通过配置相关参数为 v2ray、naiveproxy(caddy2)、trojan(trojan-go) 进行 SNI 分流（四层转发），实现共用443端口。
