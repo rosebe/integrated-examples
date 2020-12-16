@@ -32,4 +32,4 @@
 
 9、因 trojan(trojan-go) 不支持 Unix Domain Socket，故所有配置没有采用进程回落。
 
-10、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用 PROXY protocol（除 web 回落部分外），且端口回落。
+10、配置1：没有启用 PROXY protocol，caddy2 仅端口回落。配置2：启用 PROXY protocol（除 web 回落部分外），caddy2 仅且端口回落。
