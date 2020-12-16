@@ -21,7 +21,7 @@
         "fallbacks": [
           {
             "dest": 88,
-            "xver": 1
+            "xver": 2
           },
           {
             "path": "/HALdGZ9k",
@@ -182,7 +182,7 @@
         "fallbacks": [
           {
             "dest": 88,
-            "xver": 1
+            "xver": 2
           }
         ]
       },
