@@ -20,7 +20,7 @@
     "http": {
       "servers": {
         "srv0": {
-          "listen": ["unix//dev/shm/h1h2c.sock"], //h2与http/1.1回落进程
+          "listen": ["unix//dev/shm/h1h2c.sock"], //h2c与http/1.1 server进程
           "routes": [{
             "handle": [{
               "handler": "file_server",
