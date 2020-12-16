@@ -20,8 +20,8 @@
         "decryption": "none",
         "fallbacks": [
           {
-            "dest": 88,
-            "xver": 2
+            "dest": "/dev/shm/h1h2c.sock",
+            "xver": 0
           },
           {
             "path": "/HALdGZ9k",
@@ -181,8 +181,8 @@
         ],
         "fallbacks": [
           {
-            "dest": 88,
-            "xver": 2
+            "dest": "/dev/shm/h1h2c.sock",
+            "xver": 0
           }
         ]
       },
