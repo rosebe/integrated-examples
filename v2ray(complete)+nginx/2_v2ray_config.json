@@ -20,12 +20,12 @@
         "fallbacks": [
           {
             "alpn": "h2",
-            "dest": 82,
-            "xver": 1
+            "dest": "/dev/shm/h2c.sock",
+            "xver": 0
           },
           {
-            "dest": 81,
-            "xver": 1
+            "dest": "/dev/shm/h1.sock",
+            "xver": 0
           },
           {
             "path": "/HALdGZ9k",
