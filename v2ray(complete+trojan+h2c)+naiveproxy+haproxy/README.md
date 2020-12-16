@@ -32,4 +32,6 @@ v2ray vless+tcp 类应用直连，v2ray ws（WebSocket）类应用分流一次�
 
 7、nginx 预编译程序包不带支持 SNI 分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
 
-8、配置1：没有启用 PROXY protocol，仅端口回落。配置2：启用了 PROXY protocol，且端口回落。配置3：启用了 PROXY protocol，且进程回落。
+8、配置2因 caddy2 没有启用 PROXY protocol（接收），而 nginx SNI 中的 PROXY protocol 发送是针对共用端口全局模式，故配置2不能用 nginx SNI 分流。
+
+9、配置1：caddy2 没有启用 PROXY protocol（接收），仅端口回落。配置2：caddy2 没有启用 PROXY protocol（接收），仅进程回落。配置3：caddy2 启用了 PROXY protocol（接收），且进程回落。
