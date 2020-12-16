@@ -23,6 +23,6 @@
 
 5、因 trojan(trojan-go) 不支持 PROXY protocol（接收），而 nginx SNI 中的 PROXY protocol 发送是针对共用端口全局模式，故配置3不启用此项应用。
 
-6、配置1：v2ray 与 trojan 各自公开一个对外端口，分别提供科学上网服务。配置2：v2ray 通过配置相关参数为 v2ray、trojan(trojan-go) 进行 SNI 分流（四层转发），除 v2ray kcp 外，实现共用443端口。配置3：nginx 为 v2ray、trojan(trojan-go) 进行 SNI 分流（四层转发），除 v2ray kcp 外、实现共用443端口。
+6、因 trojan(trojan-go) 回落不支持 DomainSocket，故所有配置仅采用端口回落。
 
-7、若对配置1/配置2/配置3回落网站响应效能有要求，可以改成进程回落，参考单一应用服务器端配置示例中相关进程回落配置示例。
+7、配置1：v2ray 与 trojan 各自公开一个对外端口，分别提供科学上网服务。配置2：v2ray 通过配置相关参数为 v2ray、trojan(trojan-go) 进行 SNI 分流（四层转发），除 v2ray kcp 外，实现共用443端口。配置3：nginx 为 v2ray、trojan(trojan-go) 进行 SNI 分流（四层转发），除 v2ray kcp 外、实现共用443端口。
