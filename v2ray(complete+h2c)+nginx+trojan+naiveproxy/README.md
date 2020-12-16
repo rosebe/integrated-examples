@@ -28,5 +28,5 @@
 
 7、因 trojan(trojan-go) 不支持 Unix Domain Socket，故所有配置没有采用进程回落。
 
-8、配置1：v2ray、trojan(trojan-go)、naiveproxy(caddy2) 各自公开一个监听端口，各自分别或配合提供服务。配置2：v2ray 通过配置相关参数为 v2ray、trojan(trojan-go)、naiveproxy(caddy2) 进行 SNI 分流（四层转发），除 v2ray kcp 外、实现共用443端口。配置3：nginx 为 v2ray、trojan(trojan-go)、naiveproxy(caddy2) 进行 SNI 分流（四层转发），除 v2ray kcp 外、实现共用443端口。
+8、配置1：v2ray 通过配置相关参数为 v2ray、trojan(trojan-go)、naiveproxy(caddy2) 进行 SNI 分流（四层转发），除 v2ray kcp 外、实现共用443端口。配置2：nginx 为 v2ray、trojan(trojan-go)、naiveproxy(caddy2) 进行 SNI 分流（四层转发），除 v2ray kcp 外、实现共用443端口。
 
