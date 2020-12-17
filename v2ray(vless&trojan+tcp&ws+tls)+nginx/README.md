@@ -18,7 +18,7 @@ v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协�
 
 3、nginx 预编译程序包可能不带支持 PROXY protocol 协议的模块。如要使用此项协议应用，需加 http_realip_module（必须加） 及 stream_realip_module（可选加） 两模块构建自定义模板，再进行源代码编译和安装。另编译时选取源代码版本建议不要低于1.13.11。
 
-4、配置1：没有启用 PROXY protocol，端口回落。配置2：仅回落没有启用 PROXY protocol，进程回落。配置3：启用了 PROXY protocol，进程回落。
+4、配置1：没有启用 PROXY protocol，端口回落。配置2：没有启用 PROXY protocol，进程回落。配置3：启用了 PROXY protocol，进程回落。
 
 二、v2ray SNI 分流优化共用443端口（配置4/配置5）
 
@@ -58,4 +58,4 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行端口分流（�
 
 4、nginx 预编译程序包可能不带支持 PROXY protocol 协议的模块。如要使用此项协议应用，需加 http_realip_module 与 stream_realip_module 两模块构建自定义模板，再进行源代码编译和安装。另编译时选取源代码版本建议不要低于1.13.11。
 
-5、配置6：没有启用 PROXY protocol，端口回落。配置7：仅回落没有启用 PROXY protocol，进程回落。配置8：启用了 PROXY protocol，进程回落。
+5、配置6：没有启用 PROXY protocol，端口回落。配置7：没有启用 PROXY protocol，进程回落。配置8：启用了 PROXY protocol，进程回落。
