@@ -20,7 +20,7 @@
         "fallbacks": [
           {
             "alpn": "h2", //h2回落匹配
-            "dest": 2006, //回落给trojan+tcp处理
+            "dest": "@ttcp", //回落给trojan+tcp处理,即@ttcp进程。
             "xver": 2 //开启PROXY protocol发送，发送真实来源IP和端口给如下trojan+tcp应用。1或2表示PROXY protocol插件版本。多级传递，建议配置2。
           },
           {
@@ -29,7 +29,7 @@
           },
           {
             "path": "/HALdGZ9k", //通过路径分流出ws
-            "dest": 2001, //分流后转发到2001端口
+            "dest": "@vws", //分流后转发到@vws进程
             "xver": 1 //开启PROXY protocol发送，发送真实来源IP和端口给如下ws应用。1或2表示PROXY protocol插件版本。
           }
         ]
@@ -59,8 +59,7 @@
       }
     },
     {
-      "listen": "127.0.0.1", //只监听本机，避免本机外的机器探测到下面端口。
-      "port": 2001, //监听端口
+      "listen": "@vws", //监听@vws进程
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -88,8 +87,7 @@
       }
     },
     {
-      "listen": "127.0.0.1", //只监听本机，避免本机外的机器探测到下面端口。
-      "port": 2006, //监听端口，对应上回落端口。
+      "listen": "@ttcp", //监听@ttcp进程
       "protocol": "trojan",
       "settings": {
         "clients": [
