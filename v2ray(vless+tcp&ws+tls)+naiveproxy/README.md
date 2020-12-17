@@ -16,4 +16,4 @@ v2ray 前置（监听443端口），利用 vless+tcp 强大的回落/分流特�
 
 3、使用本人 github 中编译好的 caddy2 文件，才支持 naiveproxy 及 PROXY protocol 应用。
 
-4、配置1：没有启用 PROXY protocol，端口回落。配置2：仅回落没有启用 PROXY protocol，进程回落。配置3：启用了 PROXY protocol，进程回落。
+4、配置1：没有启用 PROXY protocol，端口回落。配置2：没有启用 PROXY protocol，进程回落。配置3：启用了 PROXY protocol，进程回落。
