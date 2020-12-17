@@ -20,4 +20,4 @@ v2ray tcp 类应用直连，且以 http/2 或 http/1.1 自适应代理科学上�
 
 3、nginx 预编译程序包可能不带支持 PROXY protocol 协议的模块。如要使用此项协议应用，需加 http_realip_module（必须加） 及 stream_realip_module（可选加） 两模块构建自定义模板，再进行源代码编译和安装。另编译时选取源代码版本建议不要低于1.13.11。
 
-4、配置1：没有启用 PROXY protocol，端口回落。配置2：仅回落没有启用 PROXY protocol，进程回落。配置3：启用了 PROXY protocol，进程回落。
+4、配置1：没有启用 PROXY protocol，端口回落。配置2：没有启用 PROXY protocol，进程回落。配置3：启用了 PROXY protocol，进程回落。
