@@ -22,8 +22,7 @@
         "srv0": {
           "listen": ["unix//dev/shm/h1h2c.sock"], //h2c与http/1.1 server进程
           "listener_wrappers": [{
-            "wrapper": "proxy_protocol", //开启PROXY protocol接收
-            "timeout": "5s"
+            "wrapper": "proxy_protocol" //开启PROXY protocol接收
           }],
           "routes": [{
             "handle": [{
