@@ -23,6 +23,14 @@
           "listen": ["127.0.0.1:88"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。此端口为web回落提供服务。
           "routes": [{
             "handle": [{
+              "handler": "headers",
+              "response": {
+                "set": {
+                  "Strict-Transport-Security": ["max-age=31536000"] //启用HSTS
+                }
+              }
+            },
+            {
               "handler": "file_server",
               "root": "/var/www/html" //修改为自己存放的web文件路径
             }],
@@ -47,6 +55,14 @@
           "listen": ["127.0.0.1:7443"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。因SNI分流统一监听端口为443，故此端口改成7443。
           "routes": [{
             "handle": [{
+              "handler": "headers",
+              "response": {
+                "set": {
+                  "Strict-Transport-Security": ["max-age=31536000"] //启用HSTS
+                }
+              }
+            },
+            {
               "handler": "forward_proxy",
               "hide_ip": true,
               "hide_via": true,
@@ -90,8 +106,7 @@
             "terminal": true
           }],
           "tls_connection_policies": [{
-            "cipher_suites": ["TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"],
-            "curves": ["x25519"],
+            "cipher_suites": ["TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"],
             "alpn": ["h2","http/1.1"],
             "default_sni": "xx.yy" //修改成自己的域名
           }],
