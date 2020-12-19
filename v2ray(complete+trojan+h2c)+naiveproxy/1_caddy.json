@@ -23,6 +23,14 @@
           "listen": ["127.0.0.1:88"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。此端口主要为web回落应用。
           "routes": [{
             "handle": [{
+              "handler": "headers",
+              "response": {
+                "set": {
+                  "Strict-Transport-Security": ["max-age=31536000"] //启用HSTS
+                }
+              }
+            },
+            {
               "handler": "file_server",
               "root": "/var/www/html" //修改为自己存放的web文件路径
             }],
@@ -47,6 +55,14 @@
           "listen": ["127.0.0.1:7443"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。因SNI分流统一监听端口为443，故此端口改成7443。
           "routes": [{
             "handle": [{
+              "handler": "headers",
+              "response": {
+                "set": {
+                  "Strict-Transport-Security": ["max-age=31536000"] //启用HSTS
+                }
+              }
+            },
+            {
               "handler": "forward_proxy",
               "hide_ip": true,
               "hide_via": true,
