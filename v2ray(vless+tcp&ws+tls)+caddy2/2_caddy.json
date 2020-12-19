@@ -23,6 +23,14 @@
           "listen": ["unix//dev/shm/h1h2c.sock"], //h2c与http/1.1 server进程
           "routes": [{
             "handle": [{
+              "handler": "headers",
+              "response": {
+                "set": {
+                  "Strict-Transport-Security": ["max-age=31536000"] //启用HSTS
+                }
+              }
+            },
+            {
               "handler": "file_server",
               "root": "/var/www/html" //修改成自己存放的web文件路径
             }],
