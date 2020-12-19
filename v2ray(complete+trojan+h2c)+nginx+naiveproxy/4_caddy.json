@@ -21,12 +21,6 @@
       "servers": {
         "srv0": {
           "listen": ["unix//dev/shm/caddy.sock"], //caddy server进程
-          "listener_wrappers": [{
-            "wrapper": "proxy_protocol" //开启PROXY protocol接收
-          }, 
-          {
-            "wrapper":"tls"
-          }],
           "routes": [{
             "handle": [{
               "handler": "headers",
