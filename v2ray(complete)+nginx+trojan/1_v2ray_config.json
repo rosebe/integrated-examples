@@ -6,7 +6,23 @@
   },
   "inbounds": [
     {
-      "port": 443, //监听端口
+      "port": 443, //SNI分流应用的监听端口
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "0.0.0.0",
+        "network": "tcp",
+        "followRedirect": false
+      },
+      "sniffing": {
+        "enabled": true, //开启流量探测
+        "destOverride": [
+          "tls" //tls探测,以实现SNI分流应用。
+        ]
+      }
+    },
+    {
+      "listen": "127.0.0.1", //只监听本机，避免本机外的机器探测到下面端口。
+      "port": 7443, //监听端口
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -172,6 +188,20 @@
     "rules": [
       {
         "type": "field",
+        "domain": [
+          "zv.xx.yy" //修改成自己域名
+        ],
+        "outboundTag": "zv" //与outbounds中标签对应
+      },
+      {
+        "type": "field",
+        "domain": [
+          "zt.xx.yy" //修改成自己域名
+        ],
+        "outboundTag": "zt" //与outbounds中标签对应
+      },
+      {
+        "type": "field",
         "inboundTag": [
           "ss1ws" //与inbounds中标签对应
         ],
@@ -200,6 +230,20 @@
           "path": "ss1", //与streamSettings中对应
           "abstract": true
         }
+      }
+    },
+    {
+      "tag": "zv", //标签，与routing中标签对应。
+      "protocol": "freedom",
+      "settings": {
+        "redirect": "127.0.0.1:8443" //与vless+tcp端口对应
+      }
+    },
+    {
+      "tag": "zt", //标签，与routing中标签对应。
+      "protocol": "freedom",
+      "settings": {
+        "redirect": "127.0.0.1:2006" //与trojan+tcp端口对应
       }
     },
     {
