@@ -56,4 +56,4 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp、naiveproxy(caddy2) �
 
 6、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2（http/2）反向代理的应用。
 
-7、配置3：没有启用 PROXY protocol，端口回落。配置4：启用了 PROXY protocol，端口回落。配置5：启用了 PROXY protocol，进程回落。
+7、配置3：没有启用 PROXY protocol，端口回落。配置4：没有启用 PROXY protocol，进程回落。配置5：启用了 PROXY protocol，进程回落。
