@@ -20,7 +20,7 @@
     "http": {
       "servers": {
         "srv0": {
-          "listen": ["127.0.0.1:8443"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。
+          "listen": ["unix//dev/shm/caddy.sock"], //caddy server进程
           "listener_wrappers": [{
             "wrapper": "proxy_protocol" //开启PROXY protocol接收
           }, 
@@ -87,7 +87,7 @@
           "automatic_https": {
             "disable_redirects": true //禁用自动http->https重定向
           },
-          "experimental_http3": true //开启http3 server支持。
+          "experimental_http3": false //关闭http3 server支持。采用进程转发，目前不支持UDP。
         }
       }
     },
