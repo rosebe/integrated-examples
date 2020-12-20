@@ -20,10 +20,7 @@
     "http": {
       "servers": {
         "srv0": {
-          "listen": ["127.0.0.1:88"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。此端口为web回落提供服务。
-          "listener_wrappers": [{
-            "wrapper": "proxy_protocol" //开启PROXY protocol接收
-          }],
+          "listen": ["unix//dev/shm/h1h2c.sock"], //h2c与http/1.1 server进程
           "routes": [{
             "handle": [{
               "handler": "headers",
@@ -56,12 +53,6 @@
         },
         "srv2": {
           "listen": ["127.0.0.1:7443"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。因SNI分流统一监听端口为443，故此端口改成7443。
-          "listener_wrappers": [{
-            "wrapper": "proxy_protocol" //开启PROXY protocol接收
-          }, 
-          {
-            "wrapper":"tls"
-          }],
           "routes": [{
             "handle": [{
               "handler": "headers",
