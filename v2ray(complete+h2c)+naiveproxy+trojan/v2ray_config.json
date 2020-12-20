@@ -1,12 +1,12 @@
 {
   "log": {
-    "error": "/var/log/v2ray/error.log",
-    "access": "/var/log/v2ray/access.log",
-    "loglevel": "warning"
+    "loglevel": "warning",
+    "error": "/var/log/xray/error.log", //若使用v2ray，此处目录名称xray改成v2ray。
+    "access": "/var/log/xray/access.log" //若使用v2ray，此处目录名称xray改成v2ray。
   },
   "inbounds": [
     {
-      "port": 443,
+      "port": 443, //SNI分流应用的监听端口
       "protocol": "dokodemo-door",
       "settings": {
         "address": "0.0.0.0",
@@ -14,15 +14,15 @@
         "followRedirect": false
       },
       "sniffing": {
-        "enabled": true,
+        "enabled": true, //开启流量探测
         "destOverride": [
-          "tls"
+          "tls" //tls探测,以实现SNI分流应用。
         ]
       }
     },
     {
-      "listen": "127.0.0.1",
-      "port": 8443,
+      "listen": "127.0.0.1", //只监听本机，避免本机外的机器探测到下面端口。
+      "port": 8443, //监听端口
       "protocol": "vless",
       "settings": {
         "clients": [
