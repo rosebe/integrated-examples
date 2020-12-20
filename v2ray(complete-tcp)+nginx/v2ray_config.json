@@ -35,7 +35,7 @@
     },
     {
       "listen": "127.0.0.1", //只监听本机，避免本机外的机器探测到下面端口。
-      "port": 2004, //监听端口
+      "port": 2002, //监听端口
       "protocol": "dokodemo-door",
       "settings": {
         "address": "v1.mux.cool",
@@ -59,10 +59,10 @@
       }
     },
     {
-      "port": 2005,
+      "port": 2003,
       "protocol": "shadowsocks",
       "settings": {
-        "email": "2005@gmail.com",
+        "email": "2003@gmail.com",
         "method": "chacha20-poly1305",
         "password": "diy9125", //修改成自己的密码
         "ota": false,
