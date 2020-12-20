@@ -40,8 +40,8 @@
           },
           {
             "path": "/HALdGZ9k", //通过路径分流出ws
-            "dest": "@vws", //分流后转发到@vws进程
-            "xver": 0 //关闭PROXY protocol发送，不发送真实来源IP和端口给如下ws应用。另默认为0，此条参数可以省略不写。
+            "dest": "@vless-ws", //分流后转给vless+ws处理,即@vless-ws进程。
+            "xver": 0 //关闭PROXY protocol发送，不发送真实来源IP和端口给如下vless+ws应用。另默认为0，此条参数可以省略不写。
           }
         ]
       },
@@ -73,7 +73,7 @@
       }
     },
     {
-      "listen": "@vws", //监听@vws进程
+      "listen": "@vless-ws", //监听@vless-ws进程
       "protocol": "vless",
       "settings": {
         "clients": [
