@@ -269,7 +269,7 @@
       "tag": "zv", //标签，与routing中标签对应。
       "protocol": "freedom",
       "settings": {
-        "redirect": "127.0.0.1:7443" //与vless+tcp端口对应
+        "redirect": "127.0.0.1:8443" //与vless+tcp端口对应
       }
     },
     {
@@ -283,7 +283,7 @@
       "tag": "zc", //标签，与routing中标签对应。
       "protocol": "freedom",
       "settings": {
-        "redirect": "127.0.0.1:8443" //与caddy端口对应
+        "redirect": "127.0.0.1:7443" //与caddy端口对应
       }
     },
     {
