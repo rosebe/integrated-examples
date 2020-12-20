@@ -84,7 +84,7 @@
       }
     },
     {
-      "listen": "@trojan-tcp", //监听@trojan-tcp进程
+      "listen": "@trojan-tcp", //监听@trojan-tcp进程，对应上回落进程。
       "protocol": "trojan",
       "settings": {
         "clients": [
