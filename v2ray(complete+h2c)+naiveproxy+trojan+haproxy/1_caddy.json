@@ -20,33 +20,49 @@
     "http": {
       "servers": {
         "srv0": {
-          "listen": ["127.0.0.1:88"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。此端口为web回落提供服务。无必要用http的默认端口80。
+          "listen": ["127.0.0.1:88"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。
           "routes": [{
             "handle": [{
+              "handler": "headers",
+              "response": {
+                "set": {
+                  "Strict-Transport-Security": ["max-age=31536000"] //启用HSTS
+                }
+              }
+            },
+            {
               "handler": "file_server",
               "root": "/var/www/html" //修改为自己存放的web文件路径
             }],
             "terminal": true
           }],
-          "errors": {
-            "routes": [{
-              "handle": [{
-                "handler": "error",
-                "error": "warning",
-                "status_code": "404"
-              }],
-              "terminal": true
-            }]
-          },
-          "automatic_https": {
-            "disable": true
-          },
-          "allow_h2c": true //开启h2c server支持。
+          "allow_h2c": true //开启h2c server支持
         },
         "srv1": {
+          "listen": [":80"], //http默认监听端口
+          "routes": [{
+            "handle": [{
+              "handler": "static_response",
+              "status_code": "301", 
+              "headers": {
+              	"Location": ["https://{http.request.host}{http.request.uri}"] //http自动跳转https,让网站看起来更真实。
+              }
+            }],
+            "terminal": true
+          }]
+        },
+        "srv2": {
           "listen": ["127.0.0.1:7443"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。因SNI分流统一监听端口为443，故此端口改成7443。
           "routes": [{
             "handle": [{
+              "handler": "headers",
+              "response": {
+                "set": {
+                  "Strict-Transport-Security": ["max-age=31536000"] //启用HSTS
+                }
+              }
+            },
+            {
               "handler": "forward_proxy",
               "hide_ip": true,
               "hide_via": true,
@@ -58,9 +74,6 @@
             }]
           },
           {
-            "match": [{
-              "host": ["xx.yy"] //修改为自己域名
-            }],
             "handle": [{
               "handler": "subroute",
               "routes": [{
@@ -93,20 +106,12 @@
             "terminal": true
           }],
           "tls_connection_policies": [{
-            "cipher_suites": ["TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"],
-            "curves": ["x25519"],
+            "cipher_suites": ["TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"],
             "alpn": ["h2","http/1.1"],
             "default_sni": "xx.yy" //修改成自己的域名
           }],
-          "errors": {
-            "routes": [{
-              "handle": [{
-                "handler": "error",
-                "error": "warning",
-                "status_code": "404"
-              }],
-              "terminal": true
-            }]
+          "automatic_https": {
+            "disable_redirects": true //禁用自己自动http->https重定向
           },
           "experimental_http3": true //开启http3 server支持。如haproxy SNI分流，不支持UDP，可以关闭。
         }

@@ -1,9 +1,9 @@
 {
     "run_type": "server",
-    "local_addr": "0.0.0.0",
-    "local_port": 2083,
+    "local_addr": "127.0.0.1",
+    "local_port": 7443,
     "remote_addr": "127.0.0.1",
-    "remote_port": 80,
+    "remote_port": 81,
     "password": [
         "diy1155",
         "diy9125"
@@ -21,7 +21,7 @@
             "http/1.1"
         ],
         "alpn_port_override": {
-            "h2": 88
+            "h2": 82
         },
         "reuse_session": true,
         "session_ticket": false,

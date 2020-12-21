@@ -1,51 +1,54 @@
 {
   "log": {
-    "error": "/var/log/v2ray/error.log",
-    "access": "/var/log/v2ray/access.log",
-    "loglevel": "warning"
+    "loglevel": "warning",
+    "error": "/var/log/xray/error.log", //若使用v2ray，此处目录名称xray改成v2ray。
+    "access": "/var/log/xray/access.log" //若使用v2ray，此处目录名称xray改成v2ray。
   },
   "inbounds": [
     {
-      "port": 443,
+      "port": 443, //监听端口
       "protocol": "vless",
       "settings": {
         "clients": [
           {
-            "id": "888fd3ac-dd53-11e9-b357-5600024c1d6a",
-            "flow": "xtls-rprx-direct",
+            "id": "048e0bf2-dd56-11e9-aa37-5600024c1d6a", //修改成自己的UUID
+            "flow": "xtls-rprx-direct", //启用xtls，必须增加此条参数；否则删除。v2ray从v4.33.0版开始删除了xtls应用，如要使用此应用，建议选用xray。
             "email": "443@gmail.com"
           }
         ],
         "decryption": "none",
         "fallbacks": [
           {
-            "dest": 80,
-            "xver": 1
+            "dest": "/dev/shm/h1h2c.sock", //h2与http/1.1回落共用此进程，回落到web服务器。需web服务器同一进程，同时支持h2c server与http/1.1 server应用。
+            "xver": 0 //caddy2发行版不支持PROXY protocol，如用发行版此处值必须为0。
           },
           {
-            "path": "/HALdGZ9k",
-            "dest": 2001,
-            "xver": 1
+            "path": "/HALdGZ9k", //通过路径分流出ws
+            "dest": "@vless-ws", //分流后转给vless+ws处理,即@vless-ws进程。
+            "xver": 0 //关闭PROXY protocol发送，不发送真实来源IP和端口给如下vless+ws应用。另默认为0，此条参数可以省略不写。
           },
           {
-            "path": "/SS1v2ray",
-            "dest": 2004,
-            "xver": 1
+            "path": "/SS1v2ray", //通过路径分流出ws
+            "dest": 2004, //分流后转发到2004端口
+            "xver": 0 //关闭PROXY protocol发送，不发送真实来源IP和端口给如下SS+v2ray-plugin应用。另默认为0，此条参数可以省略不写。
           }
         ]
       },
       "streamSettings": {
         "network": "tcp",
-        "security": "xtls",
-        "xtlsSettings": {
+        "security": "xtls", //如启用xtls，tls必须改成xtls；否则恢复tls。
+        "xtlsSettings": { //如启用xtls，tlsSettings必须改成xtlsSettings；否则恢复tlsSettings。
+          "minVersion": "1.2", //最低tls版本设置，Xray v1.1.4版及以后支持（可选项参数，可以不配置。）。目前v2ray不支持，若使用v2ray做服务端必须删除此项参数。
+          "cipherSuites": "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256", //密码套件，Xray v1.1.4版及以后支持（可选项参数，可以不配置。）。目前v2ray不支持，若使用v2ray做服务端必须删除此项参数。
+          "preferServerCipherSuites": true, //首选服务端密码套件开关（与上配合），Xray v1.1.4版及以后支持（可选项参数，可以不配置。）。目前v2ray不支持，若使用v2ray做服务端必须删除此项参数。
           "alpn":[
-            "h2",
-            "http/1.1"
+            "h2", //启用h2连接，web回落也需配置支持h2回落；否则不一致（裸奔），容易被墙探测出，从而被封。
+            "http/1.1" //启用http/1.1连接，web回落也需配置支持http/1.1回落；否则不一致（裸奔），容易被墙探测出，从而被封。
           ],
           "certificates": [
             {
-              "certificateFile": "/etc/ssl/tls/xx.yy.crt",
-              "keyFile": "/etc/ssl/tls/xx.yy.key"
+              "certificateFile": "/etc/ssl/tls/xx.yy.crt", //换成你的证书，绝对路径。
+              "keyFile": "/etc/ssl/tls/xx.yy.key" //换成你的私钥，绝对路径。
             }
           ]
         }
@@ -59,14 +62,13 @@
       }
     },
     {
-      "listen": "127.0.0.1",
-      "port": 2001,
+      "listen": "@vless-ws", //监听@vless-ws进程
       "protocol": "vless",
       "settings": {
         "clients": [
           {
-            "email": "2001@gmail.com",
-            "id": "048e0bf2-dd56-11e9-aa37-5600024c1d6a"
+            "id": "048e0bf2-dd56-11e9-aa37-5600024c1d6a", //修改成自己的UUID
+            "email": "2001@gmail.com"
           }
         ],
         "decryption": "none"
@@ -75,8 +77,7 @@
         "network": "ws",
         "security": "none",
         "wsSettings": {
-          "acceptProxyProtocol": true,
-          "path": "/HALdGZ9k"
+          "path": "/HALdGZ9k" //修改成自己的path
         }
       },
       "sniffing": {
@@ -88,39 +89,8 @@
       }
     },
     {
-      "listen": "127.0.0.1",
-      "port": 2002,
-      "protocol": "vless",
-      "settings": {
-        "clients": [
-          {
-            "email": "2002@gmail.com",
-            "id": "f392b9f4-e0df-11ea-afb3-42010a8c000a"
-          }
-        ],
-        "decryption": "none"
-      },
-      "streamSettings": {
-        "network": "h2",
-        "security": "none",
-        "httpSettings": {
-          "host": [
-            "xx.yy"
-          ],
-          "path": "/SeuW56Es"
-        }
-      },
-      "sniffing": {
-        "enabled": true,
-        "destOverride": [
-          "http",
-          "tls"
-        ]
-      }
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": "2004",
+      "listen": "127.0.0.1", //只监听本机，避免本机外的机器探测到下面端口。
+      "port": 2002, //监听端口
       "protocol": "dokodemo-door",
       "settings": {
         "address": "v1.mux.cool",
@@ -131,11 +101,10 @@
         "network": "ws",
         "security": "none",
         "wsSettings": {
-          "acceptProxyProtocol": true,
-          "path": "/SS1v2ray"
+          "path": "/SS1v2ray" //修改成自己的path
         }
       },
-      "tag": "ss1ws",
+      "tag": "ss1ws", //标签，与routing中标签对应。
       "sniffing": {
         "enabled": true,
         "destOverride": [
@@ -145,12 +114,12 @@
       }
     },
     {
-      "port": 2005,
+      "port": 2003,
       "protocol": "shadowsocks",
       "settings": {
-        "email": "2005@gmail.com",
+        "email": "2003@gmail.com",
         "method": "chacha20-poly1305",
-        "password": "diy9125",
+        "password": "diy9125", //修改成自己的密码
         "ota": false,
         "network": "tcp,udp"
       },
@@ -158,30 +127,60 @@
         "network": "domainsocket",
         "security": "none",
         "dsSettings": {
-          "path": "ss1",
+          "path": "ss1", //与outbounds中对应
           "abstract": true
         }
       }
     },
     {
-      "port": 2053,
-      "protocol": "vmess",
+      "listen": "127.0.0.1", //只监听本机，避免本机外的机器探测到下面端口。
+      "port": 2005, //监听端口，此端口收发caddy2转来的数据。
+      "protocol": "vless",
       "settings": {
         "clients": [
           {
-            "email": "2053@gmail.com",
-            "id": "0a652466-dd56-11e9-aa37-5600024c1d6a",
-            "alterId": 0
+            "id": "048e0bf2-dd56-11e9-aa37-5600024c1d6a", //修改成自己的UUID
+            "email": "2005@gmail.com"
           }
         ],
-        "disableInsecureEncryption": true
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "h2",
+        "security": "none",
+        "httpSettings": {
+          "host": [
+            "xx.yy" //修改成自己的域名
+          ],
+          "path": "/SeuW56Es" //修改成自己的path
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      }
+    },
+    {
+      "port": 2053, //监听端口
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "0a652466-dd56-11e9-aa37-5600024c1d6a", //修改成自己的UUID
+            "email": "2053@gmail.com"
+          }
+        ],
+        "decryption": "none"
       },
       "streamSettings": {
         "network": "kcp",
         "security": "none",
         "kcpSettings": {
-          "congestion": true,
-          "seed": "60VoqhfjP79nBQyU"
+          "congestion": true, //启用拥塞控制
+          "seed": "60VoqhfjP79nBQyU" //seed密码，修改成自己的。
         }
       },
       "sniffing": {
@@ -199,9 +198,9 @@
       {
         "type": "field",
         "inboundTag": [
-          "ss1ws"
+          "ss1ws" //与inbounds中标签对应
         ],
-        "outboundTag": "ss1mux"
+        "outboundTag": "ss1mux" //与outbounds中标签对应
       },
       {
         "type": "field",
@@ -218,12 +217,12 @@
       "settings": {}
     },
     {
-      "tag": "ss1mux",
+      "tag": "ss1mux", //标签，与routing中标签对应。
       "protocol": "freedom",
       "streamSettings": {
         "network": "domainsocket",
         "dsSettings": {
-          "path": "ss1",
+          "path": "ss1", //与streamSettings中对应
           "abstract": true
         }
       }

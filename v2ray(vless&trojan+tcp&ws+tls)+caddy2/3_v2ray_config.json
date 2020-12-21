@@ -1,54 +1,41 @@
 {
   "log": {
-    "error": "/var/log/v2ray/error.log",
-    "access": "/var/log/v2ray/access.log",
-    "loglevel": "warning"
+    "loglevel": "warning",
+    "error": "/var/log/xray/error.log", //若使用v2ray，此处目录名称xray改成v2ray。
+    "access": "/var/log/xray/access.log" //若使用v2ray，此处目录名称xray改成v2ray。
   },
   "inbounds": [
     {
-      "port": 443, //SNI分流应用的监听端口
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "0.0.0.0",
-        "network": "tcp",
-        "followRedirect": false
-      },
-      "sniffing": {
-        "enabled": true, //开启流量探测
-        "destOverride": [
-          "tls" //tls探测,以实现SNI分流应用。
-        ]
-      }
-    },
-    {
-      "listen": "127.0.0.1", //只监听本机，避免本机外的机器探测到下面端口。
-      "port": 8443, //监听端口
+      "port": 443, //监听端口
       "protocol": "vless",
       "settings": {
         "clients": [
           {
             "id": "048e0bf2-dd56-11e9-aa37-5600024c1d6a", //修改成自己的UUID
-            "flow": "xtls-rprx-direct", //启用xtls，必须增加此条参数，参数可xtls-rprx-origin或xtls-rprx-direct可选；否则删除。另支持的v2ray版本应不小于v4.31.0。
-            "email": "8443@gmail.com"
+            "flow": "xtls-rprx-direct", //启用xtls，必须增加此条参数；否则删除。v2ray从v4.33.0版开始删除了xtls应用，如要使用此应用，建议选用xray。
+            "email": "443@gmail.com"
           }
         ],
         "decryption": "none",
         "fallbacks": [
           {
-            "dest": 80, //h2与http/1.1回落共用此端口，回落到web服务器。需web服务器同一端口，同时支持h2c server与http/1.1 server应用。
-            "xver": 0 //关闭 PROXY protocol 发送，不发送真实来源 IP 和端口给 caddy2。另默认为0，此条参数可以省略不写。
+            "dest": "@trojan-tcp", //回落给trojan+tcp处理,即@trojan-tcp程。
+            "xver": 2 //开启PROXY protocol发送，发送真实来源IP和端口给如下trojan+tcp应用。1或2表示PROXY protocol插件版本。多级传递，建议配置2。
           },
           {
             "path": "/HALdGZ9k", //通过路径分流出ws
-            "dest": 2001, //分流后转发到2001端口
-            "xver": 0 //默认为0，此条参数可以省略不写。
+            "dest": "@vless-ws", //分流后转给vless+ws处理,即@vless-ws进程。
+            "xver": 2 //开启PROXY protocol发送，发送真实来源IP和端口给如下vless+ws应用。1或2表示PROXY protocol插件版本。与上一致，此处建议配置2。
           }
         ]
       },
       "streamSettings": {
         "network": "tcp",
-        "security": "xtls", //如启用xtls，tls必须改成xtls。
-        "xtlsSettings": { //如启用xtls，tlsSettings必须改成xtlsSettings。
+        "security": "xtls", //如启用xtls，tls必须改成xtls；否则恢复tls。
+        "xtlsSettings": { //如启用xtls，tlsSettings必须改成xtlsSettings；否则恢复tlsSettings。
+          "minVersion": "1.2", //最低tls版本设置，Xray v1.1.4版及以后支持（可选项参数，可以不配置。）。目前v2ray不支持，若使用v2ray做服务端必须删除此项参数。
+          "cipherSuites": "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256", //密码套件，Xray v1.1.4版及以后支持（可选项参数，可以不配置。）。目前v2ray不支持，若使用v2ray做服务端必须删除此项参数。
+          "preferServerCipherSuites": true, //首选服务端密码套件开关（与上配合），Xray v1.1.4版及以后支持（可选项参数，可以不配置。）。目前v2ray不支持，若使用v2ray做服务端必须删除此项参数。
           "alpn":[
             "h2", //启用h2连接，web回落也需配置支持h2回落；否则不一致（裸奔），容易被墙探测出，从而被封。
             "http/1.1" //启用http/1.1连接，web回落也需配置支持http/1.1回落；否则不一致（裸奔），容易被墙探测出，从而被封。
@@ -70,14 +57,13 @@
       }
     },
     {
-      "listen": "127.0.0.1", //只监听本机，避免本机外的机器探测到下面端口。
-      "port": 2001, //监听端口
+      "listen": "@vless-ws", //监听@vless-ws进程
       "protocol": "vless",
       "settings": {
         "clients": [
           {
-            "email": "2001@gmail.com",
-            "id": "048e0bf2-dd56-11e9-aa37-5600024c1d6a" //修改成自己的UUID
+            "id": "048e0bf2-dd56-11e9-aa37-5600024c1d6a", //修改成自己的UUID
+            "email": "2001@gmail.com"
           }
         ],
         "decryption": "none"
@@ -86,6 +72,7 @@
         "network": "ws",
         "security": "none",
         "wsSettings": {
+          "acceptProxyProtocol": true, //开启PROXY protocol接收，接收vless+tcp分流前真实来源IP和端口。
           "path": "/HALdGZ9k" //修改成自己的path
         }
       },
@@ -98,38 +85,27 @@
       }
     },
     {
-      "listen": "127.0.0.1", //只监听本机，避免本机外的机器探测到下面端口。
-      "port": 2006, //监听端口，对应上回落端口。
+      "listen": "@trojan-tcp", //监听@trojan-tcp进程，对应上回落进程。
       "protocol": "trojan",
       "settings": {
         "clients": [
           {
             "password":"diy2006", //修改成自己密码
-            "flow": "xtls-rprx-direct", //启用xtls，必须增加此条参数，参数可xtls-rprx-origin或xtls-rprx-direct可选；否则删除。另支持的v2ray版本应不小于v4.31.3。
             "email": "2006@gmail.com"
           }
         ],
         "fallbacks": [
           {
-            "dest": 80, //h2与http/1.1回落共用此端口，回落到web服务器。需web服务器同一端口，同时支持h2c server与http/1.1 server应用。
-            "xver": 0 //关闭 PROXY protocol 发送，不发送真实来源 IP 和端口给 caddy2。另默认为0，此条参数可以省略不写。
+            "dest": "/dev/shm/h1h2c.sock", //h2与http/1.1回落共用此进程，回落到web服务器。需web服务器同一进程，同时支持h2c server与http/1.1 server应用。
+            "xver": 2 //开启PROXY protocol发送，发送真实来源IP和端口给caddy2。caddy2用支持PROXY protocol插件的定制版。1或2表示PROXY protocol插件版本。与上一致，此处建议配置2。
           }
         ]
       },
       "streamSettings": {
         "network": "tcp",
-        "security": "xtls", //如启用xtls，tls必须改成xtls。
-        "xtlsSettings": { //如启用xtls，tlsSettings必须改成xtlsSettings。
-          "alpn":[
-            "h2", //启用h2连接，web回落也需配置支持h2回落；否则不一致（裸奔），容易被墙探测出，从而被封。
-            "http/1.1" //启用http/1.1连接，web回落也需配置支持http/1.1回落；否则不一致（裸奔），容易被墙探测出，从而被封。
-          ],
-          "certificates": [
-            {
-              "certificateFile": "/etc/ssl/tls/xx.yy.crt", //换成你的证书，绝对路径。
-              "keyFile": "/etc/ssl/tls/xx.yy.key" //换成你的私钥，绝对路径。
-            }
-          ]
+        "security": "none",
+        "tcpSettings": {
+          "acceptProxyProtocol": true //开启PROXY protocol接收，接收vless+tcp回落前真实来源IP和端口。
         }
       },
       "sniffing": {
@@ -146,20 +122,6 @@
     "rules": [
       {
         "type": "field",
-        "domain": [
-          "zv.xx.yy" //修改成自己域名
-        ],
-        "outboundTag": "zv" //与outbounds中标签对应
-      },
-      {
-        "type": "field",
-        "domain": [
-          "zt.xx.yy" //修改成自己域名
-        ],
-        "outboundTag": "zt" //与outbounds中标签对应
-      },
-      {
-        "type": "field",
         "protocol": [
           "bittorrent"
         ],
@@ -171,20 +133,6 @@
     {
       "protocol": "freedom",
       "settings": {}
-    },
-    {
-      "tag": "zv", //标签，与routing中标签对应。
-      "protocol": "freedom",
-      "settings": {
-        "redirect": "127.0.0.1:8443" //与vless+tcp端口对应
-      }
-    },
-    {
-      "tag": "zt", //标签，与routing中标签对应。
-      "protocol": "freedom",
-      "settings": {
-        "redirect": "127.0.0.1:2006" //与trojan+tcp端口对应
-      }
     },
     {
       "tag": "blocked",
